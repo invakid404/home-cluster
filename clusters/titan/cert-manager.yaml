@@ -10,5 +10,9 @@ spec:
     name: flux-system
   path: ./core/cert-manager
   prune: true
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
   dependsOn:
     - name: core
