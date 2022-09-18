@@ -1,18 +1,12 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: cert-manager
+  name: core-base
   namespace: flux-system
 spec:
   interval: 10m0s
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./core/cert-manager
+  path: ./core
   prune: true
-  decryption:
-    provider: sops
-    secretRef:
-      name: sops-gpg
-  dependsOn:
-    - name: core

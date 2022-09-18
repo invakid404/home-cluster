@@ -11,4 +11,4 @@ spec:
   path: ./apps/libreddit
   prune: true
   dependsOn:
-    - name: apps
+    - name: apps-base
