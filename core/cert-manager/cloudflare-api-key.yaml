@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: cloudflare-api-key-secret
+    namespace: core
+type: Opaque
+stringData:
+    api-key: ENC[AES256_GCM,data:FIrKxy/39GKF9DwBNB+1E2JPppXdhz1ZQubNO0S499zVYuEjzw==,iv:omyfXFADYJ1wR9CBeJxhLZqb4l+JkVxNMFSJlJLNW7Q=,tag:FTS2KaU12Z1G/p/zkbg3Zg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2022-09-18T14:26:43Z"
+    mac: ENC[AES256_GCM,data:ecR5Ox1meGEmXEH3BWWm1GzCa37RZRp2GCdhfqDf2Rztwe/NDoVL/daIv4qS4C5Lkpz2vjvV/fV6/1Vi1NFCE2xcJPjEhqGNy+uhL2WmyYd+s4ifmQ7cEdpsRTNH99ed9m8AGoMlmSdM4nSLSFxmY+f03WC7Lk54GzOuDTFWYpA=,iv:viCIuE+69rPD8ogIAEGEHCE/zAKAauLOGdEP59aRang=,tag:BeRc8TSbVr2iwY6c9C2uNA==,type:str]
+    pgp:
+        - created_at: "2022-09-18T14:21:04Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA83EhJxcYAoBARAAn/CRoBL46a5Ex70XiLxD1cfDqM7bxSQPR+xKgW1MLgoq
+            80E0NUPTZ6Jebe7NZaP3qS+nohfKBIsUgmMnqC9vgwFNvXVcSoBMoArZTzGIy+Gj
+            k9yXaM7x1wnxW9k+f/TPKIGbfLNZUxe/KmWU0Rlf3ywgzjaXkbuBtmACIfh9rPl6
+            n3LQy0I5AnYtHw5Nw7vLPffyCjUTIQ7m/XguhFSqTaWkCUKJz0F1DUrCcbg/210N
+            54kurahqTyuwL8Wr2GoMQJ2932gi6odcl2OMECdAgS4IQc9400MZdeo6+IvzaG82
+            a6vnNepkMlukgiq2gWmcg0sZkHOj2q0pPOQOcQb8PFGz2PpHup/gCvpu4kxSqPph
+            dpz8kVJihWjG0nELF2rzsqWjVKrsczkvOM3umdxtbx59l3Ys24fi/hEKwP5cKwzB
+            B4xG8uxPEYK2hB8q+WhezWG/7SoUjGMojiFRnakJpqxfZJEYfYAXGQ7HhFAWFvb2
+            4pZqSep40f+luL9Rdt/jtOo5PlQzjy5WaZMCSoYPMg2MSz7YzaPD4k9ReB74gyAV
+            vt/apOZA/qtwNIIQWHkc73PIo+jSibJ7RI9+W2nNTWtqGcNtkdTsPXvs0al4Pdy6
+            EeV6n3tMcP3c/j8nkpTZdhvxPRUZFRSKVl8yV2jT5tih87ttAp8mX233rtRDv17S
+            XAHj7jGP8AUMbIzUGyU42P3vTmG9WCyhETpaalNdvfOuvE897PVgaNMhv60gvupe
+            Ss3dwVflMQGBoKjtCI9inV7sJOqobJ0YbbgA48w/Xygg4qI9DQGWj77iK7RD
+            =fc5K
+            -----END PGP MESSAGE-----
+          fp: 05FA72D13D58F8D4588BE3FE5606FFB02A5F0984
+    encrypted_regex: ((?i)(pass($|word)|claim|secret($|[^N])|key|token|^data$|^stringData))
+    version: 3.7.3
