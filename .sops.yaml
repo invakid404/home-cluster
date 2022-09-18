@@ -1,0 +1,3 @@
+creation_rules:
+  - encrypted_regex: '((?i)(pass($|word)|claim|secret($|[^N])|key|token|^data$|^stringData))'
+    pgp: '05FA72D13D58F8D4588BE3FE5606FFB02A5F0984'
