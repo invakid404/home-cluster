@@ -1,0 +1,48 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: chezz
+  namespace: apps
+spec:
+  interval: 10m0s
+  chart:
+    spec:
+      chart: app-template
+      version: 0.1.1
+      interval: 10m0s
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: apps
+
+  values:
+    image:
+      repository: ghcr.io/invakid404/chezz
+      pullPolicy: IfNotPresent
+      tag: 1.0.0
+
+    imagePullSecrets:
+      - name: docker-config
+
+    service:
+      main:
+        ports:
+          http:
+            port: 3000
+
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: "nginx"
+        annotations:
+          cert-manager.io/cluster-issuer: letsencrypt
+        hosts:
+          - host: &chezz-host "chezz.lab.invak.id"
+            paths:
+              - path: /
+
+        tls:
+          - hosts:
+              - *chezz-host
+            secretName: letsencrypt-chezz
