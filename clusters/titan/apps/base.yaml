@@ -10,6 +10,10 @@ spec:
     name: flux-system
   path: ./apps
   prune: true
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
   dependsOn:
     - name: ingress-nginx
     - name: issuers
