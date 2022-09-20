@@ -38,7 +38,7 @@ spec:
         annotations:
           cert-manager.io/cluster-issuer: letsencrypt
         hosts:
-          - host: &chezz-host "chezz.lab.invak.id"
+          - host: &chezz-host "chezz.lab.${BASE_DOMAIN}"
             paths:
               - path: /
 

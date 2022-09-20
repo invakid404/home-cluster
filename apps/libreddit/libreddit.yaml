@@ -35,7 +35,7 @@ spec:
         annotations:
           cert-manager.io/cluster-issuer: letsencrypt
         hosts:
-          - host: &libreddit-host "libreddit.lab.invak.id"
+          - host: &libreddit-host "libreddit.lab.${BASE_DOMAIN}"
             paths:
               - path: /
 
