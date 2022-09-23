@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: renovate-env
+    namespace: apps
+type: Opaque
+stringData:
+    GITHUB_COM_TOKEN: ENC[AES256_GCM,data:RxL9CbpWWN9Jrl0mfcGzyqJd1+bBtTDyLgGJ2IAPALseORPMsITN0w==,iv:7QbpRoQciNsSbObnhJ+3A+o5BgeNAWJv5uOci/ASrrw=,tag:3x+WpEQClv8/BSm0fHa6Xg==,type:str]
+    RENOVATE_AUTODISCOVER: ENC[AES256_GCM,data:xwJCly0=,iv:BtbYwnl9keovqVSKCQh51v6Fzz9ECIy1yKKHchNGFp4=,tag:vlnzZOtWQfDXih+buRrN2Q==,type:str]
+    RENOVATE_GIT_AUTHOR: ENC[AES256_GCM,data:pJL8Z1kDw17Py5JlWSl8TW/Ycbv6ywlzuUYXrpSVonL1Rg==,iv:Pk1e2tJk8kCVaMw4ZHOg/k+OZGdDzvewfIiecd5ktkI=,tag:a7Bq7opcRsyKJMLwSVOpRw==,type:str]
+    RENOVATE_PLATFORM: ENC[AES256_GCM,data:w4h++k+g,iv:bsWUI1LmJsixmKMCe8OWZzBe2Rij71C63+aAKagVGXM=,tag:/uv4lTz6dyEjmSCOUqoqIA==,type:str]
+    RENOVATE_TOKEN: ENC[AES256_GCM,data:aTwZV31zlLxy720wWpt992zlxGDhbHLQO07hpqSE9NhKtid+sxu95g==,iv:BV34r58XCsCV89NcR/wiANRtycAwmO/8Q4QtKEs2SbE=,tag:vMwglfMmRM9z1OUv9UzTRg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2022-09-23T20:15:59Z"
+    mac: ENC[AES256_GCM,data:d02QRt7DhpK3DVWG2dBlDskp+wh7NfYJ7BTbaRywqpvzlI/BXWVFODLjptmdr5tmyGsx3JjBozgApnxx4a/8JGIuDgcp2ZILIXRRZ+DcFhaV6PTR7kirmz6iBZAYdBcFB9yZasS4lF3pZqQA3oHCPqn8K0ZqV/coXxBRNclGRxs=,iv:0lQBifz71nkRvFDWfNkhHBCV21tR3dEOBqObop6ENAg=,tag:bZQIMNjQ1Jlho6RYjPJzuA==,type:str]
+    pgp:
+        - created_at: "2022-09-23T19:58:14Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA83EhJxcYAoBARAAgOiQmSlvgq7CPMcOltSxj7wiaZK4LyRwWk4PS3izJOA6
+            8be4riPTkTy+6k7FA5Mao+yh2mTMV8UWTA+qSh344fvPV91zPlwVWCDP2mgbRVVh
+            qgY9HR0bMQBF/436YL/Wx/rRrtVY9E9xe+UkOtnTpESpxUTDI/Uxz1VqGNQTgKQt
+            DWwhB/yz5geSeyzQaD0ftrkli59R8X3h2/OzXng0p8ABFKBWOpbEbScHRiKK4wUT
+            PyaBVFtloPjom+LpqEGyicLaL5XtcJhi1Y8sq5BjnATeJRCukb47Khys1j151P77
+            5lAa/0DTGgh/PhhD5Z42udz+7VYubwaA3eRLWmwqQ0iJzEaFiIP3F18H4P5gTP9E
+            gWDyYtJzmmPrb4FxgnNdKyd+/AVwmvNv4lNvGLz5GDJZjqmbc7PP5xPJSt0AxIPN
+            10dPz504vkaaRtKal2PRULhgZ56PiqE19XMqhwKdRltrHZ8IDws1OY5mdSgMWCnP
+            V9lG3mNzgw5DmqSkPWJbDJaT6lXmVCtMWbsBwz9crr197J8Rq8KO19akFNAssXgY
+            JpIYuJZg0AohaYB21AXqCRv8f8NkULbBAiYxd7SClH2uZRmPjX9s+dvu2ptj5QNI
+            PmYoQQIFnuhnA2SrzbLm52UAtKCmPcbpss0Gs8uWNYbQ61137nacJLFBiv++shDS
+            XgEmBTYSm7PSEwwBLe3qVdGf/vDG5/yW61SZL9HGRSwky21YZ1Kf7r5XIdWh3d+B
+            oMPzJ3vCWb2+PWd7rX0bcjcHw7xvcpa1+kGPPaRxJ/IGdfCgnKOf5dbyq18DAeo=
+            =IdCx
+            -----END PGP MESSAGE-----
+          fp: 05FA72D13D58F8D4588BE3FE5606FFB02A5F0984
+    encrypted_regex: ((?i)(pass($|word)|claim|secret($|[^N])|key|token|^data$|^stringData))
+    version: 3.7.3
