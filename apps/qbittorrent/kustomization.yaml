@@ -3,3 +3,11 @@ kind: Kustomization
 resources:
   - ./pvc.yaml
   - ./qbittorrent.yaml
+configMapGenerator:
+  - name: qbittorrent-config
+    namespace: apps
+    files:
+      - ./config/categories.json
+      - ./config/qBittorrent.conf
+generatorOptions:
+  disableNameSuffixHash: true
