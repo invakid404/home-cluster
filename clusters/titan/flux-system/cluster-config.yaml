@@ -5,3 +5,4 @@ metadata:
   namespace: flux-system
 data:
   BASE_DOMAIN: invak.id
+  NAS_ADDRESS: 100.122.119.95
