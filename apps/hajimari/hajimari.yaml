@@ -52,6 +52,8 @@ spec:
           links:
             - name: Drive
               url: "https://drive.google.com"
+            - name: Synology
+              url: "https://invakid.quickconnect.to"
     ingress:
       main:
         enabled: true
