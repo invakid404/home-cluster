@@ -6,3 +6,4 @@ resources:
   - ./ingress-nginx.yaml
   - ./issuers.yaml
   - ./nfs-subdir-external-provisioner.yaml
+  - ./reloader.yaml
