@@ -50,7 +50,7 @@ spec:
               url: "https://facebook.com/messages"
         - name: Cloud
           links:
-            - name: Drive
+            - name: Google Drive
               url: "https://drive.google.com"
             - name: Synology
               url: "https://invakid.quickconnect.to"
