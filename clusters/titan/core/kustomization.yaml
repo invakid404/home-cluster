@@ -5,3 +5,4 @@ resources:
   - ./cert-manager.yaml
   - ./ingress-nginx.yaml
   - ./issuers.yaml
+  - ./nfs-subdir-external-provisioner.yaml
