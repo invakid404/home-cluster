@@ -6,3 +6,4 @@ resources:
   - ./libreddit.yaml
   - ./renovate.yaml
   - ./qbittorrent.yaml
+  - ./hajimari.yaml
