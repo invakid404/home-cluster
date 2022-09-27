@@ -10,5 +10,10 @@ spec:
     name: flux-system
   path: ./core/nfs-subdir-external-provisioner
   prune: true
+  healthChecks:
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: nfs-subdir-external-provisioner
+      namespace: core
   dependsOn:
     - name: core-base
