@@ -14,5 +14,10 @@ spec:
     provider: sops
     secretRef:
       name: sops-gpg
+  healthChecks:
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: cert-manager
+      namespace: core
   dependsOn:
     - name: core-base
