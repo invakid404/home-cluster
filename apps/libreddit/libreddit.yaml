@@ -37,7 +37,7 @@ spec:
           hajimari.io/enable: "true"
           hajimari.io/icon: "reddit"
         hosts:
-          - host: &libreddit-host "libreddit.lab.${BASE_DOMAIN}"
+          - host: &libreddit-host "reddit.${BASE_DOMAIN}"
             paths:
               - path: /
 
