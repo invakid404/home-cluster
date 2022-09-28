@@ -37,6 +37,7 @@ spec:
         ingressClassName: "nginx"
         annotations:
           cert-manager.io/cluster-issuer: letsencrypt
+          external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
         hosts:
           - host: &chezz-host "chezz.lab.${BASE_DOMAIN}"
             paths:
