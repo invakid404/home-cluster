@@ -54,6 +54,10 @@ spec:
               url: "https://drive.google.com"
             - name: Synology
               url: "https://invakid.quickconnect.to"
+        - name: Games
+          links:
+            - name: Lichess
+              url: "https://lichess.org"
     ingress:
       main:
         enabled: true
