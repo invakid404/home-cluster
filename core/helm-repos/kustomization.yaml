@@ -5,3 +5,4 @@ resources:
   - ./ingress-nginx.yaml
   - ./nfs-subdir-external-provisioner.yaml
   - ./stakater.yaml
+  - ./external-dns.yaml
