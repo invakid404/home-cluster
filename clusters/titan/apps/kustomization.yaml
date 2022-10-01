@@ -8,3 +8,4 @@ resources:
   - ./qbittorrent.yaml
   - ./hajimari.yaml
   - ./tor.yaml
+  - ./kube-prometheus-stack.yaml
