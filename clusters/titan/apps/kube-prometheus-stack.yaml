@@ -27,5 +27,9 @@ spec:
       kind: Deployment
       name: kube-prometheus-stack-grafana
       namespace: apps
+    - apiVersion: apps/v1
+      kind: StatefulSet
+      name: prometheus-kube-prometheus-stack-prometheus
+      namespace: apps
   dependsOn:
     - name: apps-base
