@@ -20,7 +20,7 @@ spec:
     image:
       repository: ghcr.io/invakid404/chezz
       pullPolicy: IfNotPresent
-      tag: 1.0.0
+      tag: 1.0.0@sha256:05f44a1d08e11844f57b6f1fdf59b4bb6bde7415e82283944576d229e90dad1c
 
     imagePullSecrets:
       - name: docker-config

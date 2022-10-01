@@ -24,7 +24,7 @@ spec:
   values:
     image:
       repository: ghcr.io/toboshii/hajimari
-      tag: v0.2.0
+      tag: v0.2.0@sha256:96900b55f16524930d78cf6185a947acbdadc1c3c8f68c259dd318398efe53fc
     hajimari:
       defaultEnable: false
       namespaceSelector:
