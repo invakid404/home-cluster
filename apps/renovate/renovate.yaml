@@ -12,7 +12,7 @@ spec:
         spec:
           containers:
             - name: renovate
-              image: renovate/renovate:32.202.3
+              image: renovate/renovate:32.211.0
               args:
                 - invakid404/home-cluster
               env:
