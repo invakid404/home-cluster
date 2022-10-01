@@ -59,11 +59,13 @@ spec:
             protocol: TCP
             port: ${OR_PORT}
             targetPort: ${OR_PORT}
+            nodePort: ${OR_PORT}
           pt:
             enabled: true
             protocol: TCP
             port: ${PT_PORT}
             targetPort: ${PT_PORT}
+            nodePort: ${PT_PORT}
 
     persistence:
       data:
