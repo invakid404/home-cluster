@@ -2,5 +2,11 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "flux": {
     "fileMatch": ["\\.yaml$"]
+  },
+  "helm-values": {
+    "fileMatch": ["\\.yaml$"]
+  },
+  "kubernetes": {
+    "fileMatch": ["\\.yaml$"]
   }
 }
