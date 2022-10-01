@@ -24,6 +24,9 @@ spec:
       runAsUser: 0
       runAsGroup: 0
 
+    hostNetwork: true
+    dnsPolicy: "ClusterFirstWithHostNet"
+
     command: ["sh"]
     args:
       [
@@ -49,23 +52,7 @@ spec:
 
     service:
       main:
-        enabled: true
-        type: NodePort
-        ports:
-          http:
-            enabled: false
-          or:
-            enabled: true
-            protocol: TCP
-            port: ${OR_PORT}
-            targetPort: ${OR_PORT}
-            nodePort: ${OR_PORT}
-          pt:
-            enabled: true
-            protocol: TCP
-            port: ${PT_PORT}
-            targetPort: ${PT_PORT}
-            nodePort: ${PT_PORT}
+        enabled: false
 
     persistence:
       data:
