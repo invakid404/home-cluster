@@ -1,0 +1,72 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: tor
+  namespace: apps
+spec:
+  interval: 10m0s
+  chart:
+    spec:
+      chart: app-template
+      version: 0.2.1
+      interval: 10m0s
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: apps
+
+  values:
+    image:
+      repository: thetorproject/obfs4-bridge
+      tag: 0.13@sha256:6bbe7257602d573cf6f91b0acda29b4a65b82d4ceaefb9cbec40e15c77e5f5eb
+
+    podSecurityContext:
+      runAsUser: 0
+      runAsGroup: 0
+
+    command: ["sh"]
+    args:
+      [
+        "-c",
+        "usermod --uid 1024 debian-tor && chown -R debian-tor:debian-tor /var/log/tor && /usr/local/bin/start-tor.sh",
+      ]
+
+    env:
+      - name: OBFS4_ENABLE_ADDITIONAL_VARIABLES
+        value: "1"
+      - name: OR_PORT
+        value: "0.0.0.0:${OR_PORT} IPv4Only"
+      - name: PT_PORT
+        value: "${PT_PORT}"
+      - name: EMAIL
+        value: "Tsvetomir Bonev <tor@invak.id>"
+      - name: NICKNAME
+        value: "invaAtTitan"
+      - name: OBFS4V_DataDirectory
+        value: "/var/lib/tor/data"
+      - name: OBFS4V_User
+        value: "debian-tor"
+
+    service:
+      main:
+        enabled: true
+        type: NodePort
+        ports:
+          http:
+            enabled: false
+          or:
+            enabled: true
+            protocol: TCP
+            port: ${OR_PORT}
+            targetPort: ${OR_PORT}
+          pt:
+            enabled: true
+            protocol: TCP
+            port: ${PT_PORT}
+            targetPort: ${PT_PORT}
+
+    persistence:
+      data:
+        enabled: true
+        existingClaim: tor-data
+        mountPath: /var/lib/tor

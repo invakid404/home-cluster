@@ -7,3 +7,4 @@ resources:
   - ./renovate.yaml
   - ./qbittorrent.yaml
   - ./hajimari.yaml
+  - ./tor.yaml
