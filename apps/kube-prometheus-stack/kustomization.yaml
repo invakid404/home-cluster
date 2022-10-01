@@ -3,14 +3,3 @@ kind: Kustomization
 resources:
   - ./grafana-creds.yaml
   - ./kube-prometheus-stack.yaml
-configMapGenerator:
-  - name: flux-grafana-dashboards
-    namespace: apps
-    files:
-      - dashboards/control-plane.json
-      - dashboards/cluster.json
-      - dashboards/logs.json
-    options:
-      labels:
-        grafana_dashboard: "1"
-        app.kubernetes.io/component: monitoring
