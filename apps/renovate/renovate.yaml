@@ -21,4 +21,11 @@ spec:
               envFrom:
                 - secretRef:
                     name: renovate-env
+              volumeMounts:
+                - mountPath: /data/cache
+                  name: cache
           restartPolicy: Never
+          volumes:
+            - name: cache
+              persistentVolumeClaim:
+                claimName: renovate-cache
