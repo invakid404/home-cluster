@@ -76,6 +76,8 @@ spec:
               url: "https://github.com"
         - group: Social
           bookmarks:
+            - name: Instagram
+              url: "https://instagram.com"
             - name: Twitter
               url: "https://twitter.com"
         - group: Media
