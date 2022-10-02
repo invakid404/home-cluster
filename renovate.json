@@ -9,5 +9,14 @@
   },
   "kubernetes": {
     "fileMatch": ["\\.yaml$"]
-  }
+  },
+  "hostRules": [
+    {
+      "matchHost": "ghcr.io",
+      "authType": "Basic",
+      "encrypted": {
+        "token": "wcFMA83EhJxcYAoBAQ/+M+afxU/1aTKiwNNE7I2DMZafc0SunwTCKe8yy0asSdvJK3za+mvXxozz7V/eagMduK0D8xFtIxwOZDeWddiPAEcZiJjH8M7SehYKTWg2cBPTC6YgInNVXJXDWmfp9aclGfCMFQ6VC/Eja/HpjEQwPGbksRt1NJ+yeDsa14IFDxMsKqv9kmLWswTfF30SmT5k0HXlnP28JPuJHrx3/7dVJRwacw0Vu8WJI38AEE7Caxsp1DlpaCru5f/RNjLyClMPV4iaXLgDyM/T3AR/Hc08Ga2J4gB7YIRltB2UGo+JMx/Apa5Ha2sE2JvEqFbu8TKUOvqNMxsOg9LZVQTt/wEigwexrOys/KngxGUN/SkM1ZD8ZUQbWE8HmckBtTLPDkyFnJXKFmXQy9zcS8cU9JK1wKrUMF92jF7Ch0YodD0+hTCSj3atuWQ2dgY/j7uqkm/yDCEBwscsMJYouBnfyamC1DxDEVemdTIg8jVoMqFeH5SBePG0bECsyBCtuyVxhek90dBNiZrUkIeDub+eNnt6URxlAIvBQRZCSkBiG0rmWuPlT04SiUde2mGEICfWZAglDsGwr5UtgNaWPkFy/yVlmYEG6OOLpnDHaHCcRsP0ygJh7rf1TbUWBFP5zEfycS6YYP9VreOeWx/D+7btPSkK4SyJPK60EkiOkHcJgPtoUVjSoQG8rcNlfwQdWogZW5XApKYnuoiRRvTIo2+SyAKWSE8jnzrc85qbm6FxCHOmuln1XPwwnMcZ6JZcOyqS/KqtQLD1rokrOwjPvwHix7fCyhtvaqUcP78dO2eEmrIkPFAdFS1a7AMnVUyBuK1tBDLKVXJ/mATWSAujPv4TJ+73EWDYxLCEVmrFa05V9suHzhkJ1IFp+2bxV/+22VJaDwVvv5rh"
+      }
+    }
+  ]
 }
