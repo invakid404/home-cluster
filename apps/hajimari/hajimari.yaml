@@ -31,33 +31,33 @@ spec:
         matchNames:
           - apps
       name: "inva"
-      groups:
-        - name: Dev
-          links:
+      globalBookmarks:
+        - group: Dev
+          bookmarks:
             - name: GitHub
               url: "https://github.com"
-        - name: Social
-          links:
+        - group: Social
+          bookmarks:
             - name: Twitter
               url: "https://twitter.com"
-        - name: Media
-          links:
+        - group: Media
+          bookmarks:
             - name: YouTube
               url: "https://youtube.com"
             - name: Plex
               url: "https://app.plex.tv"
-        - name: Communicate
-          links:
+        - group: Communicate
+          bookmarks:
             - name: Messenger
               url: "https://facebook.com/messages"
-        - name: Cloud
-          links:
+        - group: Cloud
+          bookmarks:
             - name: Google Drive
               url: "https://drive.google.com"
             - name: Synology
               url: "https://invakid.quickconnect.to"
-        - name: Games
-          links:
+        - group: Games
+          bookmarks:
             - name: Lichess
               url: "https://lichess.org"
     ingress:
