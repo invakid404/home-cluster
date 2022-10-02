@@ -1,5 +1,8 @@
 {
     "Series": {
         "save_path": "/data/nas-torrents/Series"
+    },
+    "Movies": {
+        "save_path": "/data/nas-torrents/Movies"
     }
 }
