@@ -33,6 +33,42 @@ spec:
       name: "inva"
       lightTheme: "tron"
       darkTheme: "tron"
+      searchProviders:
+        - name: Google
+          token: g
+          icon: simple-icons:google
+          searchUrl: https://www.google.com/search?q={query}
+          url: https://www.google.com
+        - name: DuckDuckGo
+          token: d
+          icon: simple-icons:duckduckgo
+          searchUrl: https://duckduckgo.com/?q={query}
+          url: https://duckduckgo.com
+        - name: IMDB
+          token: i
+          icon: simple-icons:imdb
+          searchUrl: https://www.imdb.com/find?q={query}
+          url: https://www.imdb.com
+        - name: Reddit
+          token: r
+          icon: simple-icons:reddit
+          searchUrl: https://www.reddit.com/search?q={query}
+          url: https://www.reddit.com
+        - name: YouTube
+          token: "y"
+          icon: simple-icons:youtube
+          searchUrl: https://www.youtube.com/results?search_query={query}
+          url: https://www.youtube.com
+        - name: Spotify
+          token: s
+          icon: simple-icons:spotify
+          searchUrl: https://open.spotify.com/search/{query}
+          url: https://open.spotify.com
+        - name: WolframAlpha
+          token: w
+          icon: simple-icons:wolfram
+          searchUrl: https://www.wolframalpha.com/input?i={query}
+          url: https://www.wolframalpha.com
       globalBookmarks:
         - group: Dev
           bookmarks:
