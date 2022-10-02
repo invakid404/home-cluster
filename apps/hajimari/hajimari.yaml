@@ -31,6 +31,8 @@ spec:
         matchNames:
           - apps
       name: "inva"
+      lightTheme: "tron"
+      darkTheme: "tron"
       globalBookmarks:
         - group: Dev
           bookmarks:
