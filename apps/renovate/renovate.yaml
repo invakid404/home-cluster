@@ -10,6 +10,9 @@ spec:
     spec:
       template:
         spec:
+          securityContext:
+            runAsGroup: 1024
+            runAsUser: 1024
           containers:
             - name: renovate
               image: renovate/renovate:32.211.0@sha256:fb178dd51816eeb998cf7c4914a6f101aa1fbe5c97f2b0bcc0cdfda6743381f5
@@ -21,4 +24,11 @@ spec:
               envFrom:
                 - secretRef:
                     name: renovate-env
+              volumeMounts:
+                - mountPath: /data/cache
+                  name: cache
           restartPolicy: Never
+          volumes:
+            - name: cache
+              persistentVolumeClaim:
+                claimName: renovate-cache
