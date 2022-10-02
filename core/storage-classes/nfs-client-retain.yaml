@@ -1,0 +1,10 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: nfs-client-retain
+parameters:
+  archiveOnDelete: "true"
+provisioner: cluster.local/nfs-subdir-external-provisioner
+reclaimPolicy: Reclaim
+volumeBindingMode: Immediate
+allowVolumeExpansion: true

@@ -8,3 +8,4 @@ resources:
   - ./nfs-subdir-external-provisioner.yaml
   - ./reloader.yaml
   - ./external-dns.yaml
+  - ./storage-classes.yaml
