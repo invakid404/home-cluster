@@ -44,6 +44,8 @@ spec:
           links:
             - name: YouTube
               url: "https://youtube.com"
+            - name: Plex
+              url: "https://app.plex.tv"
         - name: Communicate
           links:
             - name: Messenger
