@@ -15,7 +15,7 @@ spec:
             runAsUser: ${SQUASH_UID}
           containers:
             - name: renovate
-              image: renovate/renovate:32.213.1@sha256:039f19c1ff7b2b4be675af523777f36ed6712cbe8e1afed8c1f64e9886acb882
+              image: renovate/renovate:32.213.2@sha256:aa4cde7bdd43fe26ccda371e15efb3ca9f7071d32c5352bfb650438cad061c40
               args:
                 - invakid404/home-cluster
               env:
