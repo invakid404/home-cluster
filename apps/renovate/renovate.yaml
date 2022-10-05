@@ -27,6 +27,9 @@ spec:
               volumeMounts:
                 - mountPath: /data/cache
                   name: cache
+              resources:
+                limits:
+                  cpu: 0.5
           restartPolicy: Never
           volumes:
             - name: cache
