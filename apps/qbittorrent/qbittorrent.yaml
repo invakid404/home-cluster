@@ -32,6 +32,9 @@ spec:
       supplementalGroups:
         - 65539
 
+    hostNetwork: true
+    dnsPolicy: "ClusterFirstWithHostNet"
+
     initContainers:
       copy-config:
         image: busybox:1.35.0@sha256:d7f4aada301c0f13d93ceed62fef318c195c38bf430fc8bfbdf1d850514422ff
