@@ -24,6 +24,7 @@ spec:
 
                   cat >> run.sh <<EOS
                   mkdir -p ~/.gnupg
+
                   cat >> ~/.gnupg/gpg.conf <<EOF
                   use-agent 
                   pinentry-mode loopback
@@ -32,6 +33,9 @@ spec:
                   cat >> ~/.gnupg/gpg-agent.conf <<EOF
                   allow-loopback-pinentry
                   EOF
+
+                  find ~/.gnupg -type f -exec chmod 600 {} \;
+                  find ~/.gnupg -type d -exec chmod 700 {} \;
 
                   echo RELOADAGENT | gpg-connect-agent
 
