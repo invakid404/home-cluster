@@ -18,10 +18,30 @@ spec:
               image: renovate/renovate:32.222.2@sha256:acc3f337e975e2f716e7ea8896cd52967ab904802d273fe4f866b3403b80c0c0
               command: ["sh"]
               args:
-                [
-                  "-c",
-                  "usermod --uid ${SQUASH_UID} ubuntu && su -p ubuntu -c 'renovate invakid404/home-cluster'",
-                ]
+                - "-c"
+                - |
+                  usermod --uid ${SQUASH_UID} ubuntu
+
+                  cat >> run.sh <<EOS
+                  mkdir -p ~/.gnupg
+                  cat >> ~/.gnupg/gpg.conf <<EOF
+                  use-agent 
+                  pinentry-mode loopback
+                  EOF
+
+                  cat >> ~/.gnupg/gpg-agent.conf <<EOF
+                  allow-loopback-pinentry
+                  EOF
+
+                  echo RELOADAGENT | gpg-connect-agent
+
+                  echo "$${RENOVATE_GIT_PRIVATE_KEY}" | gpg --import -
+
+                  renovate invakid404/home-cluster
+                  EOS
+
+                  chmod +x run.sh
+                  su -p ubuntu -c ./run.sh
               env:
                 - name: LOG_LEVEL
                   value: debug
