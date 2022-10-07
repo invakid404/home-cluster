@@ -19,6 +19,12 @@
       "requiredStatusChecks": null,
       "matchUpdateTypes": ["minor", "patch", "digest"],
       "matchPackageNames": ["renovate/renovate"]
+    },
+    {
+      "description": "Disable kubernetes-api",
+      "matchManagers": ["kubernetes"],
+      "matchDatasources": ["kubernetes-api"],
+      "enabled": false
     }
   ],
   "hostRules": [
