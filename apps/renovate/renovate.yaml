@@ -25,6 +25,7 @@ spec:
                   cat >> run.sh <<EOS
                   mkdir -p ~/.gnupg
 
+                  # https://stackoverflow.com/a/59170001/9320790
                   cat >> ~/.gnupg/gpg.conf <<EOF
                   use-agent 
                   pinentry-mode loopback
