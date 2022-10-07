@@ -11,13 +11,17 @@ spec:
       template:
         spec:
           securityContext:
-            runAsGroup: ${SQUASH_UID}
-            runAsUser: ${SQUASH_UID}
+            runAsGroup: 0
+            runAsUser: 0
           containers:
             - name: renovate
               image: renovate/renovate:32.222.2@sha256:acc3f337e975e2f716e7ea8896cd52967ab904802d273fe4f866b3403b80c0c0
+              command: ["sh"]
               args:
-                - invakid404/home-cluster
+                [
+                  "-c",
+                  "usermod --uid ${SQUASH_UID} ubuntu && su -p ubuntu -c 'renovate invakid404/home-cluster'",
+                ]
               env:
                 - name: LOG_LEVEL
                   value: debug
