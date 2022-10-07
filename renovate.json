@@ -15,7 +15,7 @@
       "description": "Auto merge Docker images",
       "matchDatasources": ["docker"],
       "automerge": true,
-      "automergeType": "branch",
+      "automergeType": "pr",
       "requiredStatusChecks": null,
       "matchUpdateTypes": ["minor", "patch", "digest"],
       "matchPackageNames": ["renovate/renovate"]
