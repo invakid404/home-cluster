@@ -10,6 +10,17 @@
   "kubernetes": {
     "fileMatch": ["\\.yaml$"]
   },
+  "packageRules": [
+    {
+      "description": "Auto merge Docker images",
+      "matchDatasources": ["docker"],
+      "automerge": true,
+      "automergeType": "branch",
+      "requiredStatusChecks": null,
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "matchPackageNames": ["renovate/renovate"]
+    }
+  ],
   "hostRules": [
     {
       "matchHost": "ghcr.io",
