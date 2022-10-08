@@ -35,8 +35,8 @@ spec:
                   allow-loopback-pinentry
                   EOF
 
-                  find ~/.gnupg -type f -exec chmod 600 {} \;
-                  find ~/.gnupg -type d -exec chmod 700 {} \;
+                  find ~/.gnupg -type f -exec chmod 600 {} \\;
+                  find ~/.gnupg -type d -exec chmod 700 {} \\;
 
                   echo RELOADAGENT | gpg-connect-agent
 
