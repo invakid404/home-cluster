@@ -6,3 +6,4 @@ resources:
   - ./nfs-subdir-external-provisioner.yaml
   - ./stakater.yaml
   - ./external-dns.yaml
+  - ./bitnami.yaml
