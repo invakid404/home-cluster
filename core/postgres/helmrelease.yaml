@@ -22,6 +22,7 @@ spec:
 
     primary:
       initdb:
+        user: postgres
         scripts:
           sonarr.sql: |
             CREATE DATABASE ${SONARR_MAIN_DB} OWNER postgres;
