@@ -21,6 +21,11 @@ spec:
           existingSecret: postgres-creds
 
     primary:
+      initdb:
+        scripts:
+          init-sonarr-databases: |
+            CREATE DATABASE ${SONARR_MAIN_DB} OWNER postgres;
+            CREATE DATABASE ${SONARR_LOG_DB} OWNER postgres;
       persistence:
         enabled: true
         existingClaim: postgres-data
