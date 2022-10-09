@@ -11,3 +11,4 @@ resources:
   - ./kube-prometheus-stack.yaml
   - ./monitoring-config.yaml
   - ./loki-stack.yaml
+  - ./sonarr.yaml
