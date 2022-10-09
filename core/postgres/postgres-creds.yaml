@@ -1,0 +1,39 @@
+kind: Secret
+type: Opaque
+apiVersion: v1
+metadata:
+    name: postgres-creds
+    namespace: core
+stringData:
+    postgres-password: ENC[AES256_GCM,data:M/B4hFVhrTHsjWOeFjQUhkTLeFqRwV9qh8mqbHckeABvcOykIBTINMQRIjgTCanLu3z45kk0Q+1brWpwUdQE1w==,iv:YyMnOx23jjvH8BFC74Akuvpx0RMa/4nafyaFox6HxCE=,tag:DNJQ4h0ecqbp00/r6xx/nw==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2022-10-09T21:33:54Z"
+    mac: ENC[AES256_GCM,data:mpJOd2j3OYVfATa63D2CaVMW/vbe1l3QDvJ2ZeKxpN18BJwXNMWyAXRFTrLCGGQ4lBr9tlb2ScSghaSnSxyJKki+XFjSaZ2a7gppS9SLFswgYWq4iJomtTgf7ex9RdxOYpZna+0bAzOhcUmQLpvBMVGC2aaTrZ6MPT7rbNZVdng=,iv:V+3Ts6biDeau7fL7d+RK0dEVrtsQoEEGGAyKCFxqxdE=,tag:XoJ4ftC56vD7y/cvGq8xqw==,type:str]
+    pgp:
+        - created_at: "2022-10-09T21:33:09Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA83EhJxcYAoBAQ/9FZpR6gpmccVZw+JTY6glv3u13hMlJk/AOOCuuamgKhKf
+            Zg5ZFCUR4gFUXMkJpLFipXvew9+cnQDtkSSYoQGOobQiyeZBYM6E3LTk8xVPmjN6
+            jHktggbujRw5aVbLnTNdV3Hx41T3LtOFJzEnzIch2SEtjUp65ycDBYWR9iCXDsWq
+            3a7ewR71OziaxX7umnjd3NKEpVZgbzhNhFqQi0A75OHSlGLN3LjPYCEvRCbAT4lZ
+            vT0c4mt5ckfLe7x5EMU6yLDh1uDGRan9gnT7m0C0j38dWSwJeiJW5vnPKALY0uEJ
+            6qk82qgjLkleWtAiFyqVIk5RylYa/6IzMfoPqQldFPcHEvt/GW8Aj03S5TADZmKC
+            pXjJ3fWichmenDhiDxjktvIbWA9oc/s5jCex48tyVmVR47GFUSyqfiwupL6ZFIf1
+            hydjMmk80Y8HWwYLGByiM3Wv6k9anxLmj0EHy5k7sr2yUDqfSXiOAE6QS8QF80bh
+            fNHcgN5fV45ricPZI9KxKov1PQjB+ZdBZRoOsDo0k+bzwWA3/rsIKxqxBtN9rQ5G
+            cMHxiBIWiyC4cyGZEpO071iRuYg81Df4OuZATRkV6JbK7vMQYXHGl+jinklFwj+r
+            sR4vda8cvkh0h6gZ9hvAfWnkORgt9CLvzEmXGX2g7QYkLzNLrLkJprYukSI8odDS
+            XAGLRv0hnvA+yL+ENSDe3z9DhZu/Z+xHiQIhKnSaWx1RDWl3ORfmi85OH2De9ROb
+            +SVpsHb2F8PCp7kEgS+JBM1GIgS37iFDbpwBpugOfGcOcl2XMiba6G9MAwZQ
+            =qSBR
+            -----END PGP MESSAGE-----
+          fp: 05FA72D13D58F8D4588BE3FE5606FFB02A5F0984
+    encrypted_regex: ((?i)(pass($|word)|claim|secret($|[^N])|key|token|^data$|^stringData))
+    version: 3.7.3

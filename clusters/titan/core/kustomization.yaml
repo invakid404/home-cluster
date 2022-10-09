@@ -9,3 +9,4 @@ resources:
   - ./reloader.yaml
   - ./external-dns.yaml
   - ./storage-classes.yaml
+  - ./postgres.yaml
