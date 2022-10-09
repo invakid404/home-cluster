@@ -25,8 +25,8 @@ spec:
         user: postgres
         scripts:
           sonarr.sql: |
-            CREATE DATABASE ${SONARR_MAIN_DB} OWNER postgres;
-            CREATE DATABASE ${SONARR_LOG_DB} OWNER postgres;
+            CREATE DATABASE "${SONARR_MAIN_DB}" OWNER postgres;
+            CREATE DATABASE "${SONARR_LOG_DB}" OWNER postgres;
       persistence:
         enabled: true
         existingClaim: postgres-data
