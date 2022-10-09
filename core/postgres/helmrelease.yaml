@@ -29,3 +29,9 @@ spec:
       persistence:
         enabled: true
         existingClaim: postgres-data
+      podSecurityContext:
+        enabled: true
+        fsGroup: ${SQUASH_UID}
+      containerSecurityContext:
+        enabled: true
+        runAsUser: ${SQUASH_UID}
