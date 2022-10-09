@@ -23,7 +23,7 @@ spec:
     primary:
       initdb:
         scripts:
-          init-sonarr-databases: |
+          sonarr.sql: |
             CREATE DATABASE ${SONARR_MAIN_DB} OWNER postgres;
             CREATE DATABASE ${SONARR_LOG_DB} OWNER postgres;
       persistence:
