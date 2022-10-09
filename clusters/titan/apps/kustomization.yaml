@@ -12,3 +12,4 @@ resources:
   - ./monitoring-config.yaml
   - ./loki-stack.yaml
   - ./sonarr.yaml
+  - ./prowlarr.yaml
