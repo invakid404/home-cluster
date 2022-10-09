@@ -19,3 +19,8 @@ spec:
       postgresql:
         auth:
           existingSecret: postgres-creds
+
+    primary:
+      persistence:
+        enabled: true
+        existingClaim: postgres-data
