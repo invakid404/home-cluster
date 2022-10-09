@@ -16,3 +16,6 @@ spec:
     nfs:
       server: "${NAS_ADDRESS}"
       path: "/volume1/Kubernetes"
+      mountOptions:
+        - hard
+        - nfsvers=4.1
