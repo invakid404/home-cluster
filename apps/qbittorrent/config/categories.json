@@ -4,5 +4,8 @@
     },
     "Movies": {
         "save_path": "/data/nas-torrents/Movies"
+    },
+    "VSTs": {
+        "save_path": "/data/nas-torrents/VSTs"
     }
 }
