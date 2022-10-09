@@ -120,6 +120,11 @@ spec:
         path: /volume1/Torrents
         mountPath: /data/nas-torrents
 
+      unfinished:
+        enabled: true
+        existingClaim: qbittorrent-unfinished
+        mountPath: /data/unfinished
+
     resources:
       requests:
         cpu: 49m
