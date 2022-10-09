@@ -1,11 +1,11 @@
 {
     "Series": {
-        "save_path": "/data/nas-torrents/Series"
+        "save_path": "/data/nas-torrents/Downloads/Series"
     },
     "Movies": {
-        "save_path": "/data/nas-torrents/Movies"
+        "save_path": "/data/nas-torrents/Downloads/Movies"
     },
     "VSTs": {
-        "save_path": "/data/nas-torrents/VSTs"
+        "save_path": "/data/nas-torrents/Downloads/VSTs"
     }
 }
