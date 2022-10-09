@@ -29,6 +29,14 @@ spec:
       SONARR__PORT: &port 8989
       SONARR__APPLICATION_URL: "https://sonarr.lab.${BASE_DOMAIN}"
       SONARR__LOG_LEVEL: info
+      SONARR__POSTGRES_HOST: postgres.core.svc.cluster.local
+      SONARR__POSTGRES_MAIN_DB: ${SONARR_MAIN_DB}
+      SONARR__POSTGRES_LOG_DB: ${SONARR_LOG_DB}
+      SONARR__POSTGRES_USER: postgres
+      SONARR__POSTGRES_PASSWORD:
+        secretKeyRef:
+          name: postgres-creds
+          key: postgres-password
 
     service:
       main:
