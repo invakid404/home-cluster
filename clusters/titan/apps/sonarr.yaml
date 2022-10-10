@@ -10,6 +10,11 @@ spec:
     name: flux-system
   path: ./apps/sonarr
   prune: true
+  healthChecks:
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: sonarr
+      namespace: apps
   dependsOn:
     - name: apps-base
     - name: postgres
