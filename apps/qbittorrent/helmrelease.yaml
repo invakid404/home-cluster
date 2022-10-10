@@ -118,7 +118,7 @@ spec:
         enabled: true
         type: nfs
         server: "${NAS_ADDRESS}"
-        path: /volume1/Torrents
+        path: "${TORRENTS_VOLUME}"
         mountPath: /data/nas-torrents
 
       unfinished:

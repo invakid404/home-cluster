@@ -10,6 +10,8 @@ data:
   PRIVATE_IP: 100.75.51.26
   SQUASH_UID: "1024"
 
+  TORRENTS_VOLUME: "/volume1/Torrents"
+
   RADARR_MAIN_DB: radarr-main
   RADARR_LOG_DB: radarr-log
 
