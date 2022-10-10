@@ -9,6 +9,12 @@ gpg --export-secret-keys --armor "${SOPS_PGP_FP}" |
 	--namespace=flux-system \
 	--from-file=sops.asc=/dev/stdin
 
+WEBHOOK_TOKEN=$(head -c 12 /dev/urandom | shasum | cut -d ' ' -f1)
+
+kubectl create secret generic webhook-token \
+	--namespace flux-system \
+	--from-literal=token=${WEBHOOK_TOKEN}
+
 flux bootstrap github \
   --owner=invakid404 \
   --repository=home-cluster \
