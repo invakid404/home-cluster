@@ -24,9 +24,9 @@ spec:
       setGateway: "true"
 
     podSecurityContext:
-      runAsUser: 1024
-      runAsGroup: 1024
-      fsGroup: 1024
+      runAsUser: ${SQUASH_UID}
+      runAsGroup: ${SQUASH_UID}
+      fsGroup: ${SQUASH_UID}
       fsGroupChangePolicy: "OnRootMismatch"
 
     env:
