@@ -18,3 +18,5 @@ spec:
     - name: ingress-nginx
     - name: issuers
     - name: storage-classes
+    - name: reloader
+    - name: external-dns
