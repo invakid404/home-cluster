@@ -13,3 +13,4 @@ resources:
   - ./loki-stack.yaml
   - ./sonarr.yaml
   - ./prowlarr.yaml
+  - ./recyclarr.yaml
