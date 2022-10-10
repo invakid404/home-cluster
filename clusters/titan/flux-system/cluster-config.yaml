@@ -10,5 +10,5 @@ data:
   PRIVATE_IP: 100.75.51.26
   SQUASH_UID: "1024"
 
-  SONARR_MAIN_DB: sonarr-main
-  SONARR_LOG_DB: sonarr-log
+  PROWLARR_MAIN_DB: prowlarr-main
+  PROWLARR_LOG_DB: prowlarr-log
