@@ -34,6 +34,14 @@ spec:
       PROWLARR__PORT: &port 9696
       PROWLARR__LOG_LEVEL: info
       PROWLARR__ANALYTICS_ENABLED: "False"
+      PROWLARR__POSTGRES_HOST: postgres.core.svc.cluster.local
+      PROWLARR__POSTGRES_MAIN_DB: ${PROWLARR_MAIN_DB}
+      PROWLARR__POSTGRES_LOG_DB: ${PROWLARR_LOG_DB}
+      PROWLARR__POSTGRES_USER: postgres
+      PROWLARR__POSTGRES_PASSWORD:
+        secretKeyRef:
+          name: postgres-creds
+          key: postgres-password
 
     hostname: prowlarr
 
