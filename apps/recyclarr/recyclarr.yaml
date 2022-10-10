@@ -12,3 +12,5 @@ sonarr:
         quality_profiles:
           - name: Any
             score: 10
+          - name: HD - 720p/1080p
+            score: 10
