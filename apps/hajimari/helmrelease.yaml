@@ -104,6 +104,10 @@ spec:
           bookmarks:
             - name: Lichess
               url: "https://lichess.org"
+        - group: Observability
+          bookmarks:
+            - name: Synology ActiveInsight
+              url: https://insight.synology.com
     ingress:
       main:
         enabled: true
