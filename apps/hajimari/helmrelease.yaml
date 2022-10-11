@@ -33,6 +33,7 @@ spec:
       name: "inva"
       lightTheme: "tron"
       darkTheme: "tron"
+      showAppUrls: false
       searchProviders:
         - name: Google
           token: g
