@@ -1,0 +1,93 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: &app readarr
+  namespace: apps
+spec:
+  chart:
+    spec:
+      chart: app-template
+      version: 0.2.2
+      interval: 10m0s
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: apps
+  interval: 10m0s
+  values:
+    image:
+      repository: ghcr.io/onedr0p/readarr-nightly
+      tag: 0.1.1.1426@sha256:f7513a7aea80362daecb3ba543092a87d436e0bb7ed6d3a2df3f8d31d093c9a2
+
+    podSecurityContext:
+      runAsUser: ${SQUASH_UID}
+      runAsGroup: ${SQUASH_UID}
+      fsGroup: ${SQUASH_UID}
+
+    env:
+      READARR__INSTANCE_NAME: Readarr
+      READARR__PORT: &port 7878
+      READARR__APPLICATION_URL: "https://readarr.lab.${BASE_DOMAIN}"
+      READARR__LOG_LEVEL: info
+      READARR__POSTGRES_HOST: postgres.core.svc.cluster.local
+      READARR__POSTGRES_MAIN_DB: ${READARR_MAIN_DB}
+      READARR__POSTGRES_LOG_DB: ${READARR_LOG_DB}
+      READARR__POSTGRES_USER: postgres
+      READARR__POSTGRES_PASSWORD:
+        secretKeyRef:
+          name: postgres-creds
+          key: postgres-password
+      READARR__API_KEY:
+        secretKeyRef:
+          name: *app
+          key: api-key
+
+    service:
+      main:
+        ports:
+          http:
+            port: *port
+
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: "nginx"
+        annotations:
+          nginx.ingress.kubernetes.io/configuration-snippet: |
+            proxy_set_header Accept-Encoding "";
+            sub_filter '</head>' '<link rel="stylesheet" type="text/css" href="https://theme-park.dev/css/base/readarr/nord.css"></head>';
+            sub_filter_once on;
+          cert-manager.io/cluster-issuer: letsencrypt
+          hajimari.io/enable: "true"
+          hajimari.io/icon: book-open-page-variant-outline
+          external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
+        hosts:
+          - host: &readarr-host "readarr.lab.${BASE_DOMAIN}"
+            paths:
+              - path: /
+        tls:
+          - hosts:
+              - *readarr-host
+            secretName: letsencrypt-readarr
+
+    persistence:
+      config:
+        enabled: true
+        existingClaim: readarr-config
+
+      data:
+        enabled: true
+        type: nfs
+        server: "${NAS_ADDRESS}"
+        path: "${TORRENTS_VOLUME}"
+        mountPath: /data/nas-torrents
+
+    podAnnotations:
+      secret.reloader.stakater.com/reload: *app
+
+    resources:
+      requests:
+        cpu: 10m
+        memory: 250Mi
+      limits:
+        memory: 1000Mi

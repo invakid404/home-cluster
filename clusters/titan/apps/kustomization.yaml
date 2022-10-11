@@ -15,4 +15,5 @@ resources:
   - ./radarr.yaml
   - ./prowlarr.yaml
   - ./recyclarr.yaml
+  - ./readarr.yaml
   - ./webhook.yaml
