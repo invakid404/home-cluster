@@ -54,7 +54,7 @@ sonarr:
         quality_profiles:
           - name: Any
             reset_unmatched_scores: true
-          - name: HD - 720p/1080p
+          - name: HD
             reset_unmatched_scores: true
 
       - trash_ids:
@@ -62,7 +62,7 @@ sonarr:
         quality_profiles:
           - name: Any
             score: 10
-          - name: HD - 720p/1080p
+          - name: HD
             score: 10
 
 radarr:
