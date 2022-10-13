@@ -4,7 +4,7 @@
 sonarr:
   - base_url: ${SONARR_BASE_URL}
     api_key: ${SONARR_API_KEY}
-    quality_definition: series
+    quality_definition: hybrid
     delete_old_custom_formats: true
     custom_formats:
       - trash_ids:
