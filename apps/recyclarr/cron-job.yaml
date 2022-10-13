@@ -4,7 +4,7 @@ metadata:
   name: &app recyclarr
   namespace: apps
 spec:
-  schedule: "@daily"
+  schedule: "0 * * * *"
   jobTemplate:
     spec:
       ttlSecondsAfterFinished: 86400
