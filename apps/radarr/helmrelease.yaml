@@ -25,6 +25,7 @@ spec:
       fsGroup: ${SQUASH_UID}
 
     env:
+      TZ: ${TIMEZONE}
       RADARR__INSTANCE_NAME: Radarr
       RADARR__PORT: &port 7878
       RADARR__APPLICATION_URL: "https://radarr.lab.${BASE_DOMAIN}"
