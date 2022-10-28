@@ -1,0 +1,30 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: qbittorrent-scripts
+  namespace: apps
+spec:
+  schedule: "@hourly"
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 2
+  jobTemplate:
+    spec:
+      ttlSecondsAfterFinished: 3600
+      template:
+        spec:
+          automountServiceAccountToken: false
+          restartPolicy: OnFailure
+          containers:
+            - name: unclog-queue
+              image: ghcr.io/invakid404/qbit-scripts:1.0.0@sha256:8223353112e93e7333ff62f8ca5d058991aa7a9d53c68a21d9a54b57952d3c87
+              envFrom:
+                - secretRef:
+                    name: qbittorrent-scripts
+              args:
+                - "unclog-queue"
+                - "--host=https://qbit.lab.invak.id"
+                - "--username=$$(QBIT_USERNAME)"
+                - "--password=$$(QBIT_PASSWORD)"
+                - "--threshold=2h"
