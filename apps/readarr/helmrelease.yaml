@@ -17,7 +17,7 @@ spec:
   values:
     image:
       repository: ghcr.io/onedr0p/readarr-nightly
-      tag: 0.1.1.1426@sha256:de62299cb7eb22af9a67ebcecac99521193f8687946ca7bbed7d4f875e16e688
+      tag: 0.1.1.1426@sha256:4f1e7862a1fea75e6ee2d50976034f0d361b0157d250f56eb2edff20445d730b
 
     podSecurityContext:
       runAsUser: ${SQUASH_UID}
