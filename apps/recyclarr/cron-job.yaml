@@ -14,7 +14,7 @@ spec:
           restartPolicy: OnFailure
           initContainers:
             - name: render-configs
-              image: ghcr.io/onedr0p/recyclarr:2.6.1@sha256:cf9c060a5b08aed86b60f057a7f691191e61adcc7983f3597ab399f4705c9488
+              image: ghcr.io/onedr0p/recyclarr:2.6.1@sha256:c7a3823a4a6a92b2effcd5d341ff1fb13ee6feae09867d11c345caf862b96caf
               env:
                 - name: SONARR_BASE_URL
                   value: https://sonarr.lab.${BASE_DOMAIN}
@@ -42,7 +42,7 @@ spec:
                   mountPath: /shared
           containers:
             - name: sonarrs
-              image: ghcr.io/onedr0p/recyclarr:2.6.1@sha256:cf9c060a5b08aed86b60f057a7f691191e61adcc7983f3597ab399f4705c9488
+              image: ghcr.io/onedr0p/recyclarr:2.6.1@sha256:c7a3823a4a6a92b2effcd5d341ff1fb13ee6feae09867d11c345caf862b96caf
               command:
                 - /app/recyclarr
               args:
@@ -55,7 +55,7 @@ spec:
                   subPath: recyclarr.yaml
                   readOnly: true
             - name: radarrs
-              image: ghcr.io/onedr0p/recyclarr:2.6.1@sha256:cf9c060a5b08aed86b60f057a7f691191e61adcc7983f3597ab399f4705c9488
+              image: ghcr.io/onedr0p/recyclarr:2.6.1@sha256:c7a3823a4a6a92b2effcd5d341ff1fb13ee6feae09867d11c345caf862b96caf
               command:
                 - /app/recyclarr
               args:
