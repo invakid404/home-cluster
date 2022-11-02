@@ -19,3 +19,4 @@ resources:
   - ./readarr.yaml
   - ./webhook.yaml
   - ./reddit-rss.yaml
+  - ./bazarr.yaml
