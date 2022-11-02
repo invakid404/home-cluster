@@ -12,6 +12,12 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: bitnami
+  install:
+    remediation:
+      retries: 10
+  upgrade:
+    remediation:
+      retries: 10
   values:
     fullnameOverride: postgres
 
