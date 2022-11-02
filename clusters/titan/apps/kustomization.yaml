@@ -19,3 +19,4 @@ resources:
   - ./webhook.yaml
   - ./reddit-rss.yaml
   - ./bazarr.yaml
+  - ./pgadmin.yaml

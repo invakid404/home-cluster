@@ -1,0 +1,83 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+    name: pgadmin
+    namespace: apps
+spec:
+    interval: 10m0s
+    chart:
+        spec:
+            chart: pgadmin4
+            version: 1.13.6
+            interval: 10m0s
+            sourceRef:
+                kind: HelmRepository
+                name: runix
+                namespace: apps
+    releaseName: pgadmin4
+    values:
+        env:
+            email: pgadmin@invak.id
+            password: ENC[AES256_GCM,data:wLZLAd3wSx3GO2Jb29KSHZcmsVfazdcCHURccLYxp5alFoHOf8+yGap9HZ+HWKEEdlBcV7by+8aBA0Tyn0xGiQ==,iv:TQ1E1Rka04CL0KqkeYMHFQ+VuOrMsilkfSi725BrT/U=,tag:VyHsPD88SZaibtqe2AWTiQ==,type:str]
+        serverDefinitions:
+            enabled: true
+            servers:
+                core:
+                    Name: Core
+                    Group: Servers
+                    Port: 5432
+                    Username: postgres
+                    Host: postgres.core.svc.cluster.local
+                    SSLMode: prefer
+                    MaintenanceDB: postgres
+        ingress:
+            enabled: true
+            ingressClassName: nginx
+            hosts:
+                - host: pgadmin.lab.${BASE_DOMAIN}
+                  paths:
+                    - path: /
+                      pathType: Prefix
+            tls:
+                - hosts:
+                    - pgadmin.lab.${BASE_DOMAIN}
+                  secretName: letsencrypt-pgadmin
+            annotations:
+                cert-manager.io/cluster-issuer: letsencrypt
+                hajimari.io/enable: "true"
+                hajimari.io/icon: database-cog
+                external-dns.alpha.kubernetes.io/target: ${PRIVATE_IP}
+        persistentVolume:
+            enabled: true
+            existingClaim: ENC[AES256_GCM,data:Hg7aNSm0ig==,iv:qt0RzUB5ced63KvSHluaJ9qpG8Y3MdOfNoxm74ZoGl8=,tag:oD6PdVy9BbZd+kE1yqhjgg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2022-11-02T23:35:20Z"
+    mac: ENC[AES256_GCM,data:T9etbTZi8WilaUREuKyZTAp4G7HjIPEpJkBNolTcE4eg+sEmsanzsOwhdvnCM/2LoYK+4k4j/qAy92RiNAvOMrJOziEib6enn8Xpf1euEoa9m9pY06DxlbhWGgmzHrnzFrDfBn7xklx15KAjP9ICP51KwrSkItDVPrNwMkMGlHw=,iv:C7Tygok8FCyt0XTGVfzhSjvGA/UFqFlpb+bAwZJ9TU0=,tag:qJGFuI/L9akMlL+GYhL3Gg==,type:str]
+    pgp:
+        - created_at: "2022-11-02T23:18:17Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA83EhJxcYAoBAQ//UUzK2eGrjbdOurmKgyC6ZhhWp0f+YADP1x53/n+xSqq3
+            2DH+Br84Mvu4GmodTcLsPyItEoncgXxtuMva0/LYTxYpgauz9xnFx7D1sESPv1O5
+            /DJa1H9QSsb+l+oqysYRmP5HQIUrtVLGvkBezaU44M6MoUpmv9131kzwtU1sMz7e
+            1PVM9zwwfEejXgqp1PYwekl+fzitPLPSrr2dxRrvgluKL5vFAt5e7eAnwe6ELLdC
+            vqUEvBAc1XYVIAMWzuDxS3VRuPIJjqJQaAHcBkbVjox36SCQcC3OlsRih/544fUT
+            AI90L6maH0pGxUpLs0j7+mHjYGKMjMPz2r0hLyubUBaXyFR8c+kp8XU7K2uCx09g
+            kBEp3FCcoXFIIMq3KC1HAR/WPegV12G6GEbGac0S3/e7+x5ztEtg2rzujWbe6yq6
+            F8YMdVL8LRTaCkI27K4oKQC9VoEpZD111b3auAtwdYPxGiwk4b8cEgDSrBogcOAU
+            olI0E3ffxNQkchJgVGDEm7UDKGNgbylm23kwHo+cWPEpzufEN4Z6Nl7zgwBamgCr
+            jOxUeRksoBtTHvhScEFe7y8zrSdSQBPGLSQ05iQUzS5+5ptgLf5KEnOWQfD/MIxn
+            5RohwuC7xg8SsECQJUdOrkC9RILPzsk3+dl4vjNfmT/xZRTzKMGzwk5bNf5w/5DS
+            XgE9ck0QfTBmQwYYjWKLmCxTXwM4rRcUoEq4wDKLYqA2yIYwnpD4hUC/l4+Ah6lr
+            iB8vrmXUNWM8qX1/XM4Qdh2W+klqLWhGLUPHYInu5+VeQpTkXm4RcON6Lc0AZac=
+            =xXZs
+            -----END PGP MESSAGE-----
+          fp: 05FA72D13D58F8D4588BE3FE5606FFB02A5F0984
+    encrypted_regex: ((?i)(pass($|word)|claim|secret($|[^N])|key|token|^data$|^stringData))
+    version: 3.7.3
