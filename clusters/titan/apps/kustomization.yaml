@@ -16,7 +16,6 @@ resources:
   - ./radarr.yaml
   - ./prowlarr.yaml
   - ./recyclarr.yaml
-  - ./readarr.yaml
   - ./webhook.yaml
   - ./reddit-rss.yaml
   - ./bazarr.yaml
