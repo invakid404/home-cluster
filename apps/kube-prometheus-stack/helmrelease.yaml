@@ -37,6 +37,7 @@ spec:
           matchLabels:
             app.kubernetes.io/component: monitoring
     grafana:
+      defaultDashboardsTimezone: ${TIMEZONE}
       admin:
         existingSecret: "grafana-creds"
         userKey: "admin-user"
