@@ -46,6 +46,7 @@ spec:
                 cert-manager.io/cluster-issuer: letsencrypt
                 hajimari.io/enable: "true"
                 hajimari.io/icon: database-cog
+                hajimari.io/appName: pgadmin
                 external-dns.alpha.kubernetes.io/target: ${PRIVATE_IP}
         persistentVolume:
             enabled: true
@@ -56,8 +57,8 @@ sops:
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2022-11-02T23:35:20Z"
-    mac: ENC[AES256_GCM,data:T9etbTZi8WilaUREuKyZTAp4G7HjIPEpJkBNolTcE4eg+sEmsanzsOwhdvnCM/2LoYK+4k4j/qAy92RiNAvOMrJOziEib6enn8Xpf1euEoa9m9pY06DxlbhWGgmzHrnzFrDfBn7xklx15KAjP9ICP51KwrSkItDVPrNwMkMGlHw=,iv:C7Tygok8FCyt0XTGVfzhSjvGA/UFqFlpb+bAwZJ9TU0=,tag:qJGFuI/L9akMlL+GYhL3Gg==,type:str]
+    lastmodified: "2022-11-03T00:04:04Z"
+    mac: ENC[AES256_GCM,data:8ZyzWOscBd8Li3BCJjrTXsqMiedUnQUD3KaEKdKES9gCZfzznD+JieI8ltiL1tXoF2ZzK23OiZAfyYjdU68udbJ/iz17lLZkNdt7VNXNUY1eLQ7iipISYbyZiny4EyepESpGJ//9ZXYuL2jFhIuemQTfCsYlLctuuxnpdq9wDVA=,iv:4bqF3/6xWMVw2mL6dJOCHMJlgfGScSEcRUwQUAn898k=,tag:JrtRzcBVD2wN6weVIPXV2g==,type:str]
     pgp:
         - created_at: "2022-11-02T23:18:17Z"
           enc: |
