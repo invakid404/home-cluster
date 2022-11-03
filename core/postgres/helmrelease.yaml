@@ -39,6 +39,8 @@ spec:
       persistence:
         enabled: true
         existingClaim: postgres-data
+      startupProbe:
+        enabled: true
       podSecurityContext:
         enabled: true
         fsGroup: ${SQUASH_UID}
