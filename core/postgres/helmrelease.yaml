@@ -41,6 +41,8 @@ spec:
         existingClaim: postgres-data
       startupProbe:
         enabled: true
+        failureThreshold: 60
+        periodSeconds: 30
       podSecurityContext:
         enabled: true
         fsGroup: ${SQUASH_UID}
