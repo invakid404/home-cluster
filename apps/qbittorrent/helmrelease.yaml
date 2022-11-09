@@ -55,7 +55,7 @@ spec:
           - -c
         args:
           - |
-            VUETORRENT_VERSION="v0.19.1"
+            VUETORRENT_VERSION="v0.19.0"
             wget "https://github.com/WDaan/VueTorrent/releases/download/$${VUETORRENT_VERSION}/vuetorrent.zip" -O /data/config/vuetorrent.zip
             unzip /data/config/vuetorrent.zip -d /data/config/
         volumeMounts:
