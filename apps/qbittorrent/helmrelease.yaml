@@ -48,6 +48,19 @@ spec:
             mountPath: /data/config
           - name: configfiles
             mountPath: /data/configfiles
+      install-vuetorrent:
+        image: joshkeegan/zip:3.16.2@sha256:3310636993bf07850005de2f6b24a0d08437128adcc74c99a4b62fe408ca34aa
+        command:
+          - "/bin/sh"
+          - -c
+        args:
+          - |
+            VUETORRENT_VERSION="v0.19.1"
+            wget "https://github.com/WDaan/VueTorrent/releases/download/$${VUETORRENT_VERSION}/vuetorrent.zip" -O /data/config/vuetorrent.zip
+            unzip /data/config/vuetorrent.zip -d /data/config/
+        volumeMounts:
+          - name: config
+            mountPath: /data/config
 
     dnsConfig:
       options:
