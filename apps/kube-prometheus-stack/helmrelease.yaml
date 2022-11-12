@@ -27,7 +27,8 @@ spec:
         enabled: false
     prometheus:
       prometheusSpec:
-        retention: 24h
+        retention: 2w
+        retentionSize: 45GB
         resources:
           requests:
             cpu: 200m
@@ -36,6 +37,15 @@ spec:
         podMonitorSelector:
           matchLabels:
             app.kubernetes.io/component: monitoring
+        storageSpec:
+          volumeClaimTemplate:
+            spec:
+              accessModes:
+                - ReadWriteOnce
+              resources:
+                requests:
+                  storage: 50Gi
+              storageClassName: nfs-client
     grafana:
       defaultDashboardsTimezone: ${TIMEZONE}
       admin:
