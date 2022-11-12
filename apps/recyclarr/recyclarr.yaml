@@ -77,6 +77,8 @@ radarr:
         quality_profiles:
           - name: HD
             score: 1
+          - name: HD-1080p
+            score: 1
           - name: SD
             score: 1
       - trash_ids:
@@ -130,12 +132,16 @@ radarr:
         quality_profiles:
           - name: HD
             reset_unmatched_scores: true
+          - name: HD-1080p
+            reset_unmatched_scores: true
           - name: SD
             reset_unmatched_scores: true
       - trash_ids:
           - 1c7d7b04b15cc53ea61204bebbcc1ee2 # HQ
         quality_profiles:
           - name: HD
+            score: 0
+          - name: HD-1080p
             score: 0
           - name: SD
             score: 0
@@ -144,6 +150,8 @@ radarr:
           - 923b6abef9b17f937fab56cfcf89e1f1 # Optional: DV (WEBDL) without fallback to HDR, set to manual score 0 or -10000
         quality_profiles:
           - name: HD
+            score: 0
+          - name: HD-1080p
             score: 0
           - name: SD
             score: 0
