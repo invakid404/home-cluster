@@ -25,6 +25,8 @@ spec:
                       name: sonarr
                 - name: RADARR_BASE_URL
                   value: https://radarr.lab.${BASE_DOMAIN}
+                - name: RADARR_4K_BASE_URL
+                  value: https://radarr-4k.lab.${BASE_DOMAIN}
                 - name: RADARR_API_KEY
                   valueFrom:
                     secretKeyRef:
