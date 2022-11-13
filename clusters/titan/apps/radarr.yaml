@@ -9,6 +9,10 @@ spec:
     kind: GitRepository
     name: flux-system
   path: ./apps/radarr
+  postBuild:
+    substitute:
+      APP_NAME: radarr
+      INSTANCE_NAME: Radarr
   prune: true
   decryption:
     provider: sops
