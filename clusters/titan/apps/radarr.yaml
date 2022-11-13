@@ -13,6 +13,8 @@ spec:
     substitute:
       APP_NAME: radarr
       INSTANCE_NAME: Radarr
+      MAIN_DB: ${RADARR_MAIN_DB}
+      LOG_DB: ${RADARR_LOG_DB}
   prune: true
   decryption:
     provider: sops
