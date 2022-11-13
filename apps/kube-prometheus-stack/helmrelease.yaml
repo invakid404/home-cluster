@@ -85,3 +85,7 @@ spec:
             gnetId: 1860
             revision: 29
             datasource: Prometheus
+          ingress-nginx:
+            gnetId: 9614
+            revision: 1
+            datasource: Prometheus
