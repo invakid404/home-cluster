@@ -14,6 +14,7 @@ resources:
   - ./loki-stack.yaml
   - ./sonarr.yaml
   - ./radarr.yaml
+  - ./radarr-4k.yaml
   - ./prowlarr.yaml
   - ./recyclarr.yaml
   - ./webhook.yaml

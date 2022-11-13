@@ -1,7 +1,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: &name radarr
+  name: &name radarr-4k
   namespace: flux-system
 spec:
   interval: 10m0s
@@ -12,9 +12,9 @@ spec:
   postBuild:
     substitute:
       APP_NAME: *name
-      INSTANCE_NAME: Radarr
-      MAIN_DB: ${RADARR_MAIN_DB}
-      LOG_DB: ${RADARR_LOG_DB}
+      INSTANCE_NAME: Radarr 4K
+      MAIN_DB: ${RADARR_4K_MAIN_DB}
+      LOG_DB: ${RADARR_4K_LOG_DB}
   prune: true
   decryption:
     provider: sops

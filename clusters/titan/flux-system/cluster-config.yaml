@@ -17,5 +17,8 @@ data:
   RADARR_MAIN_DB: radarr-main
   RADARR_LOG_DB: radarr-log
 
+  RADARR_4K_MAIN_DB: radarr-4k-main
+  RADARR_4K_LOG_DB: radarr-4k-log
+
   PROWLARR_MAIN_DB: prowlarr-main
   PROWLARR_LOG_DB: prowlarr-log

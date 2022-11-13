@@ -33,6 +33,9 @@ spec:
           radarr.sql: |
             CREATE DATABASE "${RADARR_MAIN_DB}" OWNER postgres;
             CREATE DATABASE "${RADARR_LOG_DB}" OWNER postgres;
+          radarr-4k.sql: |
+            CREATE DATABASE "${RADARR_4K_MAIN_DB}" OWNER postgres;
+            CREATE DATABASE "${RADARR_4K_LOG_DB}" OWNER postgres;
           prowlarr.sql: |
             CREATE DATABASE "${PROWLARR_MAIN_DB}" OWNER postgres;
             CREATE DATABASE "${PROWLARR_LOG_DB}" OWNER postgres;
