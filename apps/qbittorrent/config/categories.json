@@ -5,6 +5,9 @@
   "Movies": {
     "save_path": "/data/nas-torrents/Downloads/Movies"
   },
+  "Movies (4K)": {
+    "save_path": "/data/nas-torrents/Downloads/Movies (4K)"
+  },
   "VSTs": {
     "save_path": "/data/nas-torrents/Downloads/VSTs"
   },
