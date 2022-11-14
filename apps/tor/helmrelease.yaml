@@ -29,10 +29,12 @@ spec:
 
     command: ["sh"]
     args:
-      [
-        "-c",
-        "usermod --uid ${SQUASH_UID} debian-tor && chown -R debian-tor:debian-tor /var/log/tor && /usr/local/bin/start-tor.sh",
-      ]
+      - "-c"
+      - |
+        usermod --uid ${SQUASH_UID} debian-tor
+        chown -R debian-tor:debian-tor /var/log/tor
+        sed -i "/SocksPort 0/d" /usr/local/bin/start-tor.sh
+        /usr/local/bin/start-tor.sh
 
     env:
       - name: OBFS4_ENABLE_ADDITIONAL_VARIABLES
@@ -49,6 +51,8 @@ spec:
         value: "/var/lib/tor/data"
       - name: OBFS4V_User
         value: "debian-tor"
+      - name: OBFS4V_SocksPort
+        value: "0.0.0.0:${SOCKS_PORT}"
 
     service:
       main:

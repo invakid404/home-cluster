@@ -13,6 +13,7 @@ spec:
     substitute:
       OR_PORT: "9090"
       PT_PORT: "44321"
+      SOCKS_PORT: "9050"
   prune: true
   dependsOn:
     - name: apps-base
