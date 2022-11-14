@@ -48,6 +48,14 @@ spec:
                 requests:
                   storage: 50Gi
               storageClassName: nfs-client
+        additionalScrapeConfigs:
+          - job_name: node-exporter
+            scrape_interval: 1m
+            scrape_timeout: 10s
+            honor_timestamps: true
+            static_configs:
+              - targets:
+                  - "${NAS_ADDRESS}:9100"
     grafana:
       defaultDashboardsTimezone: ${TIMEZONE}
       admin:
