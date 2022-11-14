@@ -16,3 +16,10 @@ spec:
     config:
       use-forwarded-headers: "true"
       enable-real-ip: "true"
+    controller:
+      metrics:
+        enabled: true
+        serviceMonitor:
+          enabled: true
+          additionalLabels:
+            release: "kube-prometheus-stack"
