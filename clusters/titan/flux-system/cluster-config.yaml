@@ -7,7 +7,7 @@ data:
   TIMEZONE: "Europe/Sofia"
 
   BASE_DOMAIN: invak.id
-  NAS_ADDRESS: nas
+  NAS_HOSTNAME: nas
   PUBLIC_IP: invakid404.asuscomm.com
   PRIVATE_IP: 100.75.51.26
   SQUASH_UID: "1024"

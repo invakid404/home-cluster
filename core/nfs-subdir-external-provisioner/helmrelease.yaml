@@ -14,7 +14,7 @@ spec:
         name: nfs-subdir-external-provisioner
   values:
     nfs:
-      server: "${NAS_ADDRESS}"
+      server: "${NAS_HOSTNAME}"
       path: "/volume1/Kubernetes"
       mountOptions:
         - hard

@@ -130,7 +130,7 @@ spec:
       media:
         enabled: true
         type: nfs
-        server: "${NAS_ADDRESS}"
+        server: "${NAS_HOSTNAME}"
         path: "${TORRENTS_VOLUME}"
         mountPath: /data/nas-torrents
 
