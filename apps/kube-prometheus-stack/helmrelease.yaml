@@ -50,7 +50,7 @@ spec:
               storageClassName: nfs-client
         additionalScrapeConfigs:
           - job_name: node-exporter
-            scrape_interval: 1m
+            scrape_interval: 30s
             scrape_timeout: 10s
             honor_timestamps: true
             static_configs:
