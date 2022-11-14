@@ -21,3 +21,4 @@ resources:
   - ./reddit-rss.yaml
   - ./bazarr.yaml
   - ./pgadmin.yaml
+  - ./notifications.yaml
