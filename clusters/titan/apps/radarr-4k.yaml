@@ -15,6 +15,7 @@ spec:
       INSTANCE_NAME: Radarr 4K
       MAIN_DB: ${RADARR_4K_MAIN_DB}
       LOG_DB: ${RADARR_4K_LOG_DB}
+      THEME: overseerr
   prune: true
   decryption:
     provider: sops
