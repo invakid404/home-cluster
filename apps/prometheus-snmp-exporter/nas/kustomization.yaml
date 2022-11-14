@@ -7,5 +7,15 @@ configMapGenerator:
     namespace: apps
     files:
       - ./snmp.yaml
+  - name: prometheus-snmp-exporter-nas-dashboard
+    namespace: apps
+    files:
+      - ./dashboard.json
+    options:
+      annotations:
+        kustomize.toolkit.fluxcd.io/substitute: disabled
+      labels:
+        grafana_dashboard: "1"
+        app.kubernetes.io/component: monitoring
 generatorOptions:
   disableNameSuffixHash: true
