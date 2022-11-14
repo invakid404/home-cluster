@@ -22,3 +22,4 @@ resources:
   - ./bazarr.yaml
   - ./pgadmin.yaml
   - ./notifications.yaml
+  - ./prometheus-snmp-exporter.yaml
