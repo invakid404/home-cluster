@@ -246,7 +246,7 @@
               },
               {
                 "id": "unit",
-                "value": "fahrenheit"
+                "value": "celsius"
               },
               {
                 "id": "custom.displayMode",
@@ -254,7 +254,7 @@
               },
               {
                 "id": "max",
-                "value": 140
+                "value": 60
               },
               {
                 "id": "color",
@@ -273,11 +273,11 @@
                     },
                     {
                       "color": "yellow",
-                      "value": 100
+                      "value": 38
                     },
                     {
                       "color": "dark-red",
-                      "value": 135
+                      "value": 57
                     }
                   ]
                 }
@@ -444,7 +444,7 @@
         },
         {
           "exemplar": true,
-          "expr": "(temperature{job=~'$JobName',instance=~'$Device'}*9/5)+32",
+          "expr": "temperature{job=~'$JobName',instance=~'$Device'}",
           "format": "table",
           "instant": true,
           "interval": "",
@@ -3045,11 +3045,11 @@
               },
               {
                 "id": "max",
-                "value": 140
+                "value": 60
               },
               {
                 "id": "unit",
-                "value": "fahrenheit"
+                "value": "celsius"
               }
             ]
           },
@@ -3186,7 +3186,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "(diskTemperature{job=~'$JobName',instance=~'$Device'}*9/5)+32",
+          "expr": "diskTemperature{job=~'$JobName',instance=~'$Device'}",
           "format": "table",
           "instant": true,
           "interval": "",
