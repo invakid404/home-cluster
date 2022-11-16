@@ -10,7 +10,11 @@ patchesJSON6902:
   - target:
       kind: Deployment
       name: "kustomize-controller"
-    patch: |-
+    patch: &requeue-dependency |-
       - op: add
         path: "/spec/template/spec/containers/0/args/-"
         value: "--requeue-dependency=5s"
+  - target:
+      kind: Deployment
+      name: "helm-controller"
+    patch: *requeue-dependency
