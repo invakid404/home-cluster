@@ -26,11 +26,11 @@ spec:
       repository: quay.io/prometheus/snmp-exporter
     extraArgs:
       - "--config.file=/config/snmp.yaml"
-    extraConfigmapMounts:
+    extraSecretMounts:
       - name: *app
         mountPath: /config/snmp.yaml
         subPath: snmp.yaml
-        configMap: *app
+        secretName: *app
         readOnly: true
         defaultMode: 420
     serviceMonitor:
