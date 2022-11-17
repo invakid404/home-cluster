@@ -20,6 +20,7 @@ resources:
   - ./webhook.yaml
   - ./reddit-rss.yaml
   - ./bazarr.yaml
+  - ./bazarr-4k.yaml
   - ./pgadmin.yaml
   - ./notifications.yaml
   - ./prometheus-snmp-exporter.yaml

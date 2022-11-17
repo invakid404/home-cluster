@@ -1,7 +1,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: &app bazarr
+  name: &app ${APP_NAME}
   namespace: apps
 spec:
   interval: 10m0s
@@ -41,25 +41,25 @@ spec:
         annotations:
           nginx.ingress.kubernetes.io/configuration-snippet: |
             proxy_set_header Accept-Encoding "";
-            sub_filter '</head>' '<link rel="stylesheet" type="text/css" href="https://theme-park.dev/css/base/bazarr/nord.css"></head>';
+            sub_filter '</head>' '<link rel="stylesheet" type="text/css" href="https://theme-park.dev/css/base/bazarr/${THEME}.css"></head>';
             sub_filter_once on;
           cert-manager.io/cluster-issuer: letsencrypt
           hajimari.io/enable: "true"
           hajimari.io/icon: subtitles-outline
           external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
         hosts:
-          - host: &bazarr-host "bazarr.lab.${BASE_DOMAIN}"
+          - host: &bazarr-host "${APP_NAME}.lab.${BASE_DOMAIN}"
             paths:
               - path: /
         tls:
           - hosts:
               - *bazarr-host
-            secretName: letsencrypt-bazarr
+            secretName: letsencrypt-${APP_NAME}
 
     persistence:
       config:
         enabled: true
-        existingClaim: bazarr-config
+        existingClaim: ${APP_NAME}-config
 
       data:
         enabled: true
