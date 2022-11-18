@@ -61,3 +61,5 @@ spec:
         memory: 226M
       limits:
         memory: 1937M
+    nodeSelector:
+      kubernetes.io/hostname: titan
