@@ -140,3 +140,6 @@ spec:
         memory: 765M
       limits:
         memory: 1426M
+
+    nodeSelector:
+      kubernetes.io/hostname: nasa-k3s
