@@ -76,4 +76,4 @@ spec:
         memory: 2357M
 
     nodeSelector:
-      kubernetes.io/hostname: titan
+      kubernetes.io/hostname: nasa-k3s
