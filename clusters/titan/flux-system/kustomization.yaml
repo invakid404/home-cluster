@@ -18,3 +18,17 @@ patchesJSON6902:
       kind: Deployment
       name: "helm-controller"
     patch: *requeue-dependency
+patches:
+  - patch: |
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: all
+      spec:
+        template:
+          spec:
+            nodeSelector:
+              kubernetes.io/hostname: titan
+    target:
+      kind: Deployment
+      labelSelector: app.kubernetes.io/part-of=flux
