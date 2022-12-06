@@ -2,7 +2,8 @@
 # https://github.com/recyclarr/recyclarr/wiki/Configuration-Reference
 
 sonarr:
-  - base_url: ${SONARR_BASE_URL}
+  main:
+    base_url: ${SONARR_BASE_URL}
     api_key: ${SONARR_API_KEY}
     delete_old_custom_formats: true
     custom_formats:
@@ -65,7 +66,7 @@ sonarr:
             score: 10
 
 radarr:
-  - &radarr-config
+  main: &radarr-config
     base_url: ${RADARR_BASE_URL}
     api_key: ${RADARR_API_KEY}
     delete_old_custom_formats: true
@@ -140,5 +141,6 @@ radarr:
         quality_profiles:
           - name: Default
             score: 0
-  - <<: *radarr-config
+  4k:
+    <<: *radarr-config
     base_url: ${RADARR_4K_BASE_URL}
