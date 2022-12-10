@@ -25,3 +25,4 @@ resources:
   - ./notifications.yaml
   - ./prometheus-snmp-exporter.yaml
   - ./overseerr.yaml
+  - ./n8n.yaml
