@@ -9,6 +9,10 @@ spec:
     kind: GitRepository
     name: flux-system
   path: ./apps/qbittorrent
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: cluster-config
   prune: true
   dependsOn:
     - name: apps-base

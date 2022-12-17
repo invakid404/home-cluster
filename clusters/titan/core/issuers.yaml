@@ -10,5 +10,9 @@ spec:
     name: flux-system
   path: ./core/issuers
   prune: true
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: cluster-config
   dependsOn:
     - name: cert-manager

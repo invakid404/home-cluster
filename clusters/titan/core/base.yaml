@@ -10,3 +10,7 @@ spec:
     name: flux-system
   path: ./core
   prune: true
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: cluster-config

@@ -10,5 +10,9 @@ spec:
     name: flux-system
   path: ./apps/chezz
   prune: true
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: cluster-config
   dependsOn:
     - name: apps-base

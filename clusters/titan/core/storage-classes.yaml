@@ -10,5 +10,9 @@ spec:
     name: flux-system
   path: ./core/storage-classes
   prune: true
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: cluster-config
   dependsOn:
     - name: nfs-subdir-external-provisioner

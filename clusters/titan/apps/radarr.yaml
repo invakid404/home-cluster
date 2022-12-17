@@ -16,6 +16,9 @@ spec:
       MAIN_DB: ${RADARR_MAIN_DB}
       LOG_DB: ${RADARR_LOG_DB}
       THEME: nord
+    substituteFrom:
+      - kind: ConfigMap
+        name: cluster-config
   prune: true
   decryption:
     provider: sops

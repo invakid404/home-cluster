@@ -10,6 +10,10 @@ spec:
     name: flux-system
   path: ./apps/notifications
   prune: true
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: cluster-config
   decryption:
     provider: sops
     secretRef:
