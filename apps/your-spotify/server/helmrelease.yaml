@@ -34,7 +34,7 @@ spec:
         secretKeyRef:
           name: your-spotify
           key: secret
-      MONGO_ENDPOINT: ${mongodb_url}/your_spotify
+      MONGO_ENDPOINT: ${mongodb_url}/your_spotify?authSource=admin
       CORS: *client-url
 
     service:
