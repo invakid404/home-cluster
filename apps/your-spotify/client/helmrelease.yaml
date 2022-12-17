@@ -23,6 +23,7 @@ spec:
       tag: latest@sha256:8eb37b6cc51d45c3c103932c7abb126bd46792c1e1bb7f9229783f7b6898bdc8
 
     env:
+      TIMEZONE: ${TIMEZONE}
       API_ENDPOINT: https://api.spotify.lab.${BASE_DOMAIN}
 
     service:
