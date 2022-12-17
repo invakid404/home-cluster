@@ -1,0 +1,33 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mongodb
+  namespace: core
+spec:
+  interval: 10m0s
+  chart:
+    spec:
+      chart: mongodb
+      version: "13.6.1"
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+  install:
+    remediation:
+      retries: 10
+  upgrade:
+    remediation:
+      retries: 10
+  values:
+    fullnameOverride: mongodb
+    auth:
+      existingSecret: mongodb-creds
+    persistence:
+      enabled: true
+      existingClaim: mongodb-data
+    podSecurityContext:
+      enabled: true
+      fsGroup: ${SQUASH_UID}
+    containerSecurityContext:
+      enabled: true
+      runAsUser: ${SQUASH_UID}

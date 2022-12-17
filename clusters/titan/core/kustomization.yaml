@@ -10,3 +10,4 @@ resources:
   - ./external-dns.yaml
   - ./storage-classes.yaml
   - ./postgres.yaml
+  - ./mongodb.yaml
