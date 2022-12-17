@@ -61,4 +61,4 @@ spec:
         tls:
           - hosts:
               - *your-spotify-server-host
-            secretName: letsencrypt-your-spotify
+            secretName: letsencrypt-your-spotify-server
