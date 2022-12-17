@@ -62,3 +62,6 @@ spec:
           - hosts:
               - *your-spotify-server-host
             secretName: letsencrypt-your-spotify-server
+
+    podAnnotations:
+      secret.reloader.stakater.com/reload: your-spotify
