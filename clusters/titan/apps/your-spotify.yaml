@@ -14,6 +14,12 @@ spec:
     provider: sops
     secretRef:
       name: sops-gpg
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: cluster-config
+      - kind: Secret
+        name: mongodb-creds
   dependsOn:
     - name: apps-base
     - name: mongodb
