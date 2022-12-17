@@ -13,8 +13,8 @@ spec:
     substitute:
       APP_NAME: *name
       INSTANCE_NAME: Radarr
-      MAIN_DB: ${RADARR_MAIN_DB}
-      LOG_DB: ${RADARR_LOG_DB}
+      MAIN_DB: radarr-main
+      LOG_DB: radarr-log
       THEME: nord
     substituteFrom:
       - kind: ConfigMap

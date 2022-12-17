@@ -13,8 +13,8 @@ spec:
     substitute:
       APP_NAME: *name
       INSTANCE_NAME: Radarr 4K
-      MAIN_DB: ${RADARR_4K_MAIN_DB}
-      LOG_DB: ${RADARR_4K_LOG_DB}
+      MAIN_DB: radarr-4k-main
+      LOG_DB: radarr-4k-log
       THEME: overseerr
     substituteFrom:
       - kind: ConfigMap
