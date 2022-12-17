@@ -20,6 +20,7 @@ spec:
       retries: 10
   values:
     fullnameOverride: mongodb
+    useStatefulSet: true
     auth:
       existingSecret: mongodb-creds
     persistence:
