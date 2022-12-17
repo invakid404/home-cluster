@@ -10,6 +10,10 @@ spec:
     name: flux-system
   path: ./apps/your-spotify
   prune: true
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
   dependsOn:
     - name: apps-base
     - name: mongodb
