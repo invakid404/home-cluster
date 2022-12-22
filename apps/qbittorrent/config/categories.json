@@ -16,5 +16,8 @@
   },
   "Programs": {
     "save_path": "/data/nas-torrents/Downloads/Programs"
+  },
+  "Music Kits": {
+    "save_path": "/data/nas-torrents/Downloads/Music Kits"
   }
 }
