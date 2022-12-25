@@ -27,3 +27,4 @@ resources:
   - ./overseerr.yaml
   - ./n8n.yaml
   - ./your-spotify.yaml
+  - ./flaresolverr.yaml
