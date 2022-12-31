@@ -11,6 +11,7 @@ data:
   NAS_ADDRESS: 192.168.50.246
   PUBLIC_IP: invakid404.asuscomm.com
   PRIVATE_IP: 192.168.50.0
+  PRIVATE_WHITELIST: 100.64.0.0/10
   SQUASH_UID: "1024"
 
   TORRENTS_VOLUME: "/volume1/Torrents"
