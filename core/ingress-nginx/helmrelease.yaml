@@ -17,6 +17,8 @@ spec:
       use-forwarded-headers: "true"
       enable-real-ip: "true"
     controller:
+      service:
+        externalTrafficPolicy: Local
       metrics:
         enabled: true
         serviceMonitor:
