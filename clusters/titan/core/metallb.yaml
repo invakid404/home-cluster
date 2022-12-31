@@ -14,5 +14,10 @@ spec:
     substituteFrom:
       - kind: ConfigMap
         name: cluster-config
+  healthChecks:
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: metallb-controller
+      namespace: core
   dependsOn:
     - name: core-base
