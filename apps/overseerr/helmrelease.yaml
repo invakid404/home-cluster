@@ -35,6 +35,7 @@ spec:
         enabled: true
         ingressClassName: "nginx"
         annotations:
+          nginx.ingress.kubernetes.io/whitelist-source-range: ${PRIVATE_WHITELIST}
           nginx.ingress.kubernetes.io/configuration-snippet: |
             proxy_set_header Accept-Encoding "";
             sub_filter_once on;
