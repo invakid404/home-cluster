@@ -16,6 +16,7 @@ spec:
     config:
       use-forwarded-headers: "true"
       enable-real-ip: "true"
+      use-proxy-protocol: "true"
     controller:
       service:
         externalTrafficPolicy: Local
