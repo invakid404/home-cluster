@@ -27,7 +27,7 @@ spec:
           - "${PRIVATE_IP}"
         externalTrafficPolicy: Local
       metrics:
-        enabled: true
+        enabled: false
         serviceMonitor:
           enabled: true
           additionalLabels:
