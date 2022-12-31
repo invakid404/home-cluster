@@ -13,9 +13,9 @@ spec:
         kind: HelmRepository
         name: ingress-nginx
   values:
-    config:
-      use-forwarded-headers: "true"
     controller:
+      config:
+        use-forwarded-headers: "true"
       service:
         externalIPs:
           - "${PRIVATE_IP}"
