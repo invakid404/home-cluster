@@ -17,6 +17,8 @@ spec:
       use-forwarded-headers: "true"
     controller:
       service:
+        externalIPs:
+          - "${PRIVATE_IP}"
         externalTrafficPolicy: Local
       metrics:
         enabled: true
