@@ -1,24 +1,18 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: ingress-nginx
+  name: ip-pools
   namespace: flux-system
 spec:
   interval: 10m0s
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./core/ingress-nginx
+  path: ./core/ip-pools
   prune: true
   postBuild:
     substituteFrom:
       - kind: ConfigMap
         name: cluster-config
-  healthChecks:
-    - apiVersion: apps/v1
-      kind: Deployment
-      name: ingress-nginx-controller
-      namespace: core
   dependsOn:
-    - name: core-base
-    - name: ip-pools
+    - name: metallb
