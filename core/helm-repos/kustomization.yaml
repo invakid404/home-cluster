@@ -7,3 +7,4 @@ resources:
   - ./stakater.yaml
   - ./external-dns.yaml
   - ./bitnami.yaml
+  - ./prometheus-community.yaml
