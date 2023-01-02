@@ -15,9 +15,9 @@ spec:
         namespace: apps
       interval: 10m0s
   install:
-    crds: Create
+    crds: Skip
   upgrade:
-    crds: CreateReplace
+    crds: Skip
   values:
     namespaceOverride: apps
     alertmanager:
