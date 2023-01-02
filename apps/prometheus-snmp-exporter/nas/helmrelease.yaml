@@ -12,7 +12,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: prometheus-community
-        namespace: apps
+        namespace: core
   install:
     createNamespace: true
     remediation:
