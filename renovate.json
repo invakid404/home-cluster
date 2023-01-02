@@ -19,7 +19,7 @@
       "automergeType": "branch",
       "requiredStatusChecks": null,
       "matchUpdateTypes": ["minor", "patch", "digest"],
-      "matchPackageNames": ["renovate/renovate", "spikecodes/libreddit"]
+      "matchPackageNames": ["renovate/renovate", "libreddit/libreddit"]
     },
     {
       "description": "Disable kubernetes-api",
