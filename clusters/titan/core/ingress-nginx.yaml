@@ -22,3 +22,4 @@ spec:
   dependsOn:
     - name: core-base
     - name: ip-pools
+    - name: crds
