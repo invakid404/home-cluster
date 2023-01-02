@@ -12,3 +12,4 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: prometheus-community
+        namespace: core
