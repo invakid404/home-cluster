@@ -13,3 +13,4 @@ resources:
   - ./mongodb.yaml
   - ./metallb.yaml
   - ./ip-pools.yaml
+  - ./crds.yaml
