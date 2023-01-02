@@ -14,5 +14,7 @@ spec:
     substituteFrom:
       - kind: ConfigMap
         name: cluster-config
+  wait: true
+  timeout: 10m0s
   dependsOn:
     - name: core-base
