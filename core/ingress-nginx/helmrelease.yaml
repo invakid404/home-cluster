@@ -15,7 +15,6 @@ spec:
   values:
     controller:
       config:
-        use-forwarded-headers: "true"
         log-format-escape-json: "true"
         log-format-upstream:
           '{"time": "$time_iso8601", "remote_addr": "$proxy_protocol_addr", "x_forwarded_for": "$proxy_add_x_forwarded_for", "request_id": "$req_id",
