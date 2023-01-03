@@ -58,6 +58,7 @@ spec:
           - |
             # renovate: github-release depName=WDaan/VueTorrent
             VUETORRENT_VERSION="v1.1.0"
+            rm -rf /data/config/vuetorrent
             busybox wget -qO- "https://github.com/WDaan/VueTorrent/releases/download/$${VUETORRENT_VERSION}/vuetorrent.zip" | busybox unzip -d /data/config -
         volumeMounts:
           - name: data
