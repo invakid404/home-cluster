@@ -44,8 +44,9 @@ spec:
         args:
           - cp /data/configfiles/* /data/config/
         volumeMounts:
-          - name: config
+          - name: data
             mountPath: /data/config
+            subPath: config
           - name: configfiles
             mountPath: /data/configfiles
       install-vuetorrent:
@@ -60,8 +61,9 @@ spec:
             wget "https://github.com/WDaan/VueTorrent/releases/download/$${VUETORRENT_VERSION}/vuetorrent.zip" -O /data/config/vuetorrent.zip
             unzip /data/config/vuetorrent.zip -d /data/config/
         volumeMounts:
-          - name: config
+          - name: data
             mountPath: /data/config
+            subPath: config
 
     dnsConfig:
       options:
@@ -108,11 +110,6 @@ spec:
             secretName: letsencrypt-qbittorrent
 
     persistence:
-      config:
-        enabled: true
-        type: emptyDir
-        mountPath: /config/qBittorrent/config
-
       cache:
         enabled: true
         type: emptyDir
@@ -127,8 +124,11 @@ spec:
       data:
         enabled: true
         existingClaim: qbittorrent-config
-        mountPath: /config/qBittorrent/data
-        subPath: data
+        subPath:
+          - path: data
+            mountPath: /config/qBittorrent/data
+          - path: config
+            mountPath: /config/qBittorrent/config
 
       media:
         enabled: true
