@@ -50,7 +50,7 @@ spec:
           - name: configfiles
             mountPath: /data/configfiles
       install-vuetorrent:
-        image: joshkeegan/zip:3.17.0@sha256:060fd9b5da1cb0fb0db1785945e1b5d583f69f54440b4deb8f6887b1f143eacd
+        image: busybox:1.35.0@sha256:f4ed5f2163110c26d42741fdc92bd1710e118aed4edb19212548e8ca4e5fca22
         command:
           - "/bin/sh"
           - -c
@@ -58,8 +58,7 @@ spec:
           - |
             # renovate: github-release depName=WDaan/VueTorrent
             VUETORRENT_VERSION="v1.1.0"
-            wget "https://github.com/WDaan/VueTorrent/releases/download/$${VUETORRENT_VERSION}/vuetorrent.zip" -O /data/config/vuetorrent.zip
-            unzip /data/config/vuetorrent.zip -d /data/config/
+            busybox wget -qO- "https://github.com/WDaan/VueTorrent/releases/download/$${VUETORRENT_VERSION}/vuetorrent.zip" | busybox unzip -d /data/config -
         volumeMounts:
           - name: data
             mountPath: /data/config
