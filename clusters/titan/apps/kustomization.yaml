@@ -28,3 +28,4 @@ resources:
   - ./n8n.yaml
   - ./your-spotify.yaml
   - ./flaresolverr.yaml
+  - ./unpackerr.yaml
