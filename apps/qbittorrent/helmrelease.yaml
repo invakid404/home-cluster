@@ -25,12 +25,9 @@ spec:
       configmap.reloader.stakater.com/reload: "qbittorrent-config"
 
     podSecurityContext:
-      runAsUser: 568
-      runAsGroup: 568
-      fsGroup: 568
-      fsGroupChangePolicy: "OnRootMismatch"
-      supplementalGroups:
-        - 65539
+      runAsUser: ${SQUASH_UID}
+      runAsGroup: ${SQUASH_UID}
+      fsGroup: ${SQUASH_UID}
 
     initContainers:
       copy-config:
