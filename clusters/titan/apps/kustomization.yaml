@@ -29,3 +29,4 @@ resources:
   - ./your-spotify.yaml
   - ./flaresolverr.yaml
   - ./unpackerr.yaml
+  - ./adguard.yaml
