@@ -22,8 +22,8 @@ spec:
           "request_length": $request_length, "duration": $request_time, "method": "$request_method", "http_referrer": "$http_referer",
           "http_user_agent": "$http_user_agent" }'
       service:
-        externalIPs:
-          - "${PRIVATE_IP}"
+        annotations:
+          metallb.universe.tf/loadBalancerIPs: "${PRIVATE_IP}"
         externalTrafficPolicy: Local
       metrics:
         enabled: true
