@@ -18,7 +18,7 @@ spec:
   values:
     image:
       repository: ghcr.io/invakid404/reddit-rss
-      tag: v1.0.0@sha256:81ebff463d7e56c1878dc765ef04b557a0dd55b9a8ac284e286b8f12a02b09d3
+      tag: 2.0.0@sha256:0eaf5199f103efeac5707aaa2d86239d51c85089b0d19954be54a5bc20ed19cb
 
     env:
       PORT: &port "8080"
