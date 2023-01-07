@@ -44,7 +44,7 @@ spec:
                   mountPath: /shared
           containers:
             - name: sonarrs
-              image: ghcr.io/recyclarr/recyclarr:4.1.0@sha256:580954066f500fc217c69a099201d06068a771b1c02a33e8f38f130867277d39
+              image: ghcr.io/recyclarr/recyclarr:4.1.2@sha256:515ab63a4039ade6fd85cfabe5e08d651fafda2ef9e36e9f36f6ea20cd5986dc
               command:
                 - /app/recyclarr/recyclarr
               args:
@@ -57,7 +57,7 @@ spec:
                   subPath: recyclarr.yml
                   readOnly: true
             - name: radarrs
-              image: ghcr.io/recyclarr/recyclarr:4.1.0@sha256:580954066f500fc217c69a099201d06068a771b1c02a33e8f38f130867277d39
+              image: ghcr.io/recyclarr/recyclarr:4.1.2@sha256:515ab63a4039ade6fd85cfabe5e08d651fafda2ef9e36e9f36f6ea20cd5986dc
               command:
                 - /app/recyclarr/recyclarr
               args:
