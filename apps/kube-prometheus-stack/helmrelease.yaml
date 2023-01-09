@@ -58,6 +58,9 @@ spec:
                   - "${NAS_ADDRESS}:9100"
     grafana:
       defaultDashboardsTimezone: ${TIMEZONE}
+      grafana.ini:
+        analytics:
+          reporting_enabled: false
       admin:
         existingSecret: "grafana-creds"
         userKey: "admin-user"
