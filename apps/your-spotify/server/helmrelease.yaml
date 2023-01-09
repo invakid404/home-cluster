@@ -49,7 +49,7 @@ spec:
         ingressClassName: "nginx"
         annotations:
           nginx.ingress.kubernetes.io/whitelist-source-range: ${PRIVATE_WHITELIST}
-          nginx.ingress.kubernetes.io/proxy-body-size: 16m
+          nginx.ingress.kubernetes.io/proxy-body-size: 256m
           cert-manager.io/cluster-issuer: letsencrypt
           hajimari.io/enable: "false"
           external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
