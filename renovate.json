@@ -22,7 +22,8 @@
       "matchPackageNames": [
         "renovate/renovate",
         "libreddit/libreddit",
-        "busybox"
+        "busybox",
+        "ghcr.io/onedr0p/alpine"
       ]
     },
     {
