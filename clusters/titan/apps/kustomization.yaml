@@ -30,3 +30,4 @@ resources:
   - ./flaresolverr.yaml
   - ./unpackerr.yaml
   - ./adguard.yaml
+  - ./homepage.yaml
