@@ -38,6 +38,7 @@ spec:
         enabled: true
         ingressClassName: "nginx"
         annotations:
+          gethomepage.dev/enabled: "true"
           gethomepage.dev/name: "Homepage"
           gethomepage.dev/description: "A modern, secure, highly customizable application dashboard."
           gethomepage.dev/group: "My Group"
