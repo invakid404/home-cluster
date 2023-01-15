@@ -5,3 +5,4 @@ resources:
   - ./hajimari.yaml
   - ./grafana-charts.yaml
   - ./runix.yaml
+  - ./jameswynn.yaml
