@@ -41,7 +41,7 @@ spec:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/name: "Homepage"
           gethomepage.dev/description: "A modern, secure, highly customizable application dashboard."
-          gethomepage.dev/group: "My Group"
+          gethomepage.dev/group: Applications
           gethomepage.dev/icon: "homepage.png"
           nginx.ingress.kubernetes.io/whitelist-source-range: ${PRIVATE_WHITELIST}
           cert-manager.io/cluster-issuer: letsencrypt
