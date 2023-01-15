@@ -38,10 +38,10 @@ spec:
         enabled: true
         ingressClassName: "nginx"
         annotations:
-          homepage/name: "Homepage"
-          homepage/description: "A modern, secure, highly customizable application dashboard."
-          homepage/group: "My Group"
-          homepage/icon: "homepage.png"
+          gethomepage.dev/name: "Homepage"
+          gethomepage.dev/description: "A modern, secure, highly customizable application dashboard."
+          gethomepage.dev/group: "My Group"
+          gethomepage.dev/icon: "homepage.png"
           nginx.ingress.kubernetes.io/whitelist-source-range: ${PRIVATE_WHITELIST}
           cert-manager.io/cluster-issuer: letsencrypt
           external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
