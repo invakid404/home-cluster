@@ -47,6 +47,11 @@ spec:
           cert-manager.io/cluster-issuer: letsencrypt
           hajimari.io/enable: "true"
           hajimari.io/icon: subtitles-outline
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/name: Bazarr
+          gethomepage.dev/description: Subtitle downloader for Sonarr/Radarr
+          gethomepage.dev/group: Applications
+          gethomepage.dev/icon: bazarr.png
           external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
         hosts:
           - host: &bazarr-host "${APP_NAME}.lab.${BASE_DOMAIN}"
