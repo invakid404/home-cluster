@@ -42,6 +42,11 @@ spec:
           hajimari.io/enable: "true"
           hajimari.io/icon: "spotify"
           hajimari.io/appName: "your_spotify"
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/name: your_spotify
+          gethomepage.dev/description: Spotify tracking dashboard
+          gethomepage.dev/group: Applications
+          gethomepage.dev/icon: spotify.png
           external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
         hosts:
           - host: &your-spotify-client-host "spotify.lab.${BASE_DOMAIN}"
