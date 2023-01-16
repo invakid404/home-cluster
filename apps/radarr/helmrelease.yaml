@@ -63,6 +63,11 @@ spec:
           hajimari.io/enable: "true"
           hajimari.io/icon: filmstrip
           external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/name: *app
+          gethomepage.dev/description: Movie collection manager
+          gethomepage.dev/group: Applications
+          gethomepage.dev/icon: radarr.png
         hosts:
           - host: &radarr-host "${APP_NAME}.lab.${BASE_DOMAIN}"
             paths:
