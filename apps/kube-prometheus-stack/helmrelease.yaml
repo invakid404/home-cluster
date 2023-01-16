@@ -74,6 +74,11 @@ spec:
           hajimari.io/enable: "true"
           hajimari.io/icon: monitor-eye
           hajimari.io/appName: grafana
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/name: Grafana
+          gethomepage.dev/description: Analytics and interactive visualization web application
+          gethomepage.dev/group: Applications
+          gethomepage.dev/icon: grafana.png
           external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
         hosts:
           - &grafana-host grafana.lab.${BASE_DOMAIN}
