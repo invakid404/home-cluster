@@ -32,6 +32,12 @@ spec:
             expanded: true
             cpu: true
             memory: true
+      bookmarks:
+        - Infrastructure:
+            - "Synology NAS":
+                - abbr: SN
+                  href: https://nas.${BASE_DOMAIN}
+                  icon: synology.png
 
     ingress:
       main:
