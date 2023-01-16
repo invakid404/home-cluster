@@ -31,3 +31,4 @@ resources:
   - ./unpackerr.yaml
   - ./adguard.yaml
   - ./homepage.yaml
+  - ./synology-reverse-proxy.yaml
