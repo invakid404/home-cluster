@@ -66,6 +66,11 @@ spec:
           cert-manager.io/cluster-issuer: letsencrypt
           hajimari.io/enable: "true"
           hajimari.io/icon: cloud-search
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/name: Prowlarr
+          gethomepage.dev/description: Indexer manager/proxy
+          gethomepage.dev/group: Applications
+          gethomepage.dev/icon: prowlarr.png
           external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
         hosts:
           - host: &prowlarr-host "prowlarr.lab.${BASE_DOMAIN}"
