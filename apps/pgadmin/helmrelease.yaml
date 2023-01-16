@@ -48,6 +48,11 @@ spec:
                 hajimari.io/enable: "true"
                 hajimari.io/icon: database-cog
                 hajimari.io/appName: pgadmin
+                gethomepage.dev/enabled: "true"
+                gethomepage.dev/name: pgAdmin
+                gethomepage.dev/description: Administration and development platform for PostgreSQL
+                gethomepage.dev/group: Applications
+                gethomepage.dev/icon: pgadmin.png
                 external-dns.alpha.kubernetes.io/target: ${PRIVATE_IP}
         persistentVolume:
             enabled: true
@@ -58,8 +63,8 @@ sops:
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2022-12-31T13:22:21Z"
-    mac: ENC[AES256_GCM,data:8qDTo+iP6RqQ7amaxMnWXXLcFQdtlrm7cOSDj73hidjAAiglQLAYnGDkNK7r8gdCQzY5ykQxBAn0nyBNwTw5Nt9PRWKlat88rYVpTJ/4bzDZXDfbvcpks8tjzrsFfe4+g/Pn0itYZgCprczTxq7R+STEFD3MavqLTyOMsISRQ0c=,iv:a9i3cr+xdmNQ/y66DBcAfKTLo3NBzvBkUEIS6buW3as=,tag:aVHXKcPpn2Pkc/tzHgShGQ==,type:str]
+    lastmodified: "2023-01-16T23:55:15Z"
+    mac: ENC[AES256_GCM,data:GeoWnpJJ/v+N6m1xwWRm4e+qEgUP27WJN6qa507G4lrDprcnFl9tsaaKP5M6r2uBFlfzFWmI4f/ExSgIQ6UkdYRZJaDWKKt6tJavt+pZMXiXZynMjBk+zbgi4udRl4KEwXMGHzHW8H89qbRS8apO1KmTIMNNqa/+FIYWlcosS9s=,iv:88WNaLBXG/ERqR1Zp6yOxWtnBKjO277QlVI2Vg4eLfc=,tag:ox5/uMzIW2FLkqbnsmzjQQ==,type:str]
     pgp:
         - created_at: "2022-11-02T23:18:17Z"
           enc: |
