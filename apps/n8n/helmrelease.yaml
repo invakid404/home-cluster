@@ -50,6 +50,11 @@ spec:
           cert-manager.io/cluster-issuer: letsencrypt
           hajimari.io/enable: "true"
           hajimari.io/icon: "workflow"
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/name: n8n
+          gethomepage.dev/description: Easily automate tasks across different services
+          gethomepage.dev/group: Applications
+          gethomepage.dev/icon: n8n.png
           external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
         hosts:
           - host: *n8n-host
