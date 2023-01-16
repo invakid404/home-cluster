@@ -38,6 +38,7 @@ spec:
                 - abbr: SN
                   href: https://nas.${BASE_DOMAIN}
                   icon: synology.png
+      services:
 
     ingress:
       main:
