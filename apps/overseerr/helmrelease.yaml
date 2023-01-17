@@ -17,7 +17,7 @@ spec:
   values:
     image:
       repository: ghcr.io/sct/overseerr
-      tag: develop@sha256:6eed830c9ffb463bd577949f1c60a9a50d0f7e220c9c90e9d7868ab05018297d
+      tag: develop@sha256:1f0b9cdd42b05a36b569d5fed46a6568828bbd4d12d0da34f2178ca0001a2910
     dnsConfig:
       options:
         - name: ndots
