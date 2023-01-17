@@ -63,6 +63,11 @@ spec:
           cert-manager.io/cluster-issuer: letsencrypt
           hajimari.io/enable: "true"
           hajimari.io/icon: "reddit"
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/name: Libreddit
+          gethomepage.dev/description: Private front-end for Reddit
+          gethomepage.dev/group: Applications
+          gethomepage.dev/icon: libreddit.png
           external-dns.alpha.kubernetes.io/target: "${PUBLIC_IP}"
         hosts:
           - host: &libreddit-host "reddit.${BASE_DOMAIN}"
