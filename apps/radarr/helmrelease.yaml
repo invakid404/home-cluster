@@ -60,8 +60,6 @@ spec:
             sub_filter '</head>' '<link rel="stylesheet" type="text/css" href="https://theme-park.dev/css/base/radarr/${THEME}.css"></head>';
             sub_filter_once on;
           cert-manager.io/cluster-issuer: letsencrypt
-          hajimari.io/enable: "true"
-          hajimari.io/icon: filmstrip
           external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
           gethomepage.dev/enabled: "true"
           gethomepage.dev/name: *app

@@ -39,9 +39,6 @@ spec:
         annotations:
           nginx.ingress.kubernetes.io/whitelist-source-range: ${PRIVATE_WHITELIST}
           cert-manager.io/cluster-issuer: letsencrypt
-          hajimari.io/enable: "true"
-          hajimari.io/icon: "spotify"
-          hajimari.io/appName: "your_spotify"
           gethomepage.dev/enabled: "true"
           gethomepage.dev/name: your_spotify
           gethomepage.dev/description: Spotify tracking dashboard

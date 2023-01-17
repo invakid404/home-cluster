@@ -41,8 +41,6 @@ spec:
             sub_filter_once on;
           cert-manager.io/cluster-issuer: letsencrypt
           external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
-          hajimari.io/enable: "true"
-          hajimari.io/icon: eye
           gethomepage.dev/enabled: "true"
           gethomepage.dev/name: Overseerr
           gethomepage.dev/description: Request management and media discovery tool

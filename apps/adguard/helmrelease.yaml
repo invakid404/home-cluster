@@ -81,8 +81,6 @@ spec:
           gethomepage.dev/group: Applications
           gethomepage.dev/icon: adguard-home.png
           gethomepage.dev/name: AdGuard Home
-          hajimari.io/enable: "true"
-          hajimari.io/icon: "shield-check"
           external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
         hosts:
           - host: &host adguard.lab.${BASE_DOMAIN}
