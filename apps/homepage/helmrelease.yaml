@@ -26,6 +26,8 @@ spec:
     config:
       kubernetes:
         mode: cluster
+      settings:
+        theme: dark
       widgets:
         - resources:
             backend: kubernetes
