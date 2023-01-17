@@ -54,7 +54,7 @@ spec:
           cert-manager.io/cluster-issuer: letsencrypt
           external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
         hosts:
-          - host: &homepage-host "homepage.lab.${BASE_DOMAIN}"
+          - host: &homepage-host "lab.${BASE_DOMAIN}"
             paths:
               - path: /
 
