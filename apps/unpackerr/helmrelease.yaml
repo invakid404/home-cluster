@@ -23,19 +23,19 @@ spec:
 
     env:
       TZ: "${TIMEZONE}"
-      UN_SONARR_0_URL: https://sonarr.lab.invak.id
+      UN_SONARR_0_URL: https://sonarr.lab.${BASE_DOMAIN}
       UN_SONARR_0_PATHS_0: /data/nas-torrents/Downloads/Series
       UN_SONARR_0_API_KEY:
         secretKeyRef:
           name: sonarr
           key: api-key
-      UN_RADARR_0_URL: https://radarr.lab.invak.id
+      UN_RADARR_0_URL: https://radarr.lab.${BASE_DOMAIN}
       UN_RADARR_0_PATHS_0: /data/nas-torrents/Downloads/Movies
       UN_RADARR_0_API_KEY:
         secretKeyRef:
           name: radarr
           key: api-key
-      UN_RADARR_1_URL: https://radarr-4k.lab.invak.id
+      UN_RADARR_1_URL: https://radarr-4k.lab.${BASE_DOMAIN}
       UN_RADARR_1_PATHS_0: "/data/nas-torrents/Downloads/Movies (4K)"
       UN_RADARR_1_API_KEY:
         secretKeyRef:
