@@ -39,14 +39,22 @@ spec:
               username: csi
               password: ENC[AES256_GCM,data:G71tlrYlEo/rvCdfDYEWU+qkfzWvb3w=,iv:+jVCaZBmYGcYwVVSg+W9gY2yidAiJ4tGkYoHCPbyVNM=,tag:1Zp0HUDWlm0pkVlQ316WZg==,type:str]
               port: 5000
+        storageClasses:
+            delete:
+                parameters:
+                    fsType: btrfs
+            retain:
+                reclaimPolicy: ENC[AES256_GCM,data:F+o/bOP4,iv:ZobmyUE/G4LmPYfSei7OyKFeU9hBysi2ezfmlUSCtvk=,tag:kRZ5pSJb+ToJhs3HG6gEVQ==,type:str]
+                parameters:
+                    fsType: btrfs
 sops:
     kms: []
     gcp_kms: []
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2023-01-21T22:13:30Z"
-    mac: ENC[AES256_GCM,data:SM7kl7Q1O5bwnEMEm5wfisFNCCj+cm66tcwQSYnjjR1kLfJzD0Ksb/WoIeg/N5J7858nURHKJ0drBH4KGyFGIsvlY6eem2s7/BAszoqSHwLQ+RSvICudj4IcTBxpIUzYxjkdqTQ4OrSilTp/zzF0zkRN3ZupwO7LUmAhOHQlLR0=,iv:MqTQAmQpG26q7vU5INZx+nf+QLv/6Ptw+sJHQu0CWyo=,tag:bWkG32oWvOCqGf3H3oi/Mg==,type:str]
+    lastmodified: "2023-01-21T22:34:59Z"
+    mac: ENC[AES256_GCM,data:ItgPmT73+bltNVTo0Giovypog9JA+msWZKuwbEOmR1vbRfnPuYa5J3l2o5lnNz3nH+XI48X7/vS9zDByrq08io/DvzWj6Qui2AXQnmWA0Ii3t4FtKJ9OauIMssMnD1JeMD+A20wrOrOp3In9tOZld07VcTskvIUw9u1ue+fWqZA=,iv:T6dAMbzdo4idxF9Q26eF0m6OopaWaqFuCbFC9rBSIpo=,tag:TQimoplGmJhheNJl+nlBXw==,type:str]
     pgp:
         - created_at: "2023-01-21T22:13:30Z"
           enc: |
