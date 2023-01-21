@@ -35,7 +35,7 @@ spec:
                 tag: v5.0.1@sha256:89e900a160a986a1a7a4eba7f5259e510398fa87ca9b8a729e7dec59e04c7709
         connections:
             - host: ${NAS_ADDRESS}
-              https: true
+              https: false
               username: csi
               password: ENC[AES256_GCM,data:G71tlrYlEo/rvCdfDYEWU+qkfzWvb3w=,iv:+jVCaZBmYGcYwVVSg+W9gY2yidAiJ4tGkYoHCPbyVNM=,tag:1Zp0HUDWlm0pkVlQ316WZg==,type:str]
               port: 5000
@@ -53,8 +53,8 @@ sops:
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2023-01-21T22:34:59Z"
-    mac: ENC[AES256_GCM,data:ItgPmT73+bltNVTo0Giovypog9JA+msWZKuwbEOmR1vbRfnPuYa5J3l2o5lnNz3nH+XI48X7/vS9zDByrq08io/DvzWj6Qui2AXQnmWA0Ii3t4FtKJ9OauIMssMnD1JeMD+A20wrOrOp3In9tOZld07VcTskvIUw9u1ue+fWqZA=,iv:T6dAMbzdo4idxF9Q26eF0m6OopaWaqFuCbFC9rBSIpo=,tag:TQimoplGmJhheNJl+nlBXw==,type:str]
+    lastmodified: "2023-01-21T22:35:51Z"
+    mac: ENC[AES256_GCM,data:3DnNLWUQ0ut+Lc4IV7KctSBw1dMEt0Fma+UypSMisHyVPqkxQWp8elHUjFPKzxquAbhiICiNrRdFZdfUVYTb2B0dEK0A8x/e7JpbacLvCADPCOiuDqjLUoGCkC1GbDj29nC83/HGGFbCACVb1cX76fJtwbX/XK9eFOQb3n73Kl4=,iv:C00hdakwvQghm+kxywLqhR9PfRc/cnNZ+hEsQktQEY4=,tag:QXi2f86Fq9BSau/TMMDzdQ==,type:str]
     pgp:
         - created_at: "2023-01-21T22:13:30Z"
           enc: |
