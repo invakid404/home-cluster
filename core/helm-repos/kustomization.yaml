@@ -8,3 +8,4 @@ resources:
   - ./external-dns.yaml
   - ./bitnami.yaml
   - ./prometheus-community.yaml
+  - ./synology-csi-chart.yaml
