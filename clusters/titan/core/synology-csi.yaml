@@ -18,5 +18,14 @@ spec:
     provider: sops
     secretRef:
       name: sops-gpg
+  healthChecks:
+    - apiVersion: apps/v1
+      kind: StatefulSet
+      name: synology-csi-controller
+      namespace: core
+    - apiVersion: apps/v1
+      kind: DaemonSet
+      name: synology-csi-node
+      namespace: core
   dependsOn:
     - name: core-base
