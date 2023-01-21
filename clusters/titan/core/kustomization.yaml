@@ -14,3 +14,4 @@ resources:
   - ./metallb.yaml
   - ./ip-pools.yaml
   - ./crds.yaml
+  - ./synology-csi.yaml

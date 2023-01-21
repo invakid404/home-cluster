@@ -1,0 +1,72 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+    name: synology-csi
+    namespace: core
+spec:
+    interval: 10m0s
+    chart:
+        spec:
+            chart: .
+            sourceRef:
+                kind: GitRepository
+                name: synology-csi-chart
+    values:
+        images:
+            attacher:
+                image: k8s.gcr.io/sig-storage/csi-attacher
+                pullPolicy: IfNotPresent
+                tag: v3.4.0@sha256:8b9c313c05f54fb04f8d430896f5f5904b6cb157df261501b29adc04d2b2dc7b
+            nodeDriverRegistrar:
+                image: k8s.gcr.io/sig-storage/csi-node-driver-registrar
+                pullPolicy: IfNotPresent
+                tag: v2.5.0@sha256:4fd21f36075b44d1a423dfb262ad79202ce54e95f5cbc4622a6c1c38ab287ad6
+            provisioner:
+                image: k8s.gcr.io/sig-storage/csi-provisioner
+                pullPolicy: IfNotPresent
+                tag: v3.1.0@sha256:122bfb8c1edabb3c0edd63f06523e6940d958d19b3957dc7b1d6f81e9f1f6119
+            resizer:
+                image: k8s.gcr.io/sig-storage/csi-resizer
+                pullPolicy: IfNotPresent
+                tag: v1.4.0@sha256:9ebbf9f023e7b41ccee3d52afe39a89e3ddacdbb69269d583abfc25847cfd9e4
+            snapshotter:
+                image: k8s.gcr.io/sig-storage/csi-snapshotter
+                pullPolicy: IfNotPresent
+                tag: v5.0.1@sha256:89e900a160a986a1a7a4eba7f5259e510398fa87ca9b8a729e7dec59e04c7709
+        connections:
+            - host: ${NAS_ADDRESS}
+              https: true
+              username: csi
+              password: ENC[AES256_GCM,data:G71tlrYlEo/rvCdfDYEWU+qkfzWvb3w=,iv:+jVCaZBmYGcYwVVSg+W9gY2yidAiJ4tGkYoHCPbyVNM=,tag:1Zp0HUDWlm0pkVlQ316WZg==,type:str]
+              port: 5000
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-01-21T22:13:30Z"
+    mac: ENC[AES256_GCM,data:SM7kl7Q1O5bwnEMEm5wfisFNCCj+cm66tcwQSYnjjR1kLfJzD0Ksb/WoIeg/N5J7858nURHKJ0drBH4KGyFGIsvlY6eem2s7/BAszoqSHwLQ+RSvICudj4IcTBxpIUzYxjkdqTQ4OrSilTp/zzF0zkRN3ZupwO7LUmAhOHQlLR0=,iv:MqTQAmQpG26q7vU5INZx+nf+QLv/6Ptw+sJHQu0CWyo=,tag:bWkG32oWvOCqGf3H3oi/Mg==,type:str]
+    pgp:
+        - created_at: "2023-01-21T22:13:30Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA83EhJxcYAoBAQ/6A5+/bpqAe0FciPIJYmv5ZAvujmJKg8ghpC+EEX0pZprG
+            6g78MGtUYYSjQleJsrAFE6Ghbjs5RZpwvQY1ItPvYZmnYXYcY3BnZoddvZbE8t0B
+            xWZUdqsTFyvyQO0W4FRxC2mOMSh7JoBDRe7OgFrOoJECGtOS4/j6a/XSVpOFRHFv
+            Qt+FZRNp3z4iFtLIeiTfTRO8ISeAmIFG0QtJvxLY+HSqnerneGvMrRZhNMO01LaQ
+            8q/QTTGAb42Iy4xe37NAUnZvw+aojLaEqx+hJtIunZeeIMPj7rsSp+uHuDIE4Hon
+            c3aAZ5sDLh8YHurzmau3YVOSDM5h42m7AscoPK7uDI6kbNaFykMdiuvII1myjw2d
+            rNwumLTns26Kv9XG++XQr80uEFPsCVvzLnO+8TjBuqk21e/Gywx+91uJLkBMVg2D
+            uA9aze8Lq03AsRocT4rm0pgBCnabrJgJUCfDSSVbxw4GP02D31GKqM16gxf6jRbS
+            orlkZdMVuaNfzWyIyW/TH4epD7A3y9S34lPNz8SjtSP4UsIhySF5S0mQ/+4DcV6p
+            f97PrI5IhUUSX2G79Eo28dR0Hj+oWWyR9hpI9T3aoia1nx34rzjt+YmDLQwatmLV
+            CnneZMAnnV8IpitHdIEtiB3Z1dWte1JiYkA4qWzeb/eSX6/cf50FaTJH5TL5EtbS
+            XgHeWHieq1fRb4U3UHWuQ4uQG0fI7p111fBu2zL/Ccva2cZruc0cK4OObl+hd9PH
+            c0L7k3A5eoJXjMrlmF9jvoNcuPfbPbGjN423zmXUcELiGfoh9EuRDD7aa6XB87s=
+            =G5Fw
+            -----END PGP MESSAGE-----
+          fp: 05FA72D13D58F8D4588BE3FE5606FFB02A5F0984
+    encrypted_regex: ((?i)(pass($|word)|claim|secret($|[^N])|key|token|^data$|^stringData))
+    version: 3.7.3
