@@ -8,5 +8,5 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 100Gi
-  storageClassName: nfs-client
+      storage: 5Gi
+  storageClassName: synology-csi-retain
