@@ -33,6 +33,10 @@ spec:
                 image: k8s.gcr.io/sig-storage/csi-snapshotter
                 pullPolicy: IfNotPresent
                 tag: v5.0.1@sha256:89e900a160a986a1a7a4eba7f5259e510398fa87ca9b8a729e7dec59e04c7709
+            plugin:
+                image: ghcr.io/invakid404/synology-csi
+                pullPolicy: IfNotPresent
+                tag: latest@sha256:aee30267ce4ca8397669a7e950599b7ba40a38b112590624597cd45fb1ea4150
         connections:
             - host: ${NAS_ADDRESS}
               https: false
@@ -53,8 +57,8 @@ sops:
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2023-01-21T22:35:51Z"
-    mac: ENC[AES256_GCM,data:3DnNLWUQ0ut+Lc4IV7KctSBw1dMEt0Fma+UypSMisHyVPqkxQWp8elHUjFPKzxquAbhiICiNrRdFZdfUVYTb2B0dEK0A8x/e7JpbacLvCADPCOiuDqjLUoGCkC1GbDj29nC83/HGGFbCACVb1cX76fJtwbX/XK9eFOQb3n73Kl4=,iv:C00hdakwvQghm+kxywLqhR9PfRc/cnNZ+hEsQktQEY4=,tag:QXi2f86Fq9BSau/TMMDzdQ==,type:str]
+    lastmodified: "2023-01-23T13:24:09Z"
+    mac: ENC[AES256_GCM,data:SlSoei0Y+CibiDmrBkYOAyNCvLkUAiRmH2aq1B9KOjRsGz+6xcbg8rmvn2590Xfm8OfvYTL+wTKJ9a+lzFo3hn0rWjYc7xFVwoA8TNv2sVqylsn9hRM6Vv7x3CUwX05t0dT1DuuYSMZGZyN9M+F/GAw6ziT9T56AWQHtGvIRezQ=,iv:jBn/vFdpcKxiKdN2VX/kjODMxwS18WhJTWsr6h8tCI8=,tag:29gdfxyTS7BpBKr22aOC2A==,type:str]
     pgp:
         - created_at: "2023-01-21T22:13:30Z"
           enc: |
