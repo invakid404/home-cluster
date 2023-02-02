@@ -21,7 +21,7 @@ spec:
       tag: 2.0.0@sha256:0eaf5199f103efeac5707aaa2d86239d51c85089b0d19954be54a5bc20ed19cb
 
     env:
-      PORT: &port "8080"
+      PORT: &port 8080
       REDDIT_URL: "https://reddit.${BASE_DOMAIN}"
 
     service:
