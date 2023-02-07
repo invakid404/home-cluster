@@ -9,3 +9,4 @@ resources:
   - ./bitnami.yaml
   - ./prometheus-community.yaml
   - ./synology-csi-chart.yaml
+  - ./authentik.yaml
