@@ -33,6 +33,11 @@ spec:
       annotations:
         external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
         cert-manager.io/cluster-issuer: letsencrypt
+        gethomepage.dev/enabled: "true"
+        gethomepage.dev/description: High Performance Object Storage
+        gethomepage.dev/group: Administration
+        gethomepage.dev/icon: minio.png
+        gethomepage.dev/name: Minio Console
       hostname: &console-host console.minio.lab.${BASE_DOMAIN}
       tls:
         - hosts:
@@ -45,6 +50,7 @@ spec:
         nginx.ingress.kubernetes.io/proxy-body-size: "0"
         external-dns.alpha.kubernetes.io/target: "${PUBLIC_IP}"
         cert-manager.io/cluster-issuer: letsencrypt
+
       hostname: &api-host minio.lab.${BASE_DOMAIN}
       tls:
         - hosts:
