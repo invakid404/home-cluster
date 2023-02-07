@@ -46,7 +46,7 @@ spec:
             sub_filter_once on;
           cert-manager.io/cluster-issuer: letsencrypt
           gethomepage.dev/enabled: "true"
-          gethomepage.dev/name: Bazarr
+          gethomepage.dev/name: ${INSTANCE_NAME}
           gethomepage.dev/description: Subtitle downloader for Sonarr/Radarr
           gethomepage.dev/group: Media Automation
           gethomepage.dev/icon: bazarr.png
