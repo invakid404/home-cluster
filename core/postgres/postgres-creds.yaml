@@ -2,38 +2,7 @@ kind: Secret
 type: Opaque
 apiVersion: v1
 metadata:
-    name: postgres-creds
-    namespace: core
+  name: postgres-creds
+  namespace: core
 stringData:
-    postgres-password: ENC[AES256_GCM,data:E9VDtpe3x7p9t3zqJshTu/PFGVHI1gacUNlIcGqiDL0WMgWQVyfla5tDA2Je54eo3S4Ac9S8EzVtPnkC16io2w==,iv:xMJEfLwi0i8lNZWfsXN3BB9URb3tTYI4gMdwqjAhf5A=,tag:/vuk1i5bR/ZDkbg3DiTmlw==,type:str]
-sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age: []
-    lastmodified: "2022-10-09T22:53:37Z"
-    mac: ENC[AES256_GCM,data:hBImhJN2L+RXledPQJn6NJyB1MGddoSk7AZRIQ16Ze9+qFvPrphlANtSUgPVHc2A69uQcTVMNCeAXS0/F7Nyn6BJDs9TDLqcajWT6+JUZBU2v3+WqHfbsw0tee5MF/WA2P6b17aM3Gbrf1nRN8CZkUDwWU8yksZWaCXaM5ivtu8=,iv:h69mvKKeCrhdG1hbOeToKyzKDUYPqDIWXFjFnxrBEGI=,tag:qQHgzjYb15ZzxA/PtS6Rnw==,type:str]
-    pgp:
-        - created_at: "2022-10-09T21:33:09Z"
-          enc: |
-            -----BEGIN PGP MESSAGE-----
-
-            hQIMA83EhJxcYAoBAQ/9FZpR6gpmccVZw+JTY6glv3u13hMlJk/AOOCuuamgKhKf
-            Zg5ZFCUR4gFUXMkJpLFipXvew9+cnQDtkSSYoQGOobQiyeZBYM6E3LTk8xVPmjN6
-            jHktggbujRw5aVbLnTNdV3Hx41T3LtOFJzEnzIch2SEtjUp65ycDBYWR9iCXDsWq
-            3a7ewR71OziaxX7umnjd3NKEpVZgbzhNhFqQi0A75OHSlGLN3LjPYCEvRCbAT4lZ
-            vT0c4mt5ckfLe7x5EMU6yLDh1uDGRan9gnT7m0C0j38dWSwJeiJW5vnPKALY0uEJ
-            6qk82qgjLkleWtAiFyqVIk5RylYa/6IzMfoPqQldFPcHEvt/GW8Aj03S5TADZmKC
-            pXjJ3fWichmenDhiDxjktvIbWA9oc/s5jCex48tyVmVR47GFUSyqfiwupL6ZFIf1
-            hydjMmk80Y8HWwYLGByiM3Wv6k9anxLmj0EHy5k7sr2yUDqfSXiOAE6QS8QF80bh
-            fNHcgN5fV45ricPZI9KxKov1PQjB+ZdBZRoOsDo0k+bzwWA3/rsIKxqxBtN9rQ5G
-            cMHxiBIWiyC4cyGZEpO071iRuYg81Df4OuZATRkV6JbK7vMQYXHGl+jinklFwj+r
-            sR4vda8cvkh0h6gZ9hvAfWnkORgt9CLvzEmXGX2g7QYkLzNLrLkJprYukSI8odDS
-            XAGLRv0hnvA+yL+ENSDe3z9DhZu/Z+xHiQIhKnSaWx1RDWl3ORfmi85OH2De9ROb
-            +SVpsHb2F8PCp7kEgS+JBM1GIgS37iFDbpwBpugOfGcOcl2XMiba6G9MAwZQ
-            =qSBR
-            -----END PGP MESSAGE-----
-          fp: 05FA72D13D58F8D4588BE3FE5606FFB02A5F0984
-    encrypted_regex: ((?i)(pass($|word)|claim|secret($|[^N])|key|token|^data$|^stringData))
-    version: 3.7.3
+  postgres-password: ${POSTGRES_PASSWORD}
