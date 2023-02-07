@@ -17,3 +17,4 @@ resources:
   - ./synology-csi.yaml
   - ./redis.yaml
   - ./authentik.yaml
+  - ./minio.yaml
