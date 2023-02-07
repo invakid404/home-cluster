@@ -74,7 +74,7 @@ spec:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/name: Grafana
           gethomepage.dev/description: Analytics and interactive visualization web application
-          gethomepage.dev/group: Applications
+          gethomepage.dev/group: Monitoring
           gethomepage.dev/icon: grafana.png
           gethomepage.dev/pod-selector: >-
             app.kubernetes.io/name in (grafana)
