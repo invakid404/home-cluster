@@ -48,7 +48,7 @@ spec:
                 gethomepage.dev/enabled: "true"
                 gethomepage.dev/name: pgAdmin
                 gethomepage.dev/description: Administration and development platform for PostgreSQL
-                gethomepage.dev/group: Applications
+                gethomepage.dev/group: Administration
                 gethomepage.dev/icon: pgadmin.png
                 external-dns.alpha.kubernetes.io/target: ${PRIVATE_IP}
         persistentVolume:
@@ -60,8 +60,8 @@ sops:
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2023-01-16T23:55:15Z"
-    mac: ENC[AES256_GCM,data:GeoWnpJJ/v+N6m1xwWRm4e+qEgUP27WJN6qa507G4lrDprcnFl9tsaaKP5M6r2uBFlfzFWmI4f/ExSgIQ6UkdYRZJaDWKKt6tJavt+pZMXiXZynMjBk+zbgi4udRl4KEwXMGHzHW8H89qbRS8apO1KmTIMNNqa/+FIYWlcosS9s=,iv:88WNaLBXG/ERqR1Zp6yOxWtnBKjO277QlVI2Vg4eLfc=,tag:ox5/uMzIW2FLkqbnsmzjQQ==,type:str]
+    lastmodified: "2023-02-07T21:50:24Z"
+    mac: ENC[AES256_GCM,data:NP7WEw4EFR1uHg6CogM2BFCMDo68LZGMikF2cWTM2qPWPxT5ErgJ6FdrKVYlLFwxbClQuEH+RXtOcPTx0UgSuk7sby5Wx67Jeqa86O+EvHfcOj13nPsqG8K02/+xsLNJfCEXLgIs7gZkR0F6bO05uWskw8fwfADJePdlgKK0Ncw=,iv:AVzASJ9pKrv5BRIfRbu214TmXdXtnhN9RKbffjSy8AU=,tag:IXXuXy4LD7zc0y2paaGjsw==,type:str]
     pgp:
         - created_at: "2022-11-02T23:18:17Z"
           enc: |
