@@ -50,11 +50,6 @@ spec:
         enabled: true
         ingressClassName: "nginx"
         annotations:
-          gethomepage.dev/enabled: "true"
-          gethomepage.dev/name: "Homepage"
-          gethomepage.dev/description: "A modern, secure, highly customizable application dashboard."
-          gethomepage.dev/group: Applications
-          gethomepage.dev/icon: "homepage.png"
           nginx.ingress.kubernetes.io/whitelist-source-range: ${PRIVATE_WHITELIST}
           cert-manager.io/cluster-issuer: letsencrypt
           external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
