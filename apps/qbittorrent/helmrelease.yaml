@@ -107,7 +107,7 @@ spec:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/name: qBittorrent
           gethomepage.dev/description: BitTorrent client
-          gethomepage.dev/group: Applications
+          gethomepage.dev/group: Downloads
           gethomepage.dev/icon: qbittorrent.png
         hosts:
           - host: &qbittorrent-host "qbit.lab.${BASE_DOMAIN}"
