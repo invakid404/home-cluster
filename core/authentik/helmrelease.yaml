@@ -36,6 +36,11 @@ spec:
             annotations:
                 external-dns.alpha.kubernetes.io/target: ${PUBLIC_IP}
                 cert-manager.io/cluster-issuer: letsencrypt
+                gethomepage.dev/enabled: "true"
+                gethomepage.dev/description: Self-hosted Identity Provider
+                gethomepage.dev/group: Administration
+                gethomepage.dev/icon: authentik.png
+                gethomepage.dev/name: Authentik
             hosts:
                 - host: id.${BASE_DOMAIN}
                   paths:
@@ -64,8 +69,8 @@ sops:
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2023-02-07T21:00:43Z"
-    mac: ENC[AES256_GCM,data:LF+HKQdl7UIdk3Cla0IkZkMZBJdeNnkrx26/XeSQ4GH1wIM+z2uP/Vs02QygmkAWnjo8ZABaLYq4rdTCTI4zZfJOKCAJNBh8Wv3na5dC9kWJuTRqSn6xdCANz0NOor1APIr/OcC48+m6j7/RHSVen8gL/Ck5f3H0YAuJ3ydknNw=,iv:BYHcDjqtPVWN0z8Ymfe3zcxoa+htmDQzJ0tks+1OR9k=,tag:GLmz/55wOYOEsBxP/DQcmg==,type:str]
+    lastmodified: "2023-02-07T21:48:56Z"
+    mac: ENC[AES256_GCM,data:aLtMeysOoZFq/f1MRMDqEJTRd7+RXHQWO68Z83IM4+hUv+B7XmeUPOdygC87Eyv1og7DujZH/WUD7jpWZw5zcaBym+Eab91fE8QMMt9fuVDA2sjaa1k96weDf3atcO1QGMYla3Jn/zoANevZTfy2TDWwJsh5imALnB8sHTFwjSs=,iv:LEl3I25DlAlwppd/YqrTfOhtgaKLHLYr+jlu9xw/iZU=,tag:14NNxInKzimmR/HdY/Xa7A==,type:str]
     pgp:
         - created_at: "2023-02-07T20:28:58Z"
           enc: |
