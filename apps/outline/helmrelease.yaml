@@ -60,6 +60,11 @@ spec:
         annotations:
           external-dns.alpha.kubernetes.io/target: ${PRIVATE_IP}
           cert-manager.io/cluster-issuer: letsencrypt
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/description: Fast, collaborative, knowledge base
+          gethomepage.dev/group: Knowledge
+          gethomepage.dev/icon: outline.png
+          gethomepage.dev/name: Outline
 
         hosts:
           - host: &host "notes.lab.${BASE_DOMAIN}"
