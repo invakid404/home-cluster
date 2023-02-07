@@ -44,7 +44,7 @@ spec:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/name: Overseerr
           gethomepage.dev/description: Request management and media discovery tool
-          gethomepage.dev/group: Applications
+          gethomepage.dev/group: Media Automation
           gethomepage.dev/icon: overseerr.png
         hosts:
           - host: &overseerr-host "overseerr.lab.${BASE_DOMAIN}"

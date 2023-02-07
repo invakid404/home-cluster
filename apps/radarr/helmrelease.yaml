@@ -64,7 +64,7 @@ spec:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/name: ${INSTANCE_NAME}
           gethomepage.dev/description: Movie collection manager
-          gethomepage.dev/group: Applications
+          gethomepage.dev/group: Media Automation
           gethomepage.dev/icon: radarr.png
         hosts:
           - host: &radarr-host "${APP_NAME}.lab.${BASE_DOMAIN}"

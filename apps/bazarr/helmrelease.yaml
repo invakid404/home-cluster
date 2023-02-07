@@ -48,7 +48,7 @@ spec:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/name: Bazarr
           gethomepage.dev/description: Subtitle downloader for Sonarr/Radarr
-          gethomepage.dev/group: Applications
+          gethomepage.dev/group: Media Automation
           gethomepage.dev/icon: bazarr.png
           external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
         hosts:
