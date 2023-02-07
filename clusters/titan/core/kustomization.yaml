@@ -16,3 +16,4 @@ resources:
   - ./crds.yaml
   - ./synology-csi.yaml
   - ./redis.yaml
+  - ./authentik.yaml

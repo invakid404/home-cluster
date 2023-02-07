@@ -1,0 +1,91 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+    name: authentik
+    namespace: core
+spec:
+    interval: 10m0s
+    chart:
+        spec:
+            chart: authentik
+            version: 2022.12.4
+            sourceRef:
+                kind: HelmRepository
+                name: authentik
+            interval: 10m0s
+    values:
+        initContainers:
+            init-db:
+                image: ghcr.io/onedr0p/postgres-initdb:14.6@sha256:f2d6d7a172ce0c427bda01f4f68b8730b906fba96db3b34c2ec363d3693166c3
+                env:
+                    - name: POSTGRES_HOST
+                      value: postgres.core.svc.cluster.local
+                    - name: POSTGRES_SUPER_USER
+                      value: postgres
+                    - name: POSTGRES_SUPER_PASS
+                      value: ${POSTGRES_PASSWORD}
+                    - name: POSTGRES_USER
+                      value: postgres
+                    - name: POSTGRES_PASS
+                      value: ${POSTGRES_PASSWORD}
+                    - name: POSTGRES_DB
+                      value: authentik
+        ingress:
+            enabled: true
+            ingressClassName: nginx
+            annotations:
+                external-dns.alpha.kubernetes.io/target: ${PUBLIC_IP}
+                cert-manager.io/cluster-issuer: letsencrypt
+            hosts:
+                - host: id.${BASE_DOMAIN}
+                  paths:
+                    - path: /
+            tls:
+                - secretName: letsencrypt-authentik
+                  hosts:
+                    - id.${BASE_DOMAIN}
+        geoip:
+            enabled: false
+        authentik:
+            secret_key: ENC[AES256_GCM,data:dMDnQdRWYnRy5enbmn4lIhcM3TpXwzvGeARHOv7Uz5MaUbkJO3NQ3aukpxHs08bJliCn2SgwyudJSuyMOwhCzQ==,iv:2J7NaKh5iG4Ay3Znwp5NjHWp+pJdZgpDvVMGtq9epDU=,tag:UzNl8E/CVIfso+nXiZ+ANg==,type:str]
+            log_level: debug
+            outposts:
+                docker_image_base: ghcr.io/goauthentik/%(type)s:%(version)s
+            postgresql:
+                host: postgres.core.svc.cluster.local
+                name: authentik
+                user: postgres
+                password: ENC[AES256_GCM,data:b2UA62lJnYrHdYJsOJ39AulY2cg=,iv:TsZqZZhwBPooU5c5BPGcc83zbSlAO4p/LPLQsr9dEqs=,tag:q2N0RPqTYywnzWJdgdLNIQ==,type:str]
+            redis:
+                host: redis-master.core.svc.cluster.local
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-02-07T21:00:43Z"
+    mac: ENC[AES256_GCM,data:LF+HKQdl7UIdk3Cla0IkZkMZBJdeNnkrx26/XeSQ4GH1wIM+z2uP/Vs02QygmkAWnjo8ZABaLYq4rdTCTI4zZfJOKCAJNBh8Wv3na5dC9kWJuTRqSn6xdCANz0NOor1APIr/OcC48+m6j7/RHSVen8gL/Ck5f3H0YAuJ3ydknNw=,iv:BYHcDjqtPVWN0z8Ymfe3zcxoa+htmDQzJ0tks+1OR9k=,tag:GLmz/55wOYOEsBxP/DQcmg==,type:str]
+    pgp:
+        - created_at: "2023-02-07T20:28:58Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA83EhJxcYAoBARAAv7o5H0map8ZRCNDL0L7a9dhceXYgj56ujIOWTL6Oxhuq
+            zFY9SsCOFHba8IZ84J9RgYC60W4YSYQV7bFE3LVYhwOBOSJAstlqIUGX5kit6SQH
+            DHrR+L3LeGaIUhYn7DuMkOWnWh8QooJLysoH/iSFnZWdXokfgm5TntuW2H4fyEQ5
+            pXqW8hDh6bAscqfzYdNwjJA/qQsAC7m0vJ0ipBvPSdMoAfejrxnWxCuLqCdgefvb
+            PSe5RDDO0IKdpx3saxIHw2QL0793uyrCNH6DDpn1+IcGcrGV47zOxhVwjs3xyQfO
+            mYpZ4X80qDooDMjQ60CVzrzXiX/4CwGycrtxHqhOfcvXBu0d3AMwgNvaIMPE7SsT
+            XbYtIV1dbMtWuxSL1g8kvDO0oIfkY3r0ghLJQxHId1ym+50zpDsSkLa78AFk4FpU
+            S1imDz1Dg7JDMDH8ogTWeZ83BitrIVpBjXCoSbnBJeXj2CkU7Gd60k/wLHG8M/MU
+            JCU3gqlQZkzylwwlDYH/VKhJsKt6rgZHgDMdEIMdmC1+jkJoXKBc1l2dh/zqtzoR
+            qJjMnA60nKCTxpIZ38UphTrkJqydup8OAKSPdDA7SaposIkPC0JdoC/CkAHyU3x2
+            a1hkuZc6J0YL2mZza++DkqNRvNrK7k031Ee4WNwel81Ummh58SGojI3urHAKTKnS
+            XAGLUsvC/2vZNVHkL1Yh4Q5b35VvJfrSMl9vRmMjqMDvz0Xo0NAW/X6SrFfjMluy
+            dL/Q5DhJ3A1rNPN99/D6GnT/6jPYu78tCXiE6tNnsZsUezksIckD8y0757gi
+            =pt1k
+            -----END PGP MESSAGE-----
+          fp: 05FA72D13D58F8D4588BE3FE5606FFB02A5F0984
+    encrypted_regex: ((?i)(pass($|word)|claim|secret($|[^N])|key|token|^data$|^stringData))
+    version: 3.7.3
