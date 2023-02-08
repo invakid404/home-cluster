@@ -22,5 +22,8 @@
   },
   "Books": {
     "save_path": "/data/nas-torrents/Downloads/Books"
+  },
+  "Courses": {
+    "save_path": "/data/nas-torrents/Downloads/Courses"
   }
 }
