@@ -7,7 +7,7 @@ spec:
   interval: 10m0s
   chart:
     spec:
-      version: 1.2.1
+      version: 1.3.0
       chart: prometheus-snmp-exporter
       sourceRef:
         kind: HelmRepository
