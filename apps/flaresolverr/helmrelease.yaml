@@ -18,9 +18,9 @@ spec:
 
   values:
     image:
-      repository: ngosang/flaresolverr
+      repository: ghcr.io/flaresolverr/flaresolverr
       pullPolicy: IfNotPresent
-      tag: 3.0.0.beta3@sha256:889f13483f5a59ba1a60ba8432d39a7d0cd889b9a61f100caa6c808d7cd1708b
+      tag: v3.1.1@sha256:6f373a022e2eb05635318b73d5ef8ac3cb9ac4e7c5e2f2e5aef6b067735eb02f
 
     env:
       TZ: ${TIMEZONE}
