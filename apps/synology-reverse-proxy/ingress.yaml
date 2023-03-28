@@ -17,7 +17,7 @@ spec:
               service:
                 name: synology-reverse-proxy
                 port:
-                  number: 5000
+                  name: dsm
             path: /
             pathType: Prefix
   tls:

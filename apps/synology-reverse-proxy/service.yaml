@@ -4,5 +4,9 @@ metadata:
   name: synology-reverse-proxy
   namespace: apps
 spec:
-  type: ExternalName
-  externalName: ${NAS_ADDRESS}
+  clusterIP: None
+  ports:
+    - name: dsm
+      port: 5000
+      targetPort: dsm
+      protocol: TCP
