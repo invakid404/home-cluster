@@ -20,7 +20,7 @@ spec:
     image:
       repository: libreddit/libreddit
       pullPolicy: IfNotPresent
-      tag: latest@sha256:229ea29aa2ff62317cfc2996b68005d2704d4b0a2d3a0690ab649e3797e9bf1c
+      tag: latest@sha256:8b3e496bb73cc991e1335aa5aaa8928a726eda1d8c0f5f619fcb6cc01c6117f6
 
     controller:
       strategy: RollingUpdate
