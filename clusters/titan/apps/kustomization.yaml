@@ -33,3 +33,4 @@ resources:
   - ./synology-reverse-proxy.yaml
   - ./outline.yaml
   - ./actions-runner-controller.yaml
+  - ./invablog.yaml

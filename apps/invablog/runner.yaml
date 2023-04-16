@@ -1,0 +1,25 @@
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: RunnerDeployment
+metadata:
+  name: invablog-runner
+  namespace: apps
+spec:
+  template:
+    spec:
+      repository: invakid404/invablog
+      dockerMTU: 1400
+---
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: HorizontalRunnerAutoscaler
+metadata:
+  name: invablog-runner-autoscaler
+  namespace: apps
+spec:
+  scaleTargetRef:
+    name: invablog-runner
+  minReplicas: 0
+  maxReplicas: 1
+  scaleUpTriggers:
+    - githubEvent:
+        workflowJob: {}
+      duration: "30m"
