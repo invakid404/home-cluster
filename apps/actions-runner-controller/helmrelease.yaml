@@ -18,14 +18,39 @@ spec:
         authSecret:
             create: ENC[AES256_GCM,data:dLWr6w==,iv:PzjL3T9kMnF3JLCR2NC/GBEBcbw2O2OvV4F7e6UG3oI=,tag:AuBr+trAF9a0S3evWrNLnw==,type:bool]
             github_token: ENC[AES256_GCM,data:mlMNtCnz2Bq5GHepQfB44L4tsCYDR7DdzAQNoranpy/UNEvhuDjxFQ==,iv:u3dEe5RRBwPlD6/sN8acS2txkpWAMVegyB/QcOoYXEw=,tag:i9Wh5jPeuvcywgutTK5FkA==,type:str]
+        githubWebhookServer:
+            enabled: true
+            service:
+                type: ClusterIP
+                annotations: {}
+                ports:
+                    - port: 80
+                      targetPort: http
+                      protocol: TCP
+                      name: http
+            ingress:
+                enabled: true
+                ingressClassName: nginx
+                annotations:
+                    cert-manager.io/cluster-issuer: letsencrypt
+                    external-dns.alpha.kubernetes.io/target: ${PUBLIC_IP}
+                hosts:
+                    - host: arc.lab.${BASE_DOMAIN}
+                      paths:
+                        - path: /
+                          pathType: Prefix
+                tls:
+                    - hosts:
+                        - arc.lab.${BASE_DOMAIN}
+                      secretName: letsencrypt-actions-runner-controller-webhook
 sops:
     kms: []
     gcp_kms: []
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2023-04-16T19:55:55Z"
-    mac: ENC[AES256_GCM,data:71ZL9V7DippCwcMumUkFeeOvIgJ+pHm4bhNSFaZMqCRHTAdkAJGC0aVzOcohNf0N22n36tV4Sq+12baqyHNbqUZ0oRVXxEtISmFiEnmq/xDQ1FgIlJw/l/fZHjfSr01An7sBkxMj2WDbgJfovhlPrs2XLe854rWZsbYmIv7VtkU=,iv:n2kTXc9SzAPoaLjYWWONzAylywafSz9Slx1MJaxHEqE=,tag:x4XGyR8ECd0sice6q0iPmQ==,type:str]
+    lastmodified: "2023-04-16T20:05:14Z"
+    mac: ENC[AES256_GCM,data:0FDXHExeWRpY0+bKMNw5kOIofvLcJNl68RUYj957QVp/a+kjJMR8LbmeTI5IKvkFdOuJdo5wrdB0/EKy7pY53Rz9D/RhfhmW2RBkUaU1Ei2KyBNgfI8x1Ru2+qu4m62yPGEerUj9xIbtiIxEBQ4iyaVcTwy1R6toZDXQ4Fncxzw=,iv:zv8kPM6AMoWJ1UmF6ZAqqu6cBeDRQIGp8kUPCyzH+GU=,tag:5pmdAaeWxR7KHoHj/Gxt6A==,type:str]
     pgp:
         - created_at: "2023-04-16T19:55:54Z"
           enc: |
