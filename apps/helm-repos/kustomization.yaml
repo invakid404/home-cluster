@@ -5,3 +5,4 @@ resources:
   - ./grafana-charts.yaml
   - ./runix.yaml
   - ./jameswynn.yaml
+  - ./actions-runner-controller.yaml

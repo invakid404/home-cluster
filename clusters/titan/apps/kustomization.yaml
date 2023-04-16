@@ -32,3 +32,4 @@ resources:
   - ./homepage.yaml
   - ./synology-reverse-proxy.yaml
   - ./outline.yaml
+  - ./actions-runner-controller.yaml

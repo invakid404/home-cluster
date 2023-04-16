@@ -1,0 +1,51 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+    name: actions-runner-controller
+    namespace: apps
+spec:
+    interval: 10m0s
+    chart:
+        spec:
+            chart: actions-runner-controller
+            version: 0.23.1
+            interval: 10m0s
+            sourceRef:
+                kind: HelmRepository
+                name: actions-runner-controller
+                namespace: apps
+    values:
+        authSecret:
+            create: ENC[AES256_GCM,data:dLWr6w==,iv:PzjL3T9kMnF3JLCR2NC/GBEBcbw2O2OvV4F7e6UG3oI=,tag:AuBr+trAF9a0S3evWrNLnw==,type:bool]
+            github_token: ENC[AES256_GCM,data:mlMNtCnz2Bq5GHepQfB44L4tsCYDR7DdzAQNoranpy/UNEvhuDjxFQ==,iv:u3dEe5RRBwPlD6/sN8acS2txkpWAMVegyB/QcOoYXEw=,tag:i9Wh5jPeuvcywgutTK5FkA==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-04-16T19:55:55Z"
+    mac: ENC[AES256_GCM,data:71ZL9V7DippCwcMumUkFeeOvIgJ+pHm4bhNSFaZMqCRHTAdkAJGC0aVzOcohNf0N22n36tV4Sq+12baqyHNbqUZ0oRVXxEtISmFiEnmq/xDQ1FgIlJw/l/fZHjfSr01An7sBkxMj2WDbgJfovhlPrs2XLe854rWZsbYmIv7VtkU=,iv:n2kTXc9SzAPoaLjYWWONzAylywafSz9Slx1MJaxHEqE=,tag:x4XGyR8ECd0sice6q0iPmQ==,type:str]
+    pgp:
+        - created_at: "2023-04-16T19:55:54Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA83EhJxcYAoBAQ/+Naj7gcCw7v/5r9lFJnsS/1gK8vD/etSh+7dU8cD839V5
+            Av4X5LA7+kIxTXi3sJPpgWP582aSyS09YBhdEFF0Q2ztgTytblyX5azwgpBEGLw0
+            e38u99vwMs4xh19RenzdaUqGsOM/VCU29O41LB2MblTjvmXyoYNOLqJY2o4gW5E4
+            WyW1y7Meo1e1K/SGL7Zu5CvJhRsWsdMspXA5sstMbxJ1YdxeCpZu/me+n8vagb9b
+            f7lE5mio7AZ5wLUyxuW7OsEeAqwe3niGC1BJo8rTS5Uw4t8YuvjMJiUXE+yVbgLV
+            oAjBbVtORm9EWfcGfLk/AaxzXC4s3cw94kfLiszaYeRZ9Cds7HzolQ9I+igq5Fmx
+            4f5xDjP29ms1SQwyVQB+MdNeeqZFmL5+V/wIllkcbAjJopcS3ZFIZDCODs7zhXIn
+            9AX8CY8FMAhvmnZ9dPeMxblhjlTGNECr0cPBYSDyaO2yJ/+nsA5QQpjozEkc9hGX
+            VjbZ19riuoJpn7Y8OtrZaQDOaedRJEL2RmXy5aJ1E8/6Vmw0CZfwgZ22KeIDyKbl
+            /ps4jW2pc4/1faAP75TmyhEDfdh+HdfaT06HogpDKnSes7gpwCaK7LF3tuWD+hda
+            Os2VDJEk0JW7nuYZdpyncHLUPBYNu6BvZBDy3/8p51hfVdrxmVxWtFfhXPCYvC/S
+            XgHy4ZCU2ZViQ1MkPjEYQReZorjWqxCbsFbFCVW6U1ymFnspnFLRueTcMAfLWN0o
+            aBOqME38V+OURco0nGnuRqIc247AN3N3JdZrZze8sYBhHZfaT5LL7XgpskmyJ9o=
+            =4KqV
+            -----END PGP MESSAGE-----
+          fp: 05FA72D13D58F8D4588BE3FE5606FFB02A5F0984
+    encrypted_regex: ((?i)(pass($|word)|claim|secret($|[^N])|key|token|^data$|^stringData))
+    version: 3.7.3
