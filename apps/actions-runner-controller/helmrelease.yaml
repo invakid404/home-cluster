@@ -8,7 +8,7 @@ spec:
     chart:
         spec:
             chart: actions-runner-controller
-            version: 0.23.1
+            version: 0.23.0
             interval: 10m0s
             sourceRef:
                 kind: HelmRepository
@@ -49,8 +49,8 @@ sops:
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2023-04-16T20:05:14Z"
-    mac: ENC[AES256_GCM,data:0FDXHExeWRpY0+bKMNw5kOIofvLcJNl68RUYj957QVp/a+kjJMR8LbmeTI5IKvkFdOuJdo5wrdB0/EKy7pY53Rz9D/RhfhmW2RBkUaU1Ei2KyBNgfI8x1Ru2+qu4m62yPGEerUj9xIbtiIxEBQ4iyaVcTwy1R6toZDXQ4Fncxzw=,iv:zv8kPM6AMoWJ1UmF6ZAqqu6cBeDRQIGp8kUPCyzH+GU=,tag:5pmdAaeWxR7KHoHj/Gxt6A==,type:str]
+    lastmodified: "2023-04-16T20:40:30Z"
+    mac: ENC[AES256_GCM,data:dczsAyM+22BneKkifjfcJTAcqVPOBtD3C7ck7KFocjUkjjsXAPGxv53M5YNDoGM/6iS9UMVegRnsDjFNpM4KzDsn/sl9sko1ruoznZ6bRzGiv5aLC2isA4qosjbkOip2nJsONA13plYKl3ydNkgz/SaH21QjxjDmjiL4D9sEv5A=,iv:40f+6rjxGsMsL/++infO9QHqjleWNt2ZG/hRsZfYEA0=,tag:eELvhuHt0A5MGSIxJvTr+Q==,type:str]
     pgp:
         - created_at: "2023-04-16T19:55:54Z"
           enc: |
