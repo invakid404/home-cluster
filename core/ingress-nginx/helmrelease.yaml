@@ -36,7 +36,7 @@ spec:
       enabled: true
       image:
         repository: ghcr.io/tarampampam/error-pages
-        tag: 2.23.0@sha256:d4de57ee5a428808c8b19f5e050715d8fe63014a5b61b40089a8d801efe8eaef
+        tag: 2.24.0@sha256:857b38b26b8b9167c563b3b73eed93d85ecb52bec17c2d91501814aceaaadcd3
       extraEnvs:
         - name: TEMPLATE_NAME
           value: cats
