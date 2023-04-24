@@ -7,7 +7,7 @@ spec:
   interval: 10m0s
   chart:
     spec:
-      version: 45.19.0
+      version: 45.20.0
       chart: kube-prometheus-stack
       sourceRef:
         kind: HelmRepository
