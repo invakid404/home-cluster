@@ -30,7 +30,7 @@ spec:
           - -c
         args:
           - |
-            yarn db:create --env=production-ssl-disabled
+            yarn db:create --env=production-ssl-disabled || true
         envFrom:
           - secretRef:
               name: *app
