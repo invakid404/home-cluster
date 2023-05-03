@@ -18,9 +18,9 @@ spec:
 
   values:
     image:
-      repository: ghcr.io/jameswynn/homepage
+      repository: ghcr.io/benphelps/homepage
       pullPolicy: IfNotPresent
-      tag: kubernetes@sha256:aba1848045c44e13b74607d3bfcef016b1b9b5c954a46805c5937ab79c4ec918
+      tag: v0.6.17@sha256:a798c02153df67633b2ac023f5173b1761ac8e3e0cd562eb1e6d62ee4ecf73df
 
     enableRbac: true
     config:
