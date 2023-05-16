@@ -17,7 +17,7 @@ spec:
     values:
         authSecret:
             create: ENC[AES256_GCM,data:dLWr6w==,iv:PzjL3T9kMnF3JLCR2NC/GBEBcbw2O2OvV4F7e6UG3oI=,tag:AuBr+trAF9a0S3evWrNLnw==,type:bool]
-            github_token: ENC[AES256_GCM,data:mlMNtCnz2Bq5GHepQfB44L4tsCYDR7DdzAQNoranpy/UNEvhuDjxFQ==,iv:u3dEe5RRBwPlD6/sN8acS2txkpWAMVegyB/QcOoYXEw=,tag:i9Wh5jPeuvcywgutTK5FkA==,type:str]
+            github_token: ENC[AES256_GCM,data:Jw3sFy/04Pl9rPykSs85NEpy8raYZ6iZoOSiIcfm5xCvqhlEqhTSsA==,iv:w2I481e6cmpuClQf4NHPKU1u/SfdAiTbcsa5Lvg61bM=,tag:CXTLBB8yRhpAZMaHc+IoGQ==,type:str]
         githubWebhookServer:
             enabled: true
             service:
@@ -49,8 +49,8 @@ sops:
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2023-04-16T20:40:30Z"
-    mac: ENC[AES256_GCM,data:dczsAyM+22BneKkifjfcJTAcqVPOBtD3C7ck7KFocjUkjjsXAPGxv53M5YNDoGM/6iS9UMVegRnsDjFNpM4KzDsn/sl9sko1ruoznZ6bRzGiv5aLC2isA4qosjbkOip2nJsONA13plYKl3ydNkgz/SaH21QjxjDmjiL4D9sEv5A=,iv:40f+6rjxGsMsL/++infO9QHqjleWNt2ZG/hRsZfYEA0=,tag:eELvhuHt0A5MGSIxJvTr+Q==,type:str]
+    lastmodified: "2023-05-16T20:10:17Z"
+    mac: ENC[AES256_GCM,data:4Mds7mqXSC8XYUioX4bXGC3KvyndKE7B5VWOL+vR8enuH4S9fxJR1xrVFBhZ6TAPjoO+BtFl7tKhoF01BaNrWWHL06CvXitdLmKPMOs7Iksr1vzp8NOKIMzSgPaDv2tnjIf/s6dN80LpeyGYHLhiPoMiLV6AAxcJHG1iV0dEK+w=,iv:6/ZCRobEBjkF0hzCSuZVhkYHFwYpIUJvIM89EdxZeAQ=,tag:eFvu/x7On6uU9G88+W2pBQ==,type:str]
     pgp:
         - created_at: "2023-04-16T19:55:54Z"
           enc: |
