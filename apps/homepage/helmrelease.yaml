@@ -20,7 +20,7 @@ spec:
     image:
       repository: ghcr.io/benphelps/homepage
       pullPolicy: IfNotPresent
-      tag: v0.6.19@sha256:b518351e7649654f1512e03dfd2271690cb4c1776842b742e22f1c65b54f402d
+      tag: v0.6.20@sha256:c1dc64cb9c09b21b8ec36d91d7acdbaf67724c42525dfe2262e7baffcd48dae1
 
     enableRbac: true
     config:
