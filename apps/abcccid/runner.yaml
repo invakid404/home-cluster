@@ -7,6 +7,7 @@ spec:
   template:
     spec:
       repository: invakid404/abcccid
+      image: ghcr.io/invakid404/abcccid-runner
       dockerMTU: 1400
 ---
 apiVersion: actions.summerwind.dev/v1alpha1
