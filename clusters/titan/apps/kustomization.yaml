@@ -34,3 +34,4 @@ resources:
   - ./outline.yaml
   - ./actions-runner-controller.yaml
   - ./invablog.yaml
+  - ./abcccid.yaml
