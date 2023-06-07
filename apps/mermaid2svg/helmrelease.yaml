@@ -26,8 +26,11 @@ spec:
         external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
       hosts:
         - &mermaid2svg-host "mermaid2svg.lab.${BASE_DOMAIN}"
-
       tls:
         - hosts:
             - *mermaid2svg-host
           secretName: letsencrypt-mermaid2svg
+
+    serviceMonitor:
+      enabled: true
+      namespace: apps
