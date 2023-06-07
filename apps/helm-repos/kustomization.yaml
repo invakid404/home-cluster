@@ -6,3 +6,4 @@ resources:
   - ./runix.yaml
   - ./jameswynn.yaml
   - ./actions-runner-controller.yaml
+  - ./mermaid2svg.yaml

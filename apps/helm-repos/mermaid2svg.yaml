@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: mermaid2svg
+  namespace: apps
+spec:
+  interval: 10m0s
+  url: https://github.com/invakid404/mermaid2svg
+  ref:
+    branch: master

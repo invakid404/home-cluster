@@ -1,0 +1,33 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mermaid2svg
+  namespace: apps
+spec:
+  interval: 10m0s
+  chart:
+    spec:
+      chart: ./charts/mermaid2svg
+      version: 1.0.0
+      interval: 10m0s
+      sourceRef:
+        kind: GitRepository
+        name: mermaid2svg
+        namespace: apps
+
+  values:
+    ingress:
+      enabled: true
+      className: "nginx"
+      annotations:
+        nginx.ingress.kubernetes.io/whitelist-source-range: ${PRIVATE_WHITELIST}
+        cert-manager.io/cluster-issuer: letsencrypt
+        external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
+      hosts:
+        - &mermaid2svg-host "mermaid2svg.lab.${BASE_DOMAIN}"
+
+      tls:
+        - hosts:
+            - *mermaid2svg-host
+          secretName: letsencrypt-mermaid2svg
