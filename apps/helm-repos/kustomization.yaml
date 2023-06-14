@@ -7,3 +7,4 @@ resources:
   - ./jameswynn.yaml
   - ./actions-runner-controller.yaml
   - ./mermaid2svg.yaml
+  - ./windmill.yaml

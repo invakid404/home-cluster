@@ -36,3 +36,4 @@ resources:
   - ./invablog.yaml
   - ./abcccid.yaml
   - ./mermaid2svg.yaml
+  - ./windmill.yaml

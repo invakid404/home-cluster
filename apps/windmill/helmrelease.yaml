@@ -1,0 +1,68 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: &app windmill
+  namespace: apps
+spec:
+  interval: 10m0s
+  chart:
+    spec:
+      chart: windmill
+      version: 1.6.14
+      interval: 10m0s
+      sourceRef:
+        kind: HelmRepository
+        name: windmill
+        namespace: apps
+
+  values:
+    windmill:
+      baseDomain: &windmill-domain windmill.lab.${BASE_DOMAIN}
+      databaseUrl: postgres://postgres:${POSTGRES_PASSWORD}@postgres.core.svc.cluster.local/windmill?sslmode=disable
+      appReplicas: 1
+      workerReplicas: 1
+      lspReplicas: 1
+      workerGroups: []
+
+    postgresql:
+      enabled: false
+
+    minio:
+      enabled: false
+
+    ingress:
+      enabled: true
+      className: nginx
+      tls:
+        - hosts:
+            - *windmill-domain
+          secretName: letsencrypt-windmill
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt
+
+  postRenderers:
+    - kustomize:
+        patchesStrategicMerge:
+          - kind: Deployment
+            apiVersion: apps/v1
+            metadata:
+              name: windmill-app
+            spec:
+              template:
+                spec:
+                  initContainers:
+                    - name: init-db
+                      image: ghcr.io/onedr0p/postgres-init:14.8@sha256:d8391076d2c6449927a6409c4e72aaa5607c95be51969036f4feeb7c999638ea
+                      env:
+                        - name: INIT_POSTGRES_HOST
+                          value: postgres.core.svc.cluster.local
+                        - name: INIT_POSTGRES_SUPER_USER
+                          value: postgres
+                        - name: INIT_POSTGRES_SUPER_PASS
+                          value: ${POSTGRES_PASSWORD}
+                        - name: INIT_POSTGRES_USER
+                          value: postgres
+                        - name: INIT_POSTGRES_PASS
+                          value: ${POSTGRES_PASSWORD}
+                        - name: INIT_POSTGRES_DBNAME
+                          value: *app
