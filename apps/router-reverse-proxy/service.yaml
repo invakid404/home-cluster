@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: router-reverse-proxy
+  namespace: apps
+spec:
+  clusterIP: None
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP

@@ -1,0 +1,12 @@
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: router-reverse-proxy
+  namespace: apps
+subsets:
+  - addresses:
+      - ip: ${ROUTER_IP}
+    ports:
+      - name: http
+        port: 80
+        protocol: TCP
