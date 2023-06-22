@@ -12,7 +12,7 @@ spec:
     solvers:
       - dns01:
           cloudflare:
-            email: invakid404@riseup.net
+            email: ${CLOUDFLARE_EMAIL}
             apiKeySecretRef:
               name: cloudflare-api-key-secret
               key: api-key

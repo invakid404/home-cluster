@@ -6,15 +6,15 @@ metadata:
 type: Opaque
 stringData:
     CF_API_KEY: ENC[AES256_GCM,data:niT9Ne7ZKjiWJJripL5HN+/RC56TN4OwlpzQigk5o9cTfH43lg==,iv:QE9iJPTnvpiquAsADQFbi5TQK61pTmtrgsfupavyG50=,tag:F6LgLRJoNHp9Tn3hxvxl1g==,type:str]
-    CF_API_EMAIL: ENC[AES256_GCM,data:LXegBNJJvBUXz+kcfVRfXfW7bA90,iv:QcpiPb/gdIERfmGd6r5Ei1n3aIwEDVyI+PDzQ7Mk5pw=,tag:9rSJ42IHzH3WTZj5R6r+qQ==,type:str]
+    CF_API_EMAIL: ENC[AES256_GCM,data:yfHoq/SzsNL9NhLc3iBhggPWZw==,iv:raFJEZZqt/TdE5ZRlTYru09+/SM8NC4fie++9BJfrBU=,tag:qpjQJBugl03OCffhJO6YYQ==,type:str]
 sops:
     kms: []
     gcp_kms: []
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2022-09-28T20:42:32Z"
-    mac: ENC[AES256_GCM,data:LQr5LJdKCEneXqzEHVcGjmVcA6HwfvwW9Ds2mbFzg0nGJajpkPxwxg7do9NPKEmL/ZPDjgi9R1ZAEbwyloi8C6pByz7JNKmZGUWj51HBfdZn01nSb6EbUC0QIJrq1NEIBsxgIRRHr80Fej1JhzZy1xb0Kr/iAG2zNn7bgOLpysI=,iv:ymURCVpQsqZyDEQiOd60Q0JCw8/vXvrSwgb/5UkR7zc=,tag:fCoBSFTiCJ/OJZfkSFT8Pw==,type:str]
+    lastmodified: "2023-06-22T09:26:27Z"
+    mac: ENC[AES256_GCM,data:ZhCiULxSTTjVK3Djb0/ckxo+0fPTWwSDvDOdML58hIhA2z/AxAWyj1PXCA4FOBv57Um+o46Vo6lHgbTDaKEf01A74JB5mgLoLdFLnQuzJQgMdOEwaJLUUw41nMkfT7iFZkxdGzQk2kmug4MEnP3fkk1YJ2bE3XSKoo3qOaJWY40=,iv:9fwtfTdumZ2q0QVXnGx/lVCYNDLBaOaF2PnpQwoKO50=,tag:sp4F9eAuYOQEvaZas51qSg==,type:str]
     pgp:
         - created_at: "2022-09-28T20:42:26Z"
           enc: |
