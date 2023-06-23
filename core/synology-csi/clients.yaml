@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: client-info-secret
+    namespace: core
+type: Opaque
+stringData:
+    client-info.yml: ENC[AES256_GCM,data:bqyApb47hXLy22FUQHKpwdolPBRXsMlpegqYyH+SfUM5GbXZdHBBZ4Jo7WeFBQTfuUr9lWTGsP9CAbT14LrEiYnlkwVjIyZNbkMO5l2SmgTU2g2zFBIJzXkiuDCKpMZOciFgv2QhiTZkaNZ6UiWTcrBdaVhMnFU2SB0=,iv:4oktP2rrS6RJ4TwPH93nZ5MpC9tAKxdX97xg7N6mFbQ=,tag:5iXDmU72oXs2SGxwSdrwfg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-06-23T14:17:07Z"
+    mac: ENC[AES256_GCM,data:hExsMcOyi4Cq1ahipXCxErCCdKJmj7X8/k1RL4HejgkqbnUEdurJcgzAsOA/scj1C/fi73YGZ0wXm5vdXC6ZjoYPzqmTrrzNKW9nFhuAI4DXS/51456AMEtcZswK/LJp6q3hgjcUDFN/NmV3RPuagfkyaKjDcgUyMOjNtxRnJP0=,iv:vrt4M4EiuPcgq+xPTzDQRnuw6E2KFz1QdlLycD1qQkY=,tag:Sfh9Ajox27X4xrZRY5+znQ==,type:str]
+    pgp:
+        - created_at: "2023-06-23T14:05:45Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA83EhJxcYAoBAQ/+I8l3QQbve/SjS+r+wJdejr2C40cpIGlLo8DqDRIEHoaa
+            hZaDz3m7ivYL0zTdtTN/iwMTW/BHzFWKcKnr33i6BgA5qQGNXfqzhjhOLZ+VQM8I
+            2qzICb0QQJj1pbzSUR+bVTLMIBTHg8SUAIH0BkT7sfSQ35cMhRKtLrXbSIGYsB81
+            mWU/G8gNXIxC9zVnL8yfDd2iVhYu/e4JZdQhhjHL0oh0VJ4n+JhY4S/uBzgHJB0E
+            Gr7l1g9gF0o3m4xRGI3IrEdvKiYy74kWF5SofUcwsrgl3xBivIsWeeawwW7YWSk6
+            vsQUO5ZvNfft2p1l04KZTjKiRTpnQI2I67TiHgDNXL4k0hYXmHMDbnaJyN+nXCOF
+            ENQnDmM4s8h2uOoS9dQq08ICCdSQA16myFUTrNQPUaphMcVRtic+etIZwuSXHXXv
+            9xiJRV7g+TLwHI9gnugyKHNZfZ4A8+E/n2TJFBLV2x8F6QJBT0NXLD8ihYoNdVX7
+            AUBvaJAxGc4RkFTekk9nIUtRgVdOhfLFDFByi+Lv9ypBe4ozudXsDh/utWzVrbzR
+            eJIz2W2eK/Dk1DquwLFfkTSL0jCDY1RU5zd0bA30ROTwcrj7WeQKXjG//0muNUt0
+            shd4FbNlc3pMfmAc/rq6o2lp6EP7sgJN8u48ZTFKK1yGEu2HTJbClxKuZuhBlKXS
+            XAG6KhziUqSz01JdkG7Y1LPL5nA5w1mC/j/DMe7YTf5w1mI9Ok5WBerpweqVnY5O
+            GFHKFkjwVg+jNy9Arzu2PqWBINj0sGUcxbYk1Lq9FpnIuO2Bhr4zGgvEoMJa
+            =G0Dh
+            -----END PGP MESSAGE-----
+          fp: 05FA72D13D58F8D4588BE3FE5606FFB02A5F0984
+    encrypted_regex: ((?i)(pass($|word)|claim|secret($|[^N])|key|token|^data$|^stringData))
+    version: 3.7.3
