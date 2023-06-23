@@ -3,6 +3,12 @@ sonarr:
     base_url: ${SONARR_BASE_URL}
     api_key: ${SONARR_API_KEY}
     delete_old_custom_formats: true
+    replace_existing_custom_formats: true
+    quality_profiles:
+      - name: Any
+        reset_unmatched_scores: true
+      - name: HD
+        reset_unmatched_scores: true
     custom_formats:
       - trash_ids:
           - d660701077794679fd59e8bdf4ce3a29
@@ -45,9 +51,7 @@ sonarr:
           - 06d66ab109d4d2eddb2794d21526d140
         quality_profiles:
           - name: Any
-            reset_unmatched_scores: true
           - name: HD
-            reset_unmatched_scores: true
       - trash_ids:
           - 3bc5f395426614e155e585a2f056cdf1
         quality_profiles:
@@ -60,9 +64,13 @@ radarr:
     base_url: ${RADARR_BASE_URL}
     api_key: ${RADARR_API_KEY}
     delete_old_custom_formats: true
+    replace_existing_custom_formats: true
     quality_definition:
       type: movie
       preferred_ratio: 0.5
+    quality_profiles:
+      - name: Default
+        reset_unmatched_scores: true
     custom_formats:
       - trash_ids:
           - ff5bc9e8ce91d46c997ca3ac6994d6f8
@@ -119,7 +127,6 @@ radarr:
           - dc98083864ea246d05a42df0d05f81cc
         quality_profiles:
           - name: Default
-            reset_unmatched_scores: true
       - trash_ids:
           - 1c7d7b04b15cc53ea61204bebbcc1ee2
         quality_profiles:
@@ -135,9 +142,13 @@ radarr:
     base_url: ${RADARR_4K_BASE_URL}
     api_key: ${RADARR_API_KEY}
     delete_old_custom_formats: true
+    replace_existing_custom_formats: true
     quality_definition:
       type: movie
       preferred_ratio: 0.5
+    quality_profiles:
+      - name: Default
+        reset_unmatched_scores: true
     custom_formats:
       - trash_ids:
           - ff5bc9e8ce91d46c997ca3ac6994d6f8
@@ -194,7 +205,6 @@ radarr:
           - dc98083864ea246d05a42df0d05f81cc
         quality_profiles:
           - name: Default
-            reset_unmatched_scores: true
       - trash_ids:
           - 1c7d7b04b15cc53ea61204bebbcc1ee2
         quality_profiles:
