@@ -44,6 +44,7 @@ spec:
         gethomepage.dev/description: "Developer platform to turn scripts into workflows and UIs"
         gethomepage.dev/group: Applications
         gethomepage.dev/icon: webhook.png
+        gethomepage.dev/href: "https://windmill.lab.${BASE_DOMAIN}/"
         external-dns.alpha.kubernetes.io/target: "${PUBLIC_IP}"
 
   postRenderers:
