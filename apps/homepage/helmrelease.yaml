@@ -39,7 +39,7 @@ spec:
             - "Synology NAS":
                 - abbr: SN
                   href: https://nas.${BASE_DOMAIN}
-                  icon: synology.png
+                  icon: synology-dsm.png
             - "Synology Drive":
                 - abbr: SD
                   href: https://nas.${BASE_DOMAIN}/?launchApp=SYNO.SDS.Drive.Application
