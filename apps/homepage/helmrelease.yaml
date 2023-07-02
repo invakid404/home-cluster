@@ -40,6 +40,10 @@ spec:
                 - abbr: SN
                   href: https://nas.${BASE_DOMAIN}
                   icon: synology.png
+            - "Synology Drive":
+                - abbr: SD
+                  href: https://nas.${BASE_DOMAIN}/?launchApp=SYNO.SDS.Drive.Application
+                  icon: synology-drive.png
       services:
 
     podAnnotations:
