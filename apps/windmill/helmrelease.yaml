@@ -45,6 +45,12 @@ spec:
         gethomepage.dev/group: Applications
         gethomepage.dev/icon: webhook.png
         gethomepage.dev/href: "https://windmill.lab.${BASE_DOMAIN}/"
+        gethomepage.dev/pod-selector: >-
+          app in (
+            windmill-app,
+            windmill-workers,
+            windmill-lsp
+          )
         external-dns.alpha.kubernetes.io/target: "${PUBLIC_IP}"
 
   postRenderers:
