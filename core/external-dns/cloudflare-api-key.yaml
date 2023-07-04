@@ -5,7 +5,7 @@ metadata:
     namespace: core
 type: Opaque
 stringData:
-    CF_API_KEY: ENC[AES256_GCM,data:niT9Ne7ZKjiWJJripL5HN+/RC56TN4OwlpzQigk5o9cTfH43lg==,iv:QE9iJPTnvpiquAsADQFbi5TQK61pTmtrgsfupavyG50=,tag:F6LgLRJoNHp9Tn3hxvxl1g==,type:str]
+    CF_API_KEY: ENC[AES256_GCM,data:xGMQFBfnBth4ASdWKnWoO38=,iv:ACVj5QEBKYxanx/6nCi3SllkbF3M8u9uv8/Fntq0r5I=,tag:bTu8rOm+S7ElYA7wiXnyrg==,type:str]
     CF_API_EMAIL: ENC[AES256_GCM,data:yfHoq/SzsNL9NhLc3iBhggPWZw==,iv:raFJEZZqt/TdE5ZRlTYru09+/SM8NC4fie++9BJfrBU=,tag:qpjQJBugl03OCffhJO6YYQ==,type:str]
 sops:
     kms: []
@@ -13,8 +13,8 @@ sops:
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2023-06-22T09:26:27Z"
-    mac: ENC[AES256_GCM,data:ZhCiULxSTTjVK3Djb0/ckxo+0fPTWwSDvDOdML58hIhA2z/AxAWyj1PXCA4FOBv57Um+o46Vo6lHgbTDaKEf01A74JB5mgLoLdFLnQuzJQgMdOEwaJLUUw41nMkfT7iFZkxdGzQk2kmug4MEnP3fkk1YJ2bE3XSKoo3qOaJWY40=,iv:9fwtfTdumZ2q0QVXnGx/lVCYNDLBaOaF2PnpQwoKO50=,tag:sp4F9eAuYOQEvaZas51qSg==,type:str]
+    lastmodified: "2023-07-04T12:43:03Z"
+    mac: ENC[AES256_GCM,data:+BiZ57IC3V6TpI88ZtF3I6DxkIMnb8OisV8nC1PgCs7wD/xgjxp8q2uQAiC6VxrsM0ludIBcsGhrnQt7uWeIPJstntVEoHrJH0ZT80vjRKeFrvvit4WKvXGoCPVQA3amhD/nSJRs4ncg2px9vp+UIAZkJX08La75e0ZazXToA+0=,iv:5HzajTqS+rtQCfE/2bxTrPzMrkDxFv8ysVlgf0GYIUI=,tag:M5E81EazyE3Q53LmdN9IVQ==,type:str]
     pgp:
         - created_at: "2022-09-28T20:42:26Z"
           enc: |

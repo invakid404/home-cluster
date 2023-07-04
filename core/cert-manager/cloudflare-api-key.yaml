@@ -5,15 +5,15 @@ metadata:
     namespace: core
 type: Opaque
 stringData:
-    api-key: ENC[AES256_GCM,data:FIrKxy/39GKF9DwBNB+1E2JPppXdhz1ZQubNO0S499zVYuEjzw==,iv:omyfXFADYJ1wR9CBeJxhLZqb4l+JkVxNMFSJlJLNW7Q=,tag:FTS2KaU12Z1G/p/zkbg3Zg==,type:str]
+    api-key: ENC[AES256_GCM,data:8p/kxiLxei72ZtoIkzAuLeA=,iv:/NGfA9iPHplhanR0r8A0pki5arvJTjPKyONoDUkNEE4=,tag:YwJYZhHLWpGTqUghzEwebg==,type:str]
 sops:
     kms: []
     gcp_kms: []
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2022-09-18T14:26:43Z"
-    mac: ENC[AES256_GCM,data:ecR5Ox1meGEmXEH3BWWm1GzCa37RZRp2GCdhfqDf2Rztwe/NDoVL/daIv4qS4C5Lkpz2vjvV/fV6/1Vi1NFCE2xcJPjEhqGNy+uhL2WmyYd+s4ifmQ7cEdpsRTNH99ed9m8AGoMlmSdM4nSLSFxmY+f03WC7Lk54GzOuDTFWYpA=,iv:viCIuE+69rPD8ogIAEGEHCE/zAKAauLOGdEP59aRang=,tag:BeRc8TSbVr2iwY6c9C2uNA==,type:str]
+    lastmodified: "2023-07-04T12:42:46Z"
+    mac: ENC[AES256_GCM,data:zFrnsHJKqpFPQhJ6mI9zLADf6oDQkQCcOc+h+pia0/WesHaKZxGyLZkI5QqTYmQYWRufkiNPaSBlxY3qK5mWVyWK16bDqi6aCigwDn8a3gvzjLVUULOa1sqluJZWKVNCDDmfCxK/GtJU0+nxPEulJfRPyy+cYuG763uWQP7bRpc=,iv:mMk7rYGw8FsFj7/GOAqJl56ih0eqFAkxVkGt+ytlChE=,tag:2B9REGwh3mNxiNjg3iMkVA==,type:str]
     pgp:
         - created_at: "2022-09-18T14:21:04Z"
           enc: |
