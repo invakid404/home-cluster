@@ -1,0 +1,78 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: noip
+  namespace: apps
+spec:
+  schedule: "0 * * * *"
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: noip
+              image: debian:latest
+              command: ["bash"]
+              args:
+                - "-c"
+                - |
+                  apt update
+                  apt install -y jq curl
+
+                  function cloudflare_api() {
+                    curl --silent \
+                      --header 'Content-Type: application/json' \
+                      --header "X-Auth-Key: $${AUTH_KEY}" \
+                      --header "X-Auth-Email: $${AUTH_EMAIL}" \
+                      "$$@"
+                  }
+
+                  ZONE=$$(cloudflare_api --url "https://api.cloudflare.com/client/v4/zones" | jq ".result[] | select(.name == "'"'"$${ZONE_DOMAIN}"'"'")")
+                  if [[ "$${ZONE}" == "" ]]; then
+                    echo >&2 "zone $${ZONE_DOMAIN} not found"
+                    exit 1
+                  fi
+
+                  ZONE_ID=$$(echo "$${ZONE}" | jq -r ".id")
+
+                  IP=$$(curl --silent https://ifconfig.me)
+                  echo "resolved public IP: $${IP}"
+
+                  ARGS=(
+                    --data '{
+                      "content": "'"$${IP}"'",
+                      "name": "'"$${TARGET}"'",
+                      "proxied": false,
+                      "type": "A"
+                    }'
+                  )
+
+                  EXISTING_RECORDS=$$(cloudflare_api --url "https://api.cloudflare.com/client/v4/zones/$${ZONE_ID}/dns_records?search=$${TARGET}")
+                  EXISTING_RECORD=$$(echo "$${EXISTING_RECORDS}" | jq ".result[] | select(.name == "'"'"$${TARGET}"'"'")")
+
+                  if [[ "$${EXISTING_RECORD}" == "" ]]; then
+                    ARGS+=(
+                      --url "https://api.cloudflare.com/client/v4/zones/$${ZONE_ID}/dns_records"
+                      --request POST
+                    )
+                  else
+                    EXISTING_ID=$$(echo "$${EXISTING_RECORD}" | jq -r ".id")
+
+                    ARGS+=(
+                      --url "https://api.cloudflare.com/client/v4/zones/$${ZONE_ID}/dns_records/$${EXISTING_ID}"
+                      --request PUT
+                    )
+                  fi
+
+                  cloudflare_api "$${ARGS[@]}"
+              env:
+                - name: ZONE_DOMAIN
+                  value: "${BASE_DOMAIN}"
+                - name: AUTH_KEY
+                  value: "${CLOUDFLARE_KEY}"
+                - name: AUTH_EMAIL
+                  value: "${CLOUDFLARE_EMAIL}"
+                - name: TARGET
+                  value: "home.${BASE_DOMAIN}"
+          restartPolicy: Never
