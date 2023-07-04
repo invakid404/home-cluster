@@ -74,5 +74,5 @@ spec:
                 - name: AUTH_EMAIL
                   value: "${CLOUDFLARE_EMAIL}"
                 - name: TARGET
-                  value: "home.${BASE_DOMAIN}"
+                  value: "${PUBLIC_IP}"
           restartPolicy: Never

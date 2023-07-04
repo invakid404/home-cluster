@@ -9,7 +9,7 @@ data:
   BASE_DOMAIN: invak.id
   NAS_HOSTNAME: nas
   NAS_ADDRESS: 192.168.50.86
-  PUBLIC_IP: invakid404.asuscomm.com
+  PUBLIC_IP: home.invak.id
   PRIVATE_IP: 192.168.50.128
   PRIVATE_WHITELIST: 100.64.0.0/10,10.42.0.0/16
   SQUASH_UID: "1024"
