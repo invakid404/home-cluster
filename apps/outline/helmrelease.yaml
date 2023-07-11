@@ -20,11 +20,11 @@ spec:
     image:
       repository: outlinewiki/outline
       pullPolicy: IfNotPresent
-      tag: 0.70.1@sha256:d19cf3dd42ee02e1bba1d5d433beba014cca3759866c9cecfdd7ee11dd719ceb
+      tag: 0.70.2@sha256:7386e2d45aef267c35ee3c1f7e44abd62825bf7b41f2019d995797b2f5267f45
 
     initContainers:
       init-db:
-        image: outlinewiki/outline:0.70.1@sha256:d19cf3dd42ee02e1bba1d5d433beba014cca3759866c9cecfdd7ee11dd719ceb
+        image: outlinewiki/outline:0.70.2@sha256:7386e2d45aef267c35ee3c1f7e44abd62825bf7b41f2019d995797b2f5267f45
         command:
           - "/bin/sh"
           - -c
