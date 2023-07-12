@@ -13,10 +13,10 @@ spec:
         name: synology-csi-chart
   values:
     storageClasses:
-      delete:
+      synology-csi-delete:
         parameters:
           fsType: btrfs
-      retain:
+      synology-csi-retain:
         reclaimPolicy: Retain
         parameters:
           fsType: btrfs
