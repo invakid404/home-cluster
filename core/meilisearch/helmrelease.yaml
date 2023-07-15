@@ -1,0 +1,35 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: meilisearch
+  namespace: core
+spec:
+  interval: 10m0s
+  chart:
+    spec:
+      chart: meilisearch
+      version: "0.2.2"
+      sourceRef:
+        kind: HelmRepository
+        name: meilisearch
+  values:
+    auth:
+      existingMasterKeySecret: meili-master-key
+    environment:
+      MEILI_ENV: "production"
+      MEILI_NO_ANALYTICS: "true"
+    persistence:
+      existingClaim: meilisearch-data
+    ingress:
+      enabled: true
+      className: "nginx"
+      annotations:
+        nginx.ingress.kubernetes.io/whitelist-source-range: ${PRIVATE_WHITELIST}
+        cert-manager.io/cluster-issuer: letsencrypt
+        external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
+      hosts:
+        - &meili-host "meili.lab.${BASE_DOMAIN}"
+      tls:
+        - hosts:
+            - *meili-host
+          secretName: letsencrypt-meilisearch

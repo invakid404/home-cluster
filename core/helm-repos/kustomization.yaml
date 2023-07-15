@@ -10,3 +10,4 @@ resources:
   - ./prometheus-community.yaml
   - ./synology-csi-chart.yaml
   - ./authentik.yaml
+  - ./meilisearch.yaml

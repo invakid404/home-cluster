@@ -1,0 +1,8 @@
+kind: Secret
+type: Opaque
+apiVersion: v1
+metadata:
+  name: meili-master-key
+  namespace: core
+stringData:
+  MEILI_MASTER_KEY: ${MEILI_MASTER_KEY}
