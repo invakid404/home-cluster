@@ -20,7 +20,7 @@ spec:
     image:
       repository: ghcr.io/invakid404/package-central
       pullPolicy: IfNotPresent
-      tag: latest@sha256:5aa01e1e549cbc0e53dae184a6c23a7278c54aeaf2d83ab6cd315fecfffc1ecb
+      tag: latest@sha256:2b9a6650ae6bf5d313e1b3769bed76a60f108dce0a1b7e415f5332c09e2e381a
 
     imagePullSecrets:
       - name: docker-config
