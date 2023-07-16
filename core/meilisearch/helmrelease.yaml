@@ -24,9 +24,8 @@ spec:
       enabled: true
       className: "nginx"
       annotations:
-        nginx.ingress.kubernetes.io/whitelist-source-range: ${PRIVATE_WHITELIST}
         cert-manager.io/cluster-issuer: letsencrypt
-        external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
+        external-dns.alpha.kubernetes.io/target: "${PUBLIC_IP}"
       hosts:
         - &meili-host "meili.lab.${BASE_DOMAIN}"
       tls:
