@@ -23,6 +23,7 @@ spec:
   values:
     interval: 2m
     provider: cloudflare
+    policy: sync
     env:
       - name: CF_API_EMAIL
         valueFrom:
