@@ -66,7 +66,8 @@ spec:
           gethomepage.dev/description: Private front-end for Reddit
           gethomepage.dev/group: Applications
           gethomepage.dev/icon: libreddit.png
-          external-dns.alpha.kubernetes.io/target: "${PUBLIC_IP}"
+          external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
+          nginx.ingress.kubernetes.io/whitelist-source-range: ${PRIVATE_WHITELIST}
         hosts:
           - host: &libreddit-host "reddit.${BASE_DOMAIN}"
             paths:
