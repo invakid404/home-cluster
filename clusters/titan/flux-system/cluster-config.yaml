@@ -30,3 +30,9 @@ data:
 
   PROWLARR_MAIN_DB: prowlarr-main
   PROWLARR_LOG_DB: prowlarr-log
+
+  NGINX_ROBOTS_DISABLE_CRAWLING: |
+    location = /robots.txt {
+      add_header Content-Type text/plain;
+      return 200 "User-agent: *\nDisallow: /\n";
+    }
