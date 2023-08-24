@@ -68,6 +68,12 @@ spec:
           gethomepage.dev/icon: libreddit.png
           external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
           nginx.ingress.kubernetes.io/whitelist-source-range: ${PRIVATE_WHITELIST}
+          nginx.ingress.kubernetes.io/server-snippet: |
+            location = /robots.txt {
+              add_header Content-Type text/plain;
+              return 200 "User-agent: *\nDisallow: /\n";
+            }
+
         hosts:
           - host: &libreddit-host "reddit.${BASE_DOMAIN}"
             paths:
