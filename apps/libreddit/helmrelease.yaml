@@ -66,8 +66,7 @@ spec:
           gethomepage.dev/description: Private front-end for Reddit
           gethomepage.dev/group: Applications
           gethomepage.dev/icon: libreddit.png
-          external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
-          nginx.ingress.kubernetes.io/whitelist-source-range: ${PRIVATE_WHITELIST}
+          external-dns.alpha.kubernetes.io/target: "${PUBLIC_IP}"
           nginx.ingress.kubernetes.io/server-snippet: |
             location = /robots.txt {
               add_header Content-Type text/plain;
