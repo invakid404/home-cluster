@@ -30,6 +30,9 @@ spec:
       initdb:
         user: postgres
         scripts:
+          sonarr.sql: |
+            CREATE DATABASE "${SONARR_MAIN_DB}" OWNER postgres;
+            CREATE DATABASE "${SONARR_LOG_DB}" OWNER postgres;
           radarr.sql: |
             CREATE DATABASE "${RADARR_MAIN_DB}" OWNER postgres;
             CREATE DATABASE "${RADARR_LOG_DB}" OWNER postgres;

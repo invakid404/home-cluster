@@ -22,6 +22,9 @@ data:
 
   TORRENTS_VOLUME: "/volume1/Torrents"
 
+  SONARR_MAIN_DB: sonarr-main
+  SONARR_LOG_DB: sonarr-log
+
   RADARR_MAIN_DB: radarr-main
   RADARR_LOG_DB: radarr-log
 
