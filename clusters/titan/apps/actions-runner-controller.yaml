@@ -9,6 +9,7 @@ spec:
     kind: GitRepository
     name: flux-system
   path: ./apps/actions-runner-controller
+  wait: true
   prune: true
   postBuild:
     substituteFrom:

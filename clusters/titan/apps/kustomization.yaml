@@ -33,8 +33,7 @@ resources:
   - ./synology-reverse-proxy.yaml
   - ./outline.yaml
   - ./actions-runner-controller.yaml
-  - ./invablog.yaml
-  - ./abcccid.yaml
+  - ./actions-runner-controller-runners.yaml
   - ./mermaid2svg.yaml
   - ./windmill.yaml
   - ./router-reverse-proxy.yaml
