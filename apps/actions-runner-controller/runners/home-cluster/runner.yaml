@@ -1,0 +1,25 @@
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: RunnerDeployment
+metadata:
+  name: home-cluster-runner
+  namespace: apps
+spec:
+  template:
+    spec:
+      repository: invakid404/home-cluster
+      dockerMTU: 1400
+---
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: HorizontalRunnerAutoscaler
+metadata:
+  name: home-cluster-runner-autoscaler
+  namespace: apps
+spec:
+  scaleTargetRef:
+    name: home-cluster-runner
+  minReplicas: 0
+  maxReplicas: 3
+  scaleUpTriggers:
+    - githubEvent:
+        workflowJob: {}
+      duration: "30m"
