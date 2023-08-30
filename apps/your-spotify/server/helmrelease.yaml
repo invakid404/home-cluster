@@ -48,10 +48,9 @@ spec:
         enabled: true
         ingressClassName: "nginx"
         annotations:
-          nginx.ingress.kubernetes.io/whitelist-source-range: ${PRIVATE_WHITELIST}
           nginx.ingress.kubernetes.io/proxy-body-size: 256m
           cert-manager.io/cluster-issuer: letsencrypt
-          external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
+          external-dns.alpha.kubernetes.io/target: "${PUBLIC_IP}"
         hosts:
           - host: &your-spotify-server-host "api.spotify.lab.${BASE_DOMAIN}"
             paths:
