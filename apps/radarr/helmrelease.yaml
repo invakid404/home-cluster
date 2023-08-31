@@ -30,6 +30,7 @@ spec:
       RADARR__PORT: &port 7878
       RADARR__APPLICATION_URL: "https://${APP_NAME}.lab.${BASE_DOMAIN}"
       RADARR__LOG_LEVEL: info
+      RADARR__AUTHENTICATION_METHOD: External
       RADARR__POSTGRES_HOST: postgres.core.svc.cluster.local
       RADARR__POSTGRES_MAIN_DB: ${MAIN_DB}
       RADARR__POSTGRES_LOG_DB: ${LOG_DB}
