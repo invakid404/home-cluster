@@ -72,6 +72,11 @@ spec:
             port: ${PT_PORT}
             protocol: TCP
             targetPort: ${PT_PORT}
+          socks:
+            enabled: true
+            port: ${SOCKS_PORT}
+            protocol: TCP
+            targetPort: ${SOCKS_PORT}
 
     persistence:
       data:
