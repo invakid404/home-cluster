@@ -18,4 +18,3 @@ resources:
   - ./redis.yaml
   - ./authentik.yaml
   - ./minio.yaml
-  - ./meilisearch.yaml
