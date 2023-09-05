@@ -14,6 +14,7 @@ spec:
       OR_PORT: "9090"
       PT_PORT: "44321"
       SOCKS_PORT: "9050"
+      METRICS_PORT: "9035"
     substituteFrom:
       - kind: ConfigMap
         name: cluster-config

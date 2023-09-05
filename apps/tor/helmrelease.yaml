@@ -50,10 +50,20 @@ spec:
         value: "debian-tor"
       - name: OBFS4V_SocksPort
         value: "0.0.0.0:${SOCKS_PORT}"
+      - name: OBFS4V_MetricsPort
+        value: "0.0.0.0:${METRICS_PORT}"
+      - name: OBFS4V_MetricsPortPolicy
+        value: "accept *"
 
     service:
       main:
         enabled: false
+
+      metrics:
+        enabled: true
+        ports:
+          metrics:
+            port: "${METRICS_PORT}"
 
       lb:
         enabled: true
