@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    prometheus: kube-prometheus
+  name: tor
+  namespace: apps
+spec:
+  endpoints:
+    - honorLabels: true
+      path: /metrics
+      port: metrics
+      scrapeTimeout: 10s
+  jobLabel: tor
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: tor
+      app.kubernetes.io/name: tor
+      app.kubernetes.io/service: tor-metrics
