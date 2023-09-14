@@ -54,6 +54,9 @@ jobs:
     strategy:
       matrix:
         context: ${{ fromJSON(needs.gather-dockerfiles.outputs.contexts) }}
+    concurrency:
+      group: build-image-${{ matrix.context }}
+      cancel-in-progress: true
     steps:
       - name: Checkout
         uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4
