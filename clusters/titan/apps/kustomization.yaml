@@ -37,3 +37,4 @@ resources:
   - ./mermaid2svg.yaml
   - ./windmill.yaml
   - ./router-reverse-proxy.yaml
+  - ./home-assistant.yaml

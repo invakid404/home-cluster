@@ -1,0 +1,97 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: &app home-assistant
+  namespace: apps
+spec:
+  chart:
+    spec:
+      chart: app-template
+      version: 1.5.1
+      interval: 10m0s
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: apps
+  interval: 10m0s
+  values:
+    image:
+      repository: ghcr.io/home-assistant/home-assistant
+      tag: 2023.9.2@sha256:223c9986ff318eaf35fac70351900cf766c15faf82fbe54150b73b7cfc3c933a
+
+    initContainers:
+      init-db:
+        image: ghcr.io/onedr0p/postgres-init:14.9@sha256:e54cfa670bfaad70a3286d3792a98091125e50e176c56e07492cf5d9849cae57
+        env:
+          - name: INIT_POSTGRES_HOST
+            value: postgres.core.svc.cluster.local
+          - name: INIT_POSTGRES_SUPER_USER
+            value: postgres
+          - name: INIT_POSTGRES_SUPER_PASS
+            value: ${POSTGRES_PASSWORD}
+          - name: INIT_POSTGRES_USER
+            value: postgres
+          - name: INIT_POSTGRES_PASS
+            value: ${POSTGRES_PASSWORD}
+          - name: INIT_POSTGRES_DBNAME
+            value: *app
+      copy-config:
+        image: busybox:latest@sha256:3fbc632167424a6d997e74f52b878d7cc478225cffac6bc977eedfe51c7f4e79
+        command:
+          - "/bin/sh"
+          - -c
+        args:
+          - cp /configfiles/* /config/
+        volumeMounts:
+          - name: config
+            mountPath: /config
+          - name: configfiles
+            mountPath: /configfiles
+
+    service:
+      main:
+        ports:
+          http:
+            port: 8123
+
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: "nginx"
+        annotations:
+          nginx.ingress.kubernetes.io/whitelist-source-range: ${PRIVATE_WHITELIST}
+          external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
+          cert-manager.io/cluster-issuer: letsencrypt
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/name: Home Assistant
+          gethomepage.dev/description: Open source home automation
+          gethomepage.dev/group: Applications
+          gethomepage.dev/icon: home-assistant.png
+        hosts:
+          - host: &hass-host "hass.lab.${BASE_DOMAIN}"
+            paths:
+              - path: /
+        tls:
+          - hosts:
+              - *hass-host
+            secretName: letsencrypt-home-assistant
+
+    podAnnotations:
+      configmap.reloader.stakater.com/reload: home-assistant-config
+
+    persistence:
+      config:
+        enabled: true
+        existingClaim: home-assistant-config
+      configfiles:
+        enabled: true
+        type: configMap
+        name: home-assistant-config
+
+    probes:
+      liveness:
+        enabled: false
+      readiness:
+        enabled: false
+      startup:
+        enabled: false
