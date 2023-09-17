@@ -63,6 +63,13 @@ spec:
           - name: configfiles
             mountPath: /configfiles
 
+    hostNetwork: true
+    dnsPolicy: "ClusterFirstWithHostNet"
+    dnsConfig:
+      options:
+        - name: ndots
+          value: "1"
+
     service:
       main:
         ports:
