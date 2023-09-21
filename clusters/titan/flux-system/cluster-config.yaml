@@ -39,3 +39,12 @@ data:
       add_header Content-Type text/plain;
       return 200 "User-agent: *\nDisallow: /\n";
     }
+
+  NGINX_AUTH_URL: |-
+    http://ak-outpost-authentik-embedded-outpost.core.svc.cluster.local:9000/outpost.goauthentik.io/auth/nginx
+  NGINX_AUTH_SIGNIN: |-
+    https://id.invak.id/outpost.goauthentik.io/start?rd=https://$host$escaped_request_uri
+  NGINX_AUTH_HEADERS: |-
+    Set-Cookie,X-authentik-username,X-authentik-groups,X-authentik-email,X-authentik-name,X-authentik-uid
+  NGINX_AUTH_SNIPPET: |-
+    proxy_set_header X-Forwarded-Host $http_host;
