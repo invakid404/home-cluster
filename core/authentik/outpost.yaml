@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+    external-dns.alpha.kubernetes.io/target: ${PUBLIC_IP}
+  name: authentik-outpost
+  namespace: core
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: id.${BASE_DOMAIN}
+      http:
+        paths:
+          - path: /outpost.goauthentik.io
+            pathType: Prefix
+            backend:
+              service:
+                name: ak-outpost-authentik-embedded-outpost
+                port:
+                  number: 9000
+  tls:
+    - hosts:
+        - id.${BASE_DOMAIN}
+      secretName: letsencrypt-authentik
