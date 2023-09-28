@@ -20,9 +20,10 @@ spec:
       baseDomain: &windmill-domain windmill.lab.${BASE_DOMAIN}
       databaseUrl: postgres://postgres:${POSTGRES_PASSWORD}@postgres.core.svc.cluster.local/windmill?sslmode=disable
       appReplicas: 1
-      workerReplicas: 1
       lspReplicas: 1
-      workerGroups: []
+      workerGroups:
+        - name: "default"
+          replicas: 3
 
     postgresql:
       enabled: false
