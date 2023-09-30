@@ -14,6 +14,7 @@ spec:
         name: ingress-nginx
   values:
     controller:
+      allowSnippetAnnotations: true
       config:
         log-format-escape-json: "true"
         log-format-upstream:
