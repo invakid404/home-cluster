@@ -6,9 +6,11 @@ sonarr:
     replace_existing_custom_formats: true
     quality_profiles:
       - name: Any
-        reset_unmatched_scores: true
+        reset_unmatched_scores:
+          enabled: true
       - name: HD
-        reset_unmatched_scores: true
+        reset_unmatched_scores:
+          enabled: true
     custom_formats:
       - trash_ids:
           - d660701077794679fd59e8bdf4ce3a29
@@ -70,7 +72,8 @@ radarr:
       preferred_ratio: 0.5
     quality_profiles:
       - name: Default
-        reset_unmatched_scores: true
+        reset_unmatched_scores:
+          enabled: true
     custom_formats:
       - trash_ids:
           - ff5bc9e8ce91d46c997ca3ac6994d6f8
@@ -148,7 +151,8 @@ radarr:
       preferred_ratio: 0.5
     quality_profiles:
       - name: Default
-        reset_unmatched_scores: true
+        reset_unmatched_scores:
+          enabled: true
     custom_formats:
       - trash_ids:
           - ff5bc9e8ce91d46c997ca3ac6994d6f8
