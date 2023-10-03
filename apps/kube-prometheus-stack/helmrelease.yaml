@@ -58,6 +58,12 @@ spec:
                   - "${NAS_ADDRESS}:9100"
     grafana:
       defaultDashboardsTimezone: ${TIMEZONE}
+      persistence:
+        enabled: true
+        size: 5Gi
+        storageClassName: nfs-client
+      initChownData:
+        enabled: false
       grafana.ini:
         analytics:
           reporting_enabled: false
