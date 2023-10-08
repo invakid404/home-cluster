@@ -75,7 +75,6 @@ spec:
         enabled: true
         ingressClassName: nginx
         annotations:
-          nginx.ingress.kubernetes.io/whitelist-source-range: ${PRIVATE_WHITELIST}
           cert-manager.io/cluster-issuer: letsencrypt
           gethomepage.dev/enabled: "true"
           gethomepage.dev/name: Grafana
@@ -84,7 +83,7 @@ spec:
           gethomepage.dev/icon: grafana.png
           gethomepage.dev/pod-selector: >-
             app.kubernetes.io/name in (grafana)
-          external-dns.alpha.kubernetes.io/target: "${PRIVATE_IP}"
+          external-dns.alpha.kubernetes.io/target: "${PUBLIC_IP}"
         hosts:
           - &grafana-host grafana.lab.${BASE_DOMAIN}
         tls:
