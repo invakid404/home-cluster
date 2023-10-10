@@ -62,6 +62,8 @@ spec:
         enabled: true
         size: 5Gi
         storageClassName: nfs-client
+      env:
+        GF_FEATURE_TOGGLES_ENABLE: "publicDashboards"
       initChownData:
         enabled: false
       grafana.ini:
