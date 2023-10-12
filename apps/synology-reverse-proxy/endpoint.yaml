@@ -1,12 +1,14 @@
-kind: Endpoints
+kind: EndpointSlice
 apiVersion: v1
 metadata:
   name: synology-reverse-proxy
   namespace: apps
-subsets:
+ports:
+  - name: dsm
+    port: 5000
+    protocol: TCP
+endpoints:
   - addresses:
       - ip: ${NAS_ADDRESS}
-    ports:
-      - name: dsm
-        port: 5000
-        protocol: TCP
+    conditions:
+      ready: true
