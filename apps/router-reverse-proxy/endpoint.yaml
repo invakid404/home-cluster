@@ -1,12 +1,15 @@
-kind: Endpoints
+kind: EndpointSlice
 apiVersion: v1
 metadata:
   name: router-reverse-proxy
   namespace: apps
-subsets:
+addressType: IPv4
+ports:
+  - name: http
+    port: 80
+    protocol: TCP
+endpoints:
   - addresses:
       - ip: ${ROUTER_IP}
-    ports:
-      - name: http
-        port: 80
-        protocol: TCP
+    conditions:
+      ready: true
