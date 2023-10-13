@@ -18,7 +18,7 @@ spec:
 
   values:
     image:
-      repository: ghcr.io/benphelps/homepage
+      repository: ghcr.io/gethomepage/homepage
       pullPolicy: IfNotPresent
       tag: v0.7.1@sha256:941898727d84ea3169f083e339217910a6ab0d67e58afb58f042b0f8e9f1c178
 
