@@ -20,7 +20,7 @@ jobs:
       contexts: ${{ github.event_name == 'push' && steps.find-changed.outputs.all_changed_files || steps.find-all.outputs.contexts }}
     steps:
       - name: Checkout
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
+        uses: actions/checkout@v4
 
       - name: Find all changed Dockerfiles (push)
         id: find-changed
