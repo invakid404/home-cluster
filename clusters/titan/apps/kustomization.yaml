@@ -39,3 +39,4 @@ resources:
   - ./router-reverse-proxy.yaml
   - ./home-assistant.yaml
   - ./esphome.yaml
+  - ./miniflux.yaml
