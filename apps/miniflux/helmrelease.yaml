@@ -90,7 +90,7 @@ spec:
           gethomepage.dev/group: Applications
           gethomepage.dev/icon: miniflux.png
         hosts:
-          - host: &host "miniflux.lab.${BASE_DOMAIN}"
+          - host: &host "rss.lab.${BASE_DOMAIN}"
             paths:
               - path: /
                 service:
