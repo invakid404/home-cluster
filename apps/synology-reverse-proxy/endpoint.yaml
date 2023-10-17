@@ -1,14 +1,17 @@
 kind: EndpointSlice
-apiVersion: v1
+apiVersion: discovery.k8s.io/v1
 metadata:
-  name: synology-reverse-proxy
+  name: &name synology-reverse-proxy
   namespace: apps
+  labels:
+    kubernetes.io/service-name: *name
+addressType: IPv4
 ports:
   - name: dsm
     port: 5000
     protocol: TCP
 endpoints:
   - addresses:
-      - ip: ${NAS_ADDRESS}
+      - ${NAS_ADDRESS}
     conditions:
       ready: true
