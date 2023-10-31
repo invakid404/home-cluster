@@ -11,3 +11,4 @@ resources:
   - ./synology-csi-chart.yaml
   - ./authentik.yaml
   - ./meilisearch.yaml
+  - ./tailscale-operator.yaml

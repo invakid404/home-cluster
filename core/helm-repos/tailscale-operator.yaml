@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: tailscale-operator
+  namespace: core
+spec:
+  interval: 10m0s
+  url: https://github.com/tailscale/tailscale
+  ref:
+    branch: main
