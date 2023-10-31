@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: app-template
-      version: 1.5.1
+      version: 2.0.3
       interval: 10m0s
       sourceRef:
         kind: HelmRepository
@@ -25,27 +25,32 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    image:
-      repository: docker.io/esphome/esphome
-      tag: latest@sha256:cd5ac0f225064d7ee108a1a9a9a22d45ff9199c166500c984c04c59a375254f2
-    env:
-      TZ: "${TIMEZONE}"
-      ESPHOME_DASHBOARD_USE_PING: true
-    command: ["sh"]
-    args:
-      - "-c"
-      - |
-        git config --global --add safe.directory '*'
-        /entrypoint.sh dashboard /config
-    securityContext:
-      runAsNonRoot: false
-      readOnlyRootFilesystem: false
-      privileged: true
-      allowPrivilegeEscalation: true
+    controllers:
+      main:
+        containers:
+          main:
+            image:
+              repository: docker.io/esphome/esphome
+              tag: latest@sha256:cd5ac0f225064d7ee108a1a9a9a22d45ff9199c166500c984c04c59a375254f2
+            env:
+              TZ: "${TIMEZONE}"
+              ESPHOME_DASHBOARD_USE_PING: true
+            command: ["sh"]
+            args:
+              - "-c"
+              - |
+                git config --global --add safe.directory '*'
+                /entrypoint.sh dashboard /config
+            securityContext:
+              runAsNonRoot: false
+              readOnlyRootFilesystem: false
+              privileged: true
+              allowPrivilegeEscalation: true
     persistence:
       data:
         enabled: true
-        mountPath: /config
+        globalMounts:
+          - path: /config
         existingClaim: *app
     service:
       main:
@@ -55,7 +60,7 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: tailscale
+        className: tailscale
         annotations:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/name: ESPHome
@@ -66,7 +71,9 @@ spec:
           - host: &host esphome.${TAILSCALE_DOMAIN}
             paths:
               - path: /
-                pathType: Prefix
+                service:
+                  name: main
+                  port: http
         tls:
           - hosts:
               - *host
