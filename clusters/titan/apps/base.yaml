@@ -24,3 +24,4 @@ spec:
     - name: storage-classes
     - name: reloader
     - name: external-dns
+    - name: tailscale-operator
