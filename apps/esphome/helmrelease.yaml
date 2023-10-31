@@ -55,25 +55,18 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: nginx
+        ingressClassName: tailscale
         annotations:
-          external-dns.alpha.kubernetes.io/target: "${PUBLIC_IP}"
-          cert-manager.io/cluster-issuer: letsencrypt
           gethomepage.dev/enabled: "true"
           gethomepage.dev/name: ESPHome
           gethomepage.dev/description: ESP control system
           gethomepage.dev/group: Applications
           gethomepage.dev/icon: esphome.png
-          nginx.ingress.kubernetes.io/auth-url: ${NGINX_AUTH_URL}
-          nginx.ingress.kubernetes.io/auth-signin: ${NGINX_AUTH_SIGNIN}
-          nginx.ingress.kubernetes.io/auth-response-headers: ${NGINX_AUTH_HEADERS}
-          nginx.ingress.kubernetes.io/auth-snippet: ${NGINX_AUTH_SNIPPET}
         hosts:
-          - host: &host "esphome.lab.${BASE_DOMAIN}"
+          - host: &host esphome.${TAILSCALE_DOMAIN}
             paths:
               - path: /
                 pathType: Prefix
         tls:
           - hosts:
               - *host
-            secretName: letsencrypt-esphome

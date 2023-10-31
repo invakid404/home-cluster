@@ -7,6 +7,8 @@ data:
   TIMEZONE: "Europe/Sofia"
 
   BASE_DOMAIN: invak.id
+  TAILSCALE_DOMAIN: qilin-qilin.ts.net
+
   NAS_HOSTNAME: nas
   NAS_ADDRESS: 192.168.50.86
   PUBLIC_IP: home.invak.id
