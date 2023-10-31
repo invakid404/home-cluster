@@ -80,17 +80,16 @@ spec:
     ingress:
       main:
         enabled: true
-        className: nginx
+        className: tailscale
         annotations:
-          external-dns.alpha.kubernetes.io/target: "${PUBLIC_IP}"
-          cert-manager.io/cluster-issuer: letsencrypt
+          tailscale.com/funnel: "true"
           gethomepage.dev/enabled: "true"
           gethomepage.dev/name: Miniflux
           gethomepage.dev/description: Minimalist and opinionated feed reader
           gethomepage.dev/group: Applications
           gethomepage.dev/icon: miniflux.png
         hosts:
-          - host: &host "rss.lab.${BASE_DOMAIN}"
+          - host: &host rss.${TAILSCALE_DOMAIN}
             paths:
               - path: /
                 service:
@@ -99,4 +98,3 @@ spec:
         tls:
           - hosts:
               - *host
-            secretName: letsencrypt-miniflux
