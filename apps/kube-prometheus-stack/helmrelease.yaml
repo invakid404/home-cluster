@@ -75,9 +75,9 @@ spec:
         passwordKey: "admin-password"
       ingress:
         enabled: true
-        ingressClassName: nginx
+        ingressClassName: tailscale
         annotations:
-          cert-manager.io/cluster-issuer: letsencrypt
+          tailscale.com/funnel: "true"
           gethomepage.dev/enabled: "true"
           gethomepage.dev/name: Grafana
           gethomepage.dev/description: Analytics and interactive visualization web application
@@ -85,13 +85,11 @@ spec:
           gethomepage.dev/icon: grafana.png
           gethomepage.dev/pod-selector: >-
             app.kubernetes.io/name in (grafana)
-          external-dns.alpha.kubernetes.io/target: "${PUBLIC_IP}"
         hosts:
-          - &grafana-host grafana.lab.${BASE_DOMAIN}
+          - &host grafana.${TAILSCALE_DOMAIN}
         tls:
           - hosts:
-              - *grafana-host
-            secretName: letsencrypt-grafana
+              - *host
       dashboardProviders:
         dashboardproviders.yaml:
           apiVersion: 1
