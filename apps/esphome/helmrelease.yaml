@@ -31,7 +31,7 @@ spec:
           main:
             image:
               repository: docker.io/esphome/esphome
-              tag: latest@sha256:13b08f1446e046d240717e43a78c14a65c81e5ef4f3f8325d9c83efde93c0f74
+              tag: latest@sha256:06e7b4fec79117dff3cf73f272fd0f849e1f81d94eb1be1f036f9aaa19cc927f
             env:
               TZ: "${TIMEZONE}"
               ESPHOME_DASHBOARD_USE_PING: true
