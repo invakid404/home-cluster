@@ -1,0 +1,87 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: &app image-host
+  namespace: apps
+spec:
+  interval: 10m0s
+  chart:
+    spec:
+      chart: app-template
+      version: 2.0.3
+      interval: 10m0s
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: apps
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    controllers:
+      main:
+        initContainers:
+          init-db:
+            image:
+              repository: ghcr.io/onedr0p/postgres-init
+              tag: 14.9@sha256:170970a909f892149cbf99be8d86c26f0090bc7d2fbd1c34dd770b4bf7e08458
+            env:
+              - name: INIT_POSTGRES_HOST
+                value: postgres.core.svc.cluster.local
+              - name: INIT_POSTGRES_SUPER_USER
+                value: postgres
+              - name: INIT_POSTGRES_SUPER_PASS
+                value: ${POSTGRES_PASSWORD}
+              - name: INIT_POSTGRES_USER
+                value: postgres
+              - name: INIT_POSTGRES_PASS
+                value: ${POSTGRES_PASSWORD}
+              - name: INIT_POSTGRES_DBNAME
+                value: *app
+
+        containers:
+          main:
+            image:
+              repository: ghcr.io/invakid404/image-host
+              tag: 1.0.0@sha256:7e6a0f7e7ceedb44a259143c820900419210e901b6ca5a0e4902a9a375f6810d
+            envFrom:
+              - secretRef:
+                  name: *app
+
+        strategy: RollingUpdate
+        annotations:
+          reloader.stakater.com/auto: "true"
+
+    defaultPodOptions:
+      imagePullSecrets:
+        - name: docker-config
+
+    service:
+      main:
+        ports:
+          http:
+            port: 8080
+
+    ingress:
+      main:
+        enabled: true
+        className: tailscale
+        annotations:
+          tailscale.com/funnel: "true"
+        hosts:
+          - host: &host img.${TAILSCALE_DOMAIN}
+            paths:
+              - path: /
+                service:
+                  name: main
+                  port: http
+        tls:
+          - hosts:
+              - *host

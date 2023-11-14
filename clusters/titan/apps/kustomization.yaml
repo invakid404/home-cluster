@@ -39,3 +39,4 @@ resources:
   - ./home-assistant.yaml
   - ./esphome.yaml
   - ./miniflux.yaml
+  - ./image-host.yaml
