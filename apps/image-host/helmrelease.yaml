@@ -50,7 +50,7 @@ spec:
           main:
             image:
               repository: ghcr.io/invakid404/image-host
-              tag: 1.0.0@sha256:7e6a0f7e7ceedb44a259143c820900419210e901b6ca5a0e4902a9a375f6810d
+              tag: 1.1.0@sha256:9e4c104a3fb7c9e4532fe4c5dc91cd9ecb4b73a82db4be86c312ad910eed46d9
             envFrom:
               - secretRef:
                   name: *app
