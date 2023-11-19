@@ -5,7 +5,7 @@ metadata:
     namespace: apps
 type: Opaque
 stringData:
-    GITHUB_COM_TOKEN: ENC[AES256_GCM,data:FYJD/8m+uPotVraKYPS6pRV5MTgRbz8xljCVrEFbOZ02vzNFC1dSlg==,iv:UvL5py6k/muNCKCmiNAK7+44wMcUpI3YxKS36MM0FPI=,tag:Xsi+HquIeIC17uXbuOP2gQ==,type:str]
+    GITHUB_COM_TOKEN: ENC[AES256_GCM,data:AfjroVbnAw+R/CTQQHbVn9yP/GQYUbUqajz++gMPjFpYPJ3hR5dlPw==,iv:AGxd9dHicQ9r8DuhaA65TK23Tzz0pldmP/o9fFhSl5k=,tag:7xPZOB5puv56SsTuuzAigA==,type:str]
     RENOVATE_AUTODISCOVER: ENC[AES256_GCM,data:xwJCly0=,iv:BtbYwnl9keovqVSKCQh51v6Fzz9ECIy1yKKHchNGFp4=,tag:vlnzZOtWQfDXih+buRrN2Q==,type:str]
     RENOVATE_GIT_AUTHOR: ENC[AES256_GCM,data:XP0ZRXydWBlI9Ge5YcRGjkizj1hi7SQ19+I1yILJ76Oi6g==,iv:j4ScIDjHv8ylgI6G5esSbbNDvqdD1hhuZXKT9D0FQZI=,tag:aXucpxugiFgOMlG7zA6PFA==,type:str]
     RENOVATE_PLATFORM: ENC[AES256_GCM,data:w4h++k+g,iv:bsWUI1LmJsixmKMCe8OWZzBe2Rij71C63+aAKagVGXM=,tag:/uv4lTz6dyEjmSCOUqoqIA==,type:str]
@@ -20,8 +20,8 @@ sops:
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2023-11-17T14:31:32Z"
-    mac: ENC[AES256_GCM,data:1tFvbvl/4vNeJihA9YDn+f11rJT3v/2M58r9Utkp0108c+97OFgQoCQr6htonkD3VrvCpULCzg8a6/0j5AfFW/TUdWC8vKQIVO9cy7BI2kepcLnIV/2mLi5w2Ow3wJwG85Py9C1vchLbV97uq+mt1R2DCgwX+drxuHjVVqxJuew=,iv:AqCsNFqTpCYuRSj4s+c2DD82s6e+cdaFIkW1sah4mCk=,tag:nE6oa4DUM5RAWnccqGX0Pg==,type:str]
+    lastmodified: "2023-11-19T17:33:48Z"
+    mac: ENC[AES256_GCM,data:IcBzASYlsnRi80iJdZE9glchAcQ5MGNBVumpnbVbMd/oR3I2GwH/H+W0SkU7B+pcHZ1Xdh5uC+XG8noALCvTX0pdiSAMu6XgqmU0cH/g9k4J82fwm0numBMkwKfHgYDCiWwK/rNo3IHKwISVb9q3TYrmaAVF3KZdFBqFyobYDx4=,iv:uk9TWP58yNTW1cG3MHfR8EVZ/NgEmYDsiAIYiMgx2Rg=,tag:KqqZwiltZfn3DqqNnK5YGQ==,type:str]
     pgp:
         - created_at: "2022-09-23T19:58:14Z"
           enc: |
