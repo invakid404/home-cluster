@@ -12,6 +12,9 @@ spec:
                 kind: GitRepository
                 name: tailscale-operator
     values:
+        operatorConfig:
+            image:
+                pullPolicy: Always
         oauth:
             clientId: k3n9NG2CNTRL
             clientSecret: ENC[AES256_GCM,data:VZTcvb5pkWKXHFRKDvarPTZODOlBNKKYwJB3KOgR40rL8uQCgvDXpO64JIkXxkSyc/5gRSGMOyAyeQ==,iv:Dp434uC155qtnAuZBJcmQ9qcgkLGx9ZI+ZK9PyZDSYw=,tag:d/ALSVxSJKcQRLvafPY/3w==,type:str]
@@ -21,8 +24,8 @@ sops:
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2023-10-31T17:23:22Z"
-    mac: ENC[AES256_GCM,data:5xjvdiLU7g8TK6i7s1moTVS/jnkfcV0UP2Y11wUok7n9yTo4nIoDkqMP9gGtMZmqetZLviN4Zp4i+61NABzhgBvNu6HCNehFevSSAqu5O1Xke4EmPqk8ztb6xo3qeOsfDV4Yth9qX4Wj60dAPc6CpFkC8D3iG8zRPiLC0ejuHKE=,iv:4raEf94pnGRN5xTdRlnIN8NKqLF4Swr8ns26GT7oeKI=,tag:LHht54lpODlaBoeZlzSnCw==,type:str]
+    lastmodified: "2023-11-20T12:40:14Z"
+    mac: ENC[AES256_GCM,data:JULeRKKjNhSFODF64rh4gdIpX+IfbikTRBB3SphyGqAjzhdHEzqAVDpc9F7G6r0i5KV/tsEj78V+83P9zOXfE08I3E1mtBju+Lt6TX01VV2ppgjAhTFP6HxRp55qjbrsByfDflw5wYuYs+MSIiio3ylblwZJgP1fzkk9vy79Nlk=,iv:9HQap3OElmdHhHfOTEnYanSydKhPdIfi7VTtONGWFsE=,tag:UXxFwwHud4OMWbq+066OTg==,type:str]
     pgp:
         - created_at: "2023-10-31T17:23:22Z"
           enc: |-
