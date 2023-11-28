@@ -18,7 +18,7 @@ spec:
   values:
     image:
       repository: ghcr.io/onedr0p/qbittorrent
-      tag: 4.6.1@sha256:2c0959df796cd2acbd585861511cc0a692b235ae9d41a5225767bc484c7d8b44
+      tag: 4.6.2@sha256:58171b882a2e6172db40308920469da2f882ea46b60f9fed6100bff605caebe3
 
     podAnnotations:
       setGateway: "true"
