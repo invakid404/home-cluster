@@ -31,7 +31,7 @@ spec:
 
     initContainers:
       copy-config:
-        image: busybox:1.36.1@sha256:3fbc632167424a6d997e74f52b878d7cc478225cffac6bc977eedfe51c7f4e79
+        image: busybox:1.36.1@sha256:2e817125cc6e9d9c662963bf09912ce6360da6a33a203e1b92f379060890f646
         command:
           - "/bin/sh"
           - -c
@@ -44,7 +44,7 @@ spec:
           - name: configfiles
             mountPath: /data/configfiles
       install-vuetorrent:
-        image: busybox:1.36.1@sha256:3fbc632167424a6d997e74f52b878d7cc478225cffac6bc977eedfe51c7f4e79
+        image: busybox:1.36.1@sha256:2e817125cc6e9d9c662963bf09912ce6360da6a33a203e1b92f379060890f646
         command:
           - "/bin/sh"
           - -c
