@@ -14,7 +14,7 @@ spec:
           restartPolicy: OnFailure
           initContainers:
             - name: render-configs
-              image: ghcr.io/onedr0p/alpine:3.18.5@sha256:55b35f580db486e93271ce2bb5b222ceed8591abd6e5fa99142f9337e0ab504d
+              image: ghcr.io/onedr0p/alpine:3.19.0@sha256:af2321e7a8a745f33662fdf887d6d29f7ba841452f8187023447be21543ac31a
               env:
                 - name: SONARR_BASE_URL
                   value: https://sonarr.lab.${BASE_DOMAIN}
