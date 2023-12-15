@@ -7,10 +7,11 @@ spec:
     interval: 10m0s
     chart:
         spec:
-            chart: ./cmd/k8s-operator/deploy/chart
+            chart: tailscale-operator
+            version: 1.56.0
             sourceRef:
-                kind: GitRepository
-                name: tailscale-operator
+                kind: HelmRepository
+                name: tailscale
     values:
         operatorConfig:
             image:
@@ -24,8 +25,8 @@ sops:
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2023-11-20T12:40:14Z"
-    mac: ENC[AES256_GCM,data:JULeRKKjNhSFODF64rh4gdIpX+IfbikTRBB3SphyGqAjzhdHEzqAVDpc9F7G6r0i5KV/tsEj78V+83P9zOXfE08I3E1mtBju+Lt6TX01VV2ppgjAhTFP6HxRp55qjbrsByfDflw5wYuYs+MSIiio3ylblwZJgP1fzkk9vy79Nlk=,iv:9HQap3OElmdHhHfOTEnYanSydKhPdIfi7VTtONGWFsE=,tag:UXxFwwHud4OMWbq+066OTg==,type:str]
+    lastmodified: "2023-12-15T21:13:15Z"
+    mac: ENC[AES256_GCM,data:pToXqIkheOKvdkqTcc3FXjIMGq9EMDlZmGIsNnbyo+VR4nRtGI3x396M3mermIWic0VbDE8/BSjitgefulLOft+SC8MQLmCreqWAd8hyUtNfoG0lF/m8t5P4sbhrL0dmMuRTJB7ebfxnXos7VXdKGSwk8rZLGLEybB7h1yFjDSg=,iv:2qxuBY5uUTuGdu5T1PFyguF12+DS7A7uQ7+dIzUbisg=,tag:U3Chh4/ZmM9KddIqd3lVZA==,type:str]
     pgp:
         - created_at: "2023-10-31T17:23:22Z"
           enc: |-
