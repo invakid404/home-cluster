@@ -22,7 +22,7 @@
       "matchUpdateTypes": ["minor", "patch", "digest"],
       "matchPackageNames": [
         "renovate/renovate",
-        "libreddit/libreddit",
+        "quay.io/redlib/redlib",
         "busybox",
         "ghcr.io/onedr0p/alpine"
       ]

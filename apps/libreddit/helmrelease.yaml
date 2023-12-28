@@ -18,9 +18,9 @@ spec:
 
   values:
     image:
-      repository: libreddit/libreddit
+      repository: quay.io/redlib/redlib
       pullPolicy: IfNotPresent
-      tag: latest@sha256:70613be4f824bcfd9746c3ad21eb6c5db457cfa641a7a4dba604fd0945917af3
+      tag: latest@sha256:e72a75e177d64a0caf51dad4aeb145368bea2a18cefb771893ab5d6e8e6a3f9f
 
     controller:
       strategy: RollingUpdate
