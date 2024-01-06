@@ -18,7 +18,7 @@ spec:
   values:
     image:
       repository: ghcr.io/onedr0p/prowlarr-nightly
-      tag: 1.12.0.4186@sha256:10f3bfccb3f7d32be3d19eb8c90f85c8c079108b7f700c228712f1b3ea046af8
+      tag: 1.12.0.4188@sha256:a9d792bb2ef029a6cb93ea9ac013224bca801fe0376e9f4362179c75f6a9de17
 
     podAnnotations:
       setGateway: "true"
