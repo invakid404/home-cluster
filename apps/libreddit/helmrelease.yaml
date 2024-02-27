@@ -20,7 +20,7 @@ spec:
     image:
       repository: quay.io/redlib/redlib
       pullPolicy: IfNotPresent
-      tag: latest@sha256:d531023d32b66701b23f949a0d744320ebe7867fea72eddeebcc09f2853e68d1
+      tag: latest@sha256:cc692c94372b0c038b7433dcce7d1bde0f506148bab4bcd2aa24b0aa65746017
 
     controller:
       strategy: RollingUpdate
