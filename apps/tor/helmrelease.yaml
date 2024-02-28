@@ -18,7 +18,7 @@ spec:
   values:
     image:
       repository: thetorproject/obfs4-bridge
-      tag: 0.14@sha256:72136c2999778e9b8577139ebb9dae391ba529ae9dac852cd7c9c3616ec78ba8
+      tag: 0.15@sha256:533b30854e5cafb07b2904a921675ab4c9b8935d4df2f49f591d87e2138918aa
 
     podSecurityContext:
       runAsUser: 0
